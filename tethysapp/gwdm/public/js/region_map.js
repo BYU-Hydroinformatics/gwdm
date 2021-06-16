@@ -541,6 +541,9 @@ var LIBRARY_OBJECT = (function() {
     generate_chart = function(result){
         var variable_name = $("#variable-select option:selected").text();
         Highcharts.stockChart('chart',{
+            chart: {
+                type: 'spline',
+            },
             title: {
                 text: result['well_info']["well_name"]+ variable_name + " values",
                 style: {
