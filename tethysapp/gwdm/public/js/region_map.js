@@ -319,7 +319,7 @@ var LIBRARY_OBJECT = (function() {
             request : 'GetFeature',
             typeName : 'gwdm:region',
             outputFormat : 'text/javascript',
-            format_options : 'callback:getJson',
+            format_options : 'callback:getRegion',
             SrsName : 'EPSG:4326',
             featureID: 'region.'+region_id
         };
@@ -332,15 +332,15 @@ var LIBRARY_OBJECT = (function() {
         var ajax = $.ajax({
             url : URL,
             dataType : 'jsonp',
-            jsonpCallback : 'getJson',
+            jsonpCallback : 'getRegion',
             success : function (response) {
                 var myStyle = {
-                    "color": "#0004ff",
+                    "color": "#710000",
                     "weight": 6,
                     "opacity": 1,
                     "fillOpacity": 0
                 };
-                var feature = L.geoJSON(response, {style: myStyle}).addTo(regionGroup);
+                var feature = L.geoJSON(response, {style: myStyle, interactive: false}).addTo(regionGroup);
                 map.fitBounds(feature.getBounds());
                 return callback(region_id);
                 // console.log(region_aquifers);
@@ -355,7 +355,7 @@ var LIBRARY_OBJECT = (function() {
             request : 'GetFeature',
             typeName : 'gwdm:aquifer',
             outputFormat : 'text/javascript',
-            format_options : 'callback:getJson',
+            format_options : 'callback:getRegionAquifers',
             SrsName : 'EPSG:4326',
             cql_filter: 'region_id='+region_id
         };
@@ -365,7 +365,7 @@ var LIBRARY_OBJECT = (function() {
         var ajax = $.ajax({
             url : URL,
             dataType : 'jsonp',
-            jsonpCallback : 'getJson',
+            jsonpCallback : 'getRegionAquifers',
             success : function (response) {
                 aquiferGroup.clearLayers();
 
@@ -402,7 +402,7 @@ var LIBRARY_OBJECT = (function() {
             request : 'GetFeature',
             typeName : 'gwdm:aquifer',
             outputFormat : 'text/javascript',
-            format_options : 'callback:getJson',
+            format_options : 'callback:getAquifer',
             SrsName : 'EPSG:4326',
             featureID: 'aquifer.'+aquifer_id
         };
@@ -415,7 +415,7 @@ var LIBRARY_OBJECT = (function() {
         var ajax = $.ajax({
             url : URL,
             dataType : 'jsonp',
-            jsonpCallback : 'getJson',
+            jsonpCallback : 'getAquifer',
             success : function (response) {
                 var myStyle = {
                     "color": "#0004ff",
@@ -423,7 +423,7 @@ var LIBRARY_OBJECT = (function() {
                     "opacity": 1,
                     "fillOpacity": 0
                 };
-                var feature = L.geoJSON(response, {style: myStyle}).addTo(aquiferGroup);
+                var feature = L.geoJSON(response, {style: myStyle, interactive: false}).addTo(aquiferGroup);
                 map.fitBounds(feature.getBounds());
             }
         });
@@ -458,7 +458,7 @@ var LIBRARY_OBJECT = (function() {
             request : 'GetFeature',
             typeName : 'gwdm:well',
             outputFormat : 'text/javascript',
-            format_options : 'callback:getJson',
+            format_options : 'callback:getWells',
             SrsName : 'EPSG:4326',
             cql_filter: 'aquifer_id='+aquifer_id
         };
@@ -468,11 +468,11 @@ var LIBRARY_OBJECT = (function() {
 
         // aquiferGroup.clearLayers();
         markers.clearLayers();
-
+        markers.bringToFront();
         var ajax = $.ajax({
             url : URL,
             dataType : 'jsonp',
-            jsonpCallback : 'getJson',
+            jsonpCallback : 'getWells',
             success : function (response) {
                 wfs_response = response;
                 L.geoJson(wfs_response, {
@@ -829,6 +829,7 @@ var LIBRARY_OBJECT = (function() {
             rangeMin = document.getElementById('input-number-min').value;
             rangeMax = document.getElementById('input-number-max').value;
             markers.clearLayers();
+            markers.bringToFront()
             L.geoJson(wfs_response, {
                 // style: wfs_style_function,
                 pointToLayer: function (feature, latlng) {
