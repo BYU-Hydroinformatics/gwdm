@@ -1,31 +1,54 @@
-from setuptools import setup, find_namespace_packages
-from tethys_apps.app_installation import find_resource_files
+#Configuration file for the Sphinx documentation builder.
 
-# -- Apps Definition -- #
-app_package = 'gwdm'
-release_package = 'tethysapp-' + app_package
+# -- Project information
 
-# -- Python Dependencies -- #
-dependencies = []
+project = 'Grace Groundwater Subsetting Tool'
+copyright = '2021, Dr. Norm L. Jones'
+author = 'Dr. Norm Jones and Research Assistants'
 
-# -- Get Resource File -- #
-resource_files = find_resource_files('tethysapp/' + app_package + '/templates', 'tethysapp/' + app_package)
-resource_files += find_resource_files('tethysapp/' + app_package + '/public', 'tethysapp/' + app_package)
-resource_files += find_resource_files('tethysapp/' + app_package + '/workspaces', 'tethysapp/' + app_package)
+release = '0.1'
+version = '0.1.0'
 
-setup(
-    name=release_package,
-    version='0.0.1',
-    description='Ground Water Data Mapper',
-    long_description='',
-    keywords='',
-    author='Sarva Pulla',
-    author_email='',
-    url='https://github.com/BYU-Hydroinformatics/gwdm',
-    license='MIT',
-    packages=find_namespace_packages(),
-    package_data={'': resource_files},
-    include_package_data=True,
-    zip_safe=False,
-    install_requires=dependencies,
-)
+# -- General configuration
+
+extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.doctest',
+    'sphinx.ext.duration',
+    'sphinx.ext.doctest',
+    'sphinx.ext.autodoc',
+    'sphinx.ext.autosummary',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.todo',
+    'sphinx.ext.viewcode',
+    'sphinx.ext.extlinks',
+]
+
+
+
+intersphinx_mapping = {
+    'python': ('https://docs.python.org/3/', None),
+    'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
+}
+intersphinx_disabled_domains = ['std']
+
+templates_path = ['_templates']
+
+# -- Options for HTML output
+
+html_theme = 'sphinx_rtd_theme'
+
+# -- Options for EPUB output
+epub_show_urls = 'footnote'
+
+#Include the index in the content page
+
+html_sidebars = {
+    '**': ['globaltoc.html', 'localtoc.html', 'searchbox.html'],
+    '**/index': ['globaltoc.html', 'localtoc.html', 'searchbox.html'],
+}
+
+def setup(app):
+    app.add_css_file('screen_width.css')
+
+html_static_path = ['_static']
