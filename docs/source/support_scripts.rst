@@ -1,5 +1,8 @@
 **DATA PREPARATION SCRIPTS**
-========
+============================
+
+**Introduction**
+------------------
 
 These scripts can aid in the data preparation process required prior to using the GWDM tool. They have all been created in a cloud-based environment called Google Colaboratory, or Colab for short. Colab is built on Jupyter Notebook, which allows users to write, execute, and visualize Python code quickly and easily.
 
@@ -9,8 +12,4 @@ There is a tool for retrieving elevations at wells that are missing ground surfa
 
 An example set of files has been provided; however, you are welcome to use your own files if you would prefer.
  
- data_preparation
-    support_scripts
-    importing_data
-    mapping
-    installation
+
