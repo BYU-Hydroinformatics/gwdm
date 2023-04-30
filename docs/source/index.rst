@@ -21,8 +21,8 @@ Water managers in Western Africa and around the world face the daunting task of 
     :caption: TABLE OF CONTENT
 
     self
-    data_preparation
-    support_scripts
-    importing_data
+    datapreparation
+    supportscripts
+    importingdata
     mapping
     installation
