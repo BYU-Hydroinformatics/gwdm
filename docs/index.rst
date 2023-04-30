@@ -61,8 +61,8 @@ Installation. This section describes how to intall the GWDM app in your own Teth
 
     self
     datapreparation
-    support_scripts
-    importing_data
+    supportscripts
+    importingdata
     mapping
     installation
 
