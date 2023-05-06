@@ -43,15 +43,15 @@ Also, make sure the shapefile does NOT include Z coordinates as this will genera
 ------------
 The aquifers in your region will also need to be organized in either a geojson file or a shapefile. The attribute table for the aquifer file has two fields (columns) that are required to upload the file to the app: an aquifer name representing the unique name of the aquifer and an **aquifer ID**, a unique integer ID.
 
-+---------+-----------+---------------------------------------------------------------+
-| Field   | Type      | Description                                                   |
-+=========+===========+===============================================================+
-| Aquifer | Name Text | The names should uniquely describe the aquifers               |
-+---------+-----------+---------------------------------------------------------------+
-| Aquifer | ID Numeric| The integer IDs should be unique (not have duplicate values)  |
-+---------+-----------+---------------------------------------------------------------+
++---------------+-----------+-------------------------------------------------------------+
+| Field         | Type      | Description                                                 |
++===============+===========+=============================================================+
+| Aquifer  Name |Text       | The names should uniquely describe the aquifers             |
++---------------+-----------+-------------------------------------------------------------+
+| Aquifer ID    |  Numeric  | The integer IDs should be unique (not have duplicate values)|
++---------------+-----------+-------------------------------------------------------------+
 
-.. image:: source/images_dataprep/utah_shapefiles.png
+.. image:: source/images_dataprep/utah_aquifer.png
 
 
 **Well Locations File**
@@ -84,7 +84,7 @@ The required fields (columns) for a wells file are:
 +--------------------------+----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Ground Surface Elevation | Numeric        | OPTIONAL: This field only serves as a metadata purpose.                                                                                                                                             |
 +--------------------------+----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Aquifer                  | Text or Integer|If a file contains wells from multiple aquifers, this field is mandadory.                                                                                                                            |
+| Aquifer ID               | Text or Integer|If a file contains wells from multiple aquifers, this field is mandadory.                                                                                                                            |
 |                          |                |OPTIONAL if a file only contains wells from single aquifer. See the description above for the two methods for importing well locations.                                                              |
 +--------------------------+----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -108,22 +108,24 @@ A measurement file is a CSV file containing the groundwater data measurements. E
 .. image:: source/images_dataprep/well_chart.png
 
 The required fields (columns) for a measurements file are:
-#Table
 
-+------------------------+----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Field                  | Type           | Description                                                                                                                                             |
-+========================+================+=========================================================================================================================================================+
-| Well ID                | Numeric        | This well ID should be related to one of the well ID values defined in the Well Locations file described above.                                         |
-+------------------------+----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Date                   | Numeric        | The date that the measurement was taken. The dates can be in almost any format . When the measurements are imported, the user has the option to define the date format so that the dates are properly interpreted.   |  |                        |                |                                                                                             |
-|                        |                |                                                                                                                                                         |  |                        |                | The Unix Epoch begins in 1970, so any dates before 1970 will need to be 4-digit years; otherwise, they will be converted to the next century(e.g.       |  |                        |                |  1/1/69 will be converted to 1/1/2069; 1/1/1969 will remain 1/1/1969).                                                                                  |
-|                        |                |                                                                                                                                                         |
-+------------------------+----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Measurement(s)         | Numeric        | This column contains the actual measurements (water table elevation, depth to groundwater, water quality, etc). You can have one or multiple data       | |columns.                |                |                                                                                                                                                         |
-+------------------------+----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Aquifer ID             | Text or Numeric| This field is optional if all the measurements are from a single aquifer. This field is required if uploading files contain measurements/wells from  multiple aquifers. This aquifer ID should be related to one of the aquifer ID values defined in the Well Locations file described above.     | |                        |                |               |
-+------------------------+----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-
++-----------------------+----------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| Field                 | Type           | Description                                                                                                                                 |
++=======================+================+=============================================================================================================================================+
+| Well ID               | Numeric        | This well ID should be related to one of the well ID values defined in the Well Locations file described above.                             |
++-----------------------+----------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| Date                  | Date           | The date that the measurement was taken. The dates can be in almost any format*.                                                            |
+|                       |                | When the measurments are imported, the user has the option to define the date format so that the dates are properly interpreted.            |
+|                       |                | *The Unix Epoch begins in 1970, so any dates before 1970 will need to be 4-digit years; otherwise, they will be converted to the next       |
+|                       |                | century (e.g. 1/1/69 will be converted to 1/1/2069; 1/1/1969 will remain 1/1/1969)                                                          |
++-----------------------+----------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| Measurement(s)        | Numeric        | This column contains the actual measurements (water table elevation, depth to groundwater, water quality, etc). You can have one or multiple| 
+|                       |                | data columns.                                                                                                                               |
++-----------------------+----------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| Aquifer ID            | Text or Integer| This field is optional if all the measurements are from a single aquifer. This field is required if an uploading files contain              |
+|                       |                | measurements/wells from multiple aquifers. This aquifer ID should be related to one of the aquifer ID values defined in the Well Locations  |
+|                       |                | file described above.                                                                                                                       | 
++-----------------------+----------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 
 This is a sample measurements file. Note that a measurements file can contain extra fields or columns. These columns are ignored when the data are imported. The data import process allows the user to designate which columns contain the required data. In this example, the only fields imported are Well_ID, Date, and WTE (water table elevation). The other fields are ignored. When preparing the measurements file, one should be careful to only include measurements associated with wells that have already been uploaded into the GWDM.
 
