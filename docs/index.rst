@@ -120,7 +120,7 @@ There is also an admin control panel that is used to import and manage the data 
 
 **Documentation and Tutorials**
 --------------
-The navigation bar at the top of this page can be used to explore a set of documentation and tutorials associated with the GWDM. The sections are as follows:
+The table of content can be used to explore a set of documentation and tutorials associated with the GWDM. The sections are as follows:
 
 *Data Preparation*. This section describes how the data are organized in the GWDM and how to format your data before importing the data into the app.
 
@@ -130,7 +130,7 @@ The navigation bar at the top of this page can be used to explore a set of docum
 
 *Mapping*. This section describes the interpolation algorithms and shows to generate time-varying rasters of your groundwater data for display and animation.
 
-Installation. This section describes how to intall the GWDM app in your own Tethys portal.
+*Installation*. This section describes how to intall the GWDM app in your own Tethys portal.
 
 .. toctree::
     :maxdepth: 2
