@@ -22,7 +22,9 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.viewcode',
     'sphinx.ext.extlinks',
+    'sphinx.builders.linkcheck',
 ]
+
 
 
 
