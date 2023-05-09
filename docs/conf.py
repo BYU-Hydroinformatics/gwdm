@@ -3,7 +3,7 @@
 # -- Project information
 
 project = 'Ground Water Data Mapping'
-copyright = '2021, Dr. Norm L. Jones'
+copyright = '2021, Dr. Norman L. Jones'
 author = 'Dr. Norm Jones and Research Assistants'
 
 release = '0.1'
