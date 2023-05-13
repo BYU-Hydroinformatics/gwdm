@@ -9,7 +9,7 @@ Water managers in Western Africa and around the world face the daunting task of 
 ---------------------
 
 .. image:: source/images_overview/algorithm.png
-
+      :align: right
 
 Even when water managers have access to large data sets of historical groundwater level measurements, at any individual well these measurements often exhibit significant time gaps. Aggregating and synthesizing these well measurements to provide information that supports a holistic assessment of aquifer level sustainability can be a challenging task. In partnership with NASA SERVIR, we have developed a series of algorithms that use these existing well measurements combined with Earth Observation data to analyze changes in water tables and characterize aquifer storage over time. Our approach involves collecting data describing well locations and any historical water level measurements in an aquifer. To evaluate aquifer behavior, we need to impute missing data at each well location so that we have data at each time step for analysis. To impute these data, we use a machine learning approach, to train models to use Earth Observation data to impute (or estimate) missing measurements at each well. Using this approach, we generate a time series for each well and use these data to spatially interpolate the water table at each time step.
 
