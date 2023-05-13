@@ -1,4 +1,4 @@
-**DATA PREPARATION (API)**
+**Data Preparation (API)**
 =========================
 
 **Inntroduction**
