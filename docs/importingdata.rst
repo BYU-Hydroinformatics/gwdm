@@ -1,4 +1,4 @@
-**IMPORTING DATA**
+**Importing Data**
 ===================
  
 **Introduction**
