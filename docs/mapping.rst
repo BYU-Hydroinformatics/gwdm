@@ -21,8 +21,34 @@ While some wells have a relatively complete dataset over the period of interest,
 For reference, PCHIP stands for Piecewise Cubic Hermite Interpolating Polynomial. During this step we decide how close measurements must be to justify the use of PCHIP interpolation. We call this value the pad value. The image below shows an example results of PCHIP interpolation. In this example, the pad value was 365 days. Note that PCHIP only interpolates between measurements.
 installation.
 
-.. image:: images_mapping/PCHIP_NBimage.png
+.. image:: source/images_mapping/PCHIP_NBimage.png
     
 **Machine Learning**
 ~~~~~~~~~~~~~~~~~~~~
 For longer periods of interpolation that are harder to predict, we use machine learning to fill in the missing data. The machine learning finds correlations between Earth observations and water level measurements and then uses data imputation to fill in the gaps. For example, groundwater levels generally rise during wet periods due to increases recharge and decreased pumping. Alternately, water levels drop during dry periods due to reduced recharge and increased pumping. The following charts illustrate this relationship using soil moisture anomaly from the Global Land Data Assimilation System (GLDAS) model.
+
+.. image:: source/images_mapping/soil_moisture_correlation.png
+
+The machine learning algorithms use these correlations to predict missing water levels in gaps in the water level time series. The imputation is performed using a novel multi-linear regression (MLR) algorithm called Extreme Machine Learning (ELM) to impute missing data for infrequently sampled wells. The ELM is trained with water levels and the time-varying Palmer Drought Severity Index (PDSI) for the region in question. Sample imputation results are shown below.
+
+.. image:: source/images_mapping/imputation_results.png
+
+**Spatial Interpolation**
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+Once the time series are complete, the time series curves for each well are sampled at the selected dates and spatial interpolation is performed to build the rasters. The algorithm applies GSLIB Kriging code to generate rasters user specified time steps. For the kriging algorithm, we auto-fit a variogram to the data in the aquifer based on the size of the aquifer.
+
+To learn more about these methods, see the papers published in `Remote Sensing <https://www.mdpi.com/2072-4292/12/12/2044>`_ and `Environmental Modelling & Software journals <https://www.sciencedirect.com/science/article/pii/S1364815220301997?via%3Dihub>`_. 
+
+
+**Water Level Mapping Google Colab Notebook**
+----------------------------------------------
+To launch the mapping tool, please click on this button. The notebook will open in a new tab. 
+
+.. raw:: html
+
+    <a href="https://colab.research.google.com/github/BYU-Hydroinformatics/gwdm-notebooks/blob/main/GWDM_AquiferMapping.ipynb" target="_blank">
+        <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
+    </a>
+    
+   
+To run the water level mapping algorithm, you will first need to prepare your data. The algorithm requires three input as described in the following table. These are the same files (same content and format) that you would use to upload your original data to the GWDM mapper to visualize your wells and water level measurements. The only difference is that the aquifer file should only contain a single aquifer, while you could upload multiple aquifers at once to the GWDM app.
