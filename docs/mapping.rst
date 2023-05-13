@@ -1,4 +1,7 @@
-**GROUNDWATER LEVEL MAPPING**
+.. raw:: html
+   :file: translate.html
+   
+**Groundwater Level Mapping**
 =============================
 **Introduction**
 -------------------
@@ -10,13 +13,15 @@ In previous versions of the GWDM app, this was accomplished using the Interpolat
 --------------------------
 The final aquifer map will include a Water Table Elevation estimate for every point in your aquifer at any time step. Since it is impractical and near impossible to collect all that data, interpolation methods can be applied to fill in for data we do not have. Our interpolation algorithm can be split into two major steps. First, the temporal interpolation of individual well time series. Second, the spatial interpolation between those wells. Each of these is explained in greater detail below.
 **Temporal Interpolation**
--------------------------
+---------------------------
 While some wells have a relatively complete dataset over the period of interest, it is very common to have large gaps in the data record. The goal of temporal interpolation is to create a complete time series for each well that can be easily compared to other wells. The final output of this step will be a timeseries with measurements every month during the entire period of interest. Some measurements are close enough together that it is easy to predict the value at the beginning of the month. This can be done using simple PCHIP interpolation. Some measurements are more difficult to predict. We estimate these values using machine learning.
 
 **Simple PCHIP Interpolation**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 For reference, PCHIP stands for Piecewise Cubic Hermite Interpolating Polynomial. During this step we decide how close measurements must be to justify the use of PCHIP interpolation. We call this value the pad value. The image below shows an example results of PCHIP interpolation. In this example, the pad value was 365 days. Note that PCHIP only interpolates between measurements.
-    installation
+installation.
+
+.. image:: images_mapping/PCHIP_NBimage.png
     
 **Machine Learning**
 ~~~~~~~~~~~~~~~~~~~~
