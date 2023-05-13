@@ -1,4 +1,4 @@
-**INSTALLING THE GWDM APPLICATION**
+**Installing the GWDM Application**
 =====================================
 For this instruction, Mac OS was used.
 
