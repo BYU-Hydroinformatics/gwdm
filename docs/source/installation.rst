@@ -26,7 +26,7 @@ Follow the tethys installation steps (`link here <https://docs.tethysplatform.or
    
 After the installation is complete, go to http://127.0.0.1:8000/ and make sure the following page is displayed.
  
- .. image:: source/images_install/tethys_landing.png
+ .. image:: images_install/tethys_landing.png
                   
 **Step 2: Clone/Copy the GWDM Appliclation**
 ------------------------------------------
@@ -129,11 +129,11 @@ Portainer gives a detail status and health check of the docker containers. In th
             
 Go to localhost:9000 to set up the userID and the password. On the next page, select "Docker" and complete the setting.
 
-.. image:: source/images_install/portainer_setup.png
+.. image:: images_install/portainer_setup.png
 
 After the installation, Portainer should show up on Docker. Follow the steps below and make sure all the containers are healthy and running (you may have to start the new tethys containers with the "Start" button).
 
-.. image:: source/images_install/pass_thredds.png
+.. image:: images_install/pass_thredds.png
 
 
 **Step 4: Download PGAdmin 4 for Database Management**
@@ -142,12 +142,12 @@ Download PGAdmin (https://www.pgadmin.org/). Download the macOS version (or what
 
 Open the application and add a new server
 
-.. image:: source/images_install/pgAdmin_server.png
+.. image:: images_install/pgAdmin_server.png
 
 Name it as you desire (e.g. "postgis_thethys_docker"). Click the "Connection" tab and enter the following setting
 
-.. image:: source/images_install/pgAdmin_setting.png
-.. image:: source/images_install/pgAdmin_after_setting.png
+.. image:: images_install/pgAdmin_setting.png
+.. image:: images_install/pgAdmin_after_setting.png
 
 **Step 5: Tethys Settings**
 ---------------------------
@@ -168,7 +168,7 @@ Go to the Tethys homepage (http://127.0.0.1:8000/apps/) and click the app icon. 
 
 1. Click the **plus mark** under **PERSISTENT STORE DATABASE SETTINGS**.
 
-.. image:: source/images_install/persistent.png
+.. image:: images_install/persistent.png
 
 On the next page, set up the setting to:
 
@@ -178,7 +178,7 @@ On the next page, set up the setting to:
          - Port: 5435     
          - Username: postgres     
          
-.. image:: source/images_install/persistent_setting.png
+.. image:: images_install/persistent_setting.png
 
 Now, save the settings.
 
@@ -203,7 +203,7 @@ Now, save the settings.
       - Username: admin
       - password: pass
    
-.. image:: source/images_install/thredds_app_setting.png
+.. image:: images_install/thredds_app_setting.png
 
 4. Make a directory in your Thredds directory in **thredds/public/testdata** and call it **“groundwater”** .
    Add the file path to this new groundwater directory to the thredds file path in the app settings
@@ -217,7 +217,7 @@ Now, save the settings.
    Under databases, **“gwdm_gwdb”** should now show up
    Within gwdm_gwdb, if you select schemas>public>Tables the different parameters should be visible (aquifer, measurement, well, etc.)
 
-   .. image:: source/images_install/pgadmin.png
+.. image:: images_install/pgadmin.png
    
 
 **Step 6: Edit Thredds Files**
@@ -232,13 +232,13 @@ Remove one of the “include” tags and change the other one to say ``<include 
    - Delete the “catalogref” tag at the very bottom
 If you need help, the screenshot below shows what it should look like.
 
-.. image:: source/images_install/catalog_xml.png
+.. image:: images_install/catalog_xml.png
 
 2. Open the “threddsConfig.xml” file
 
    - Uncomment the CORS tag and enable it to “true”
    
-.. image:: source/images_install/thredds_edit2.png
+.. image:: images_install/thredds_edit2.png
 
    - Uncomment the WMS section and set “allow” and “allowRemote” to true
    - Also, add in this line of code:
@@ -249,7 +249,7 @@ If you need help, the screenshot below shows what it should look like.
   
   
   
-.. image:: source/images_install/thredds_edit3.png
+.. image:: images_install/thredds_edit3.png
                     
 **Step 7: Set Up Geoserver**
 ----------------------------
