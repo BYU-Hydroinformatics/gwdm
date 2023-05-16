@@ -12,6 +12,7 @@ In previous versions of the GWDM app, this was accomplished using the Interpolat
 **Overview of Algorithm**
 --------------------------
 The final aquifer map will include a Water Table Elevation estimate for every point in your aquifer at any time step. Since it is impractical and near impossible to collect all that data, interpolation methods can be applied to fill in for data we do not have. Our interpolation algorithm can be split into two major steps. First, the temporal interpolation of individual well time series. Second, the spatial interpolation between those wells. Each of these is explained in greater detail below.
+
 **Temporal Interpolation**
 ---------------------------
 While some wells have a relatively complete dataset over the period of interest, it is very common to have large gaps in the data record. The goal of temporal interpolation is to create a complete time series for each well that can be easily compared to other wells. The final output of this step will be a timeseries with measurements every month during the entire period of interest. Some measurements are close enough together that it is easy to predict the value at the beginning of the month. This can be done using simple PCHIP interpolation. Some measurements are more difficult to predict. We estimate these values using machine learning.
@@ -21,17 +22,17 @@ While some wells have a relatively complete dataset over the period of interest,
 For reference, PCHIP stands for Piecewise Cubic Hermite Interpolating Polynomial. During this step we decide how close measurements must be to justify the use of PCHIP interpolation. We call this value the pad value. The image below shows an example results of PCHIP interpolation. In this example, the pad value was 365 days. Note that PCHIP only interpolates between measurements.
 installation.
 
-.. image:: source/images_mapping/PCHIP_NBimage.png
+.. image:: images_mapping/PCHIP_NBimage.png
     
 **Machine Learning**
 ~~~~~~~~~~~~~~~~~~~~
 For longer periods of interpolation that are harder to predict, we use machine learning to fill in the missing data. The machine learning finds correlations between Earth observations and water level measurements and then uses data imputation to fill in the gaps. For example, groundwater levels generally rise during wet periods due to increases recharge and decreased pumping. Alternately, water levels drop during dry periods due to reduced recharge and increased pumping. The following charts illustrate this relationship using soil moisture anomaly from the Global Land Data Assimilation System (GLDAS) model.
 
-.. image:: source/images_mapping/soil_moisture_correlation.png
+.. image:: images_mapping/soil_moisture_correlation.png
 
 The machine learning algorithms use these correlations to predict missing water levels in gaps in the water level time series. The imputation is performed using a novel multi-linear regression (MLR) algorithm called Extreme Machine Learning (ELM) to impute missing data for infrequently sampled wells. The ELM is trained with water levels and the time-varying Palmer Drought Severity Index (PDSI) for the region in question. Sample imputation results are shown below.
 
-.. image:: source/images_mapping/imputation_results.png
+.. image:: images_mapping/imputation_results.png
 
 **Spatial Interpolation**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
