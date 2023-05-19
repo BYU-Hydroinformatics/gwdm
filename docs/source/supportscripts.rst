@@ -44,7 +44,6 @@ To practice using this script, download and open the attached set of files (top 
 This tool can be used for assigning an aquifer name and ID to each well. This requires an aquifers file with aquifer IDs and names assigned to each polygon and a wells file with lat/long locations for each well. Aquifers can also be assigned to a separate time series file with well IDs that correspond to the well IDs in the wells file.
 
 To practice using this script, download and open the attached set of files and locate the UtahMajorAquifers json file and the Utah wells and TS (time series) csv files.
-
   .. raw:: html
 
     <a href="https://colab.research.google.com/gist/mdstev1/3670653eafe6cbb1424c17846273b2b5/aquifer-assignment-tool.ipynb" target="_blank">
@@ -53,7 +52,6 @@ To practice using this script, download and open the attached set of files and l
 
 
 
-.. block:-quote::
     
 **File Formatter**
 ------------------ 
@@ -65,7 +63,6 @@ This tool is meant for cleaning and restructuring data files for import into the
         * reformatting data types
         * accepting different date formats (which Excel sometimes corrupts)
         * calculating water table elevation (WTE) from depth to groundwater measurements
-        
 To practice using this script, download and open the attached set of files and locate the UtahMajorAquifers geojson file and the ut_2015-2020_wells and ut_2015-2020_TS csv files.
 
   .. raw:: html
