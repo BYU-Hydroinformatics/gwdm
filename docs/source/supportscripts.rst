@@ -54,7 +54,9 @@ To practice using this script, download and open the attached set of files and l
 
     
 **File Formatter**
-   
+ 
+ .. image:: images_scripts/file_format.png
+    :align: left
    This tool is meant for cleaning and restructuring data files for import into the GWDM app. It accepts a wells file, time series file, and an aquifers file as inputs - each of which are optional, depending on your needs. Options include:
 
         * dropping unnecessary data
@@ -71,8 +73,7 @@ To practice using this script, download and open the attached set of files and l
         <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
     </a>
    
-.. image:: images_scripts/file_format.png
-    :align: left
+
 This tool is meant for cleaning and restructuring data files for import into the GWDM app. It accepts a wells file, time series file, and an aquifers file as inputs - each of which are optional, depending on your needs. Options include:
 
         * dropping unnecessary data
@@ -82,7 +83,6 @@ This tool is meant for cleaning and restructuring data files for import into the
         
 To practice using this script, download and open the attached set of files and locate the UtahMajorAquifers geojson file and the ut_2015-2020_wells and ut_2015-2020_TS csv files.
 
-
   .. raw:: html
 
     <a href="https://colab.research.google.com/gist/mdstev1/ed7fa793b3e09501ddba9b90df015e74/file_formatter.ipynb" target="_blank">
@@ -90,10 +90,6 @@ To practice using this script, download and open the attached set of files and l
     </a>
 
     
-    .. raw:: html
-
-       <br>
-       <br>
   
     
 **NWIS File Retriever**
