@@ -23,6 +23,7 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.extlinks',
     'sphinxext.photofinish',
+     'sphinx_panels',
 ]
 
 
