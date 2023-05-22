@@ -21,6 +21,8 @@ These interpolated water table maps can be used to evaluate the sustainability o
 We have incorporated our groundwater level mapping algorithms in a simple, easy-to-use web application created using Tethys Platform, developed in our hydroinformatics laboratory. In addition to the water level mapping, the system provides a powerful online database of historical groundwater data where users can zoom in to areas of interest, select wells, and view the historical water level record and meta-data about each well.
 
 .. image:: images_overview/niger_screenshot.png
+      :width: 1143px
+      :height: 771px
 
 The GWDM app can be accessed in the following locations:
 
@@ -36,6 +38,8 @@ The GWDM app can be accessed in the following locations:
 For any of the portals, you can access the app by clicking on the Groundwater Data Mapper icon. Once you are in the app, you will see the landing page:
 
 .. image:: images_overview/landingpage.png
+   :width: 970px
+   :height: 378px
 
 Select a region and then click on the **View Region** button. In the GWDM tool, data are first organized by region and then by aquifer. When you click on the View Region button, you will see a map of the selected region and the corresponding aquifers. To view well data, you need to select an aquifer. Once you select an aquifer, the app will zoom in on the aquifer and display all wells associated with the aquifer. The well data consists of two parts:
 
@@ -50,6 +54,8 @@ The observations are typically water levels that can be represented either as de
 On the left side of the map, you will see a set of controls :
 
 .. image:: images_overview/newcontrols.png
+     :width: 250px
+     :height: 441px
 
 **Select an Aquifer**: This is used to switch between aquifers in the region as described above.
 
@@ -72,18 +78,25 @@ To explore the well data, you can click on individual wells to see metadata abou
 It may be helpful to compare wells within the same aquifer that may not necessarily fall under the same cluster groups. One would need to select which variable to compare before activating the Multi Well Select. To activate this command, simply click on the button which will then turn green and three more options will be added to the screen. Here is a picture of all the options that will be available once the Multiple Well Select is activate;
 
 .. image:: images_overview/Selecting_multiple_wells.png
+   :width: 857px
+   :height: 465px
 
 **Select Option 1** : This select method allows the user to draw a polygon by clicking around the wells interested in. This option allows one to draw any closed polygon around any wells that one wish to visualize.
 
 .. image:: images_overview/sected_wells_option_1.png
-
+   :width: 857px
+   :height: 465px
 Once the polygon created is closed, a message box will appear giving you an option to view the time series. When you click on the view time series, a Multi Wells Chart will appear on your screen comparing the time series of the selected wells. If you click cancel, you can still visualize your selected wells by clicking on the Graph Option 2 whose icon looks like a bar graph.
 
 .. image:: images_overview/popmessageselectedwells.png
+   :width: 857px
+   :height: 460px
 
 Here is an image of the results from our previous selection. Notice that the chart only shows available data and skips any missing data.
 
 .. image:: images_overview/5wellsmultichart.png
+   :width: 857px
+   :height: 465px
 
 **Select Option 2** : This option is similar to the first option. The only difference is that this shape is fixed to be a rectangle. You may change the size but not the type. It follows the same procedure as the first option.
 
@@ -92,12 +105,16 @@ Here is an image of the results from our previous selection. Notice that the cha
 Here is a rendering;
 
 .. image:: images_overview/individuallyselectedwells.png
+   :width: 857px
+   :height: 675px
 
 **Displaying Rasters**
 ---------------
 Once you have created an interpolation layer and selected that layer from the control panel on the right, a new set of controls will appear. The figure below points out each of those controls and the following paragraph provides an explanation for each of them.
 
 .. image:: images_overview/rasterdisplaycontrolsV1.png
+   :width: 807px
+   :height: 420px
 
 **Animation Bar** : You can slide the bar to move through the time interpolation or you can hit play to run through the animation automatically. You can change the speed of animation by changing the frames per second (fps). You can also adjust the triangular ends on the slide bar, to animate over a shorter time period.
 
@@ -111,12 +128,16 @@ Once you have created an interpolation layer and selected that layer from the co
 
 
 .. image:: images_overview/DrawdownVolume.png
+   :width: 807px
+   :height: 420px
 
 **Admin Control Panel**
 -------------
 There is also an admin control panel that is used to import and manage the data used by the app and to perform interpolations:
 
 .. image:: images_overview/admincp.png
+   :width: 510px
+   :height: 529px
 
 **Documentation and Tutorials**
 --------------
