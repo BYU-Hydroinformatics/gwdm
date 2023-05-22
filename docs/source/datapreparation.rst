@@ -17,6 +17,8 @@ Before importing data into the GWDM app, the following data content needs to be 
 A region is typically a state, country, or water management agency boundary and represents the top of the data heirarchy. In one region, there may be one or more aquifers in which wells are located. Each well may have time series data in one or multiple files that show historical trends of groundwater data such as water table elevations, water quality, etc. The following diagram graphically illustrates the relationship of the different data components:
 
 .. image:: images_dataprep/data_tree.png
+      :height: 811px
+      :width: 765px
 
 This page will walk you through how to prepare the appropriate files needed to import data into the app and provide links to complementary tools designed to aid in this data preparation process.
 
@@ -25,6 +27,8 @@ This page will walk you through how to prepare the appropriate files needed to i
 The first step of organizing groundwater data in the GWDM app is uploading region and aquifer files where the wells are located. In the app, region is the first "filter" that users see on the landing page. Data are then organized by aquifer in the next page.
 
 .. image:: images_dataprep/GWDM_Region1.png
+      :height: 473px
+      :width: 1070px
 
 Region and aquifers files have to be one of the following data types:
 
@@ -39,6 +43,8 @@ When exporting shapefiles from a utility such as Esri ArcGIS or QGIS, the shapef
 For this example, QGIS was used to export the region boundary (the state of Utah) as a shapefile. You can often find regional shapefiles on the internet. Regardless of where you get your shapefile, the exported files should consist of multiple files as seen below.
 
 .. image:: images_dataprep/utah_shapefiles.png
+      :height: 274px
+      :width: 662px
 
 Also, make sure the shapefile does NOT include Z coordinates as this will generate an error when you attempt to import the file. The PostGIS database used by the GWDM to store the region and aquifer boundaries only supports two-dimensional shapes.
 
@@ -55,6 +61,8 @@ The aquifers in your region will also need to be organized in either a geojson f
 +---------------+-----------+-------------------------------------------------------------+
 
 .. image:: images_dataprep/utah_aquifer.png
+   :height: 335px
+   :width: 629px
 
 
 **Well Locations File**
@@ -67,6 +75,8 @@ Wells are organized by aquifers in the app. There are two ways to prepare well l
 2. Create a separate CSV file that contains only wells belonging to a single aquifer. This method does not require an aquifer ID as all of the wells are imported to a assigned aquifer. With this method, you create multiple well files - one per aquifer, and then import the wells one at a time. Each time you import the wells, you explicitly select the aquifer polygon the wells should be assigned to.
 
 .. image:: images_dataprep/wells.png
+      :height: 751px
+      :width: 994px
 
 A well location file must include the well coordinates (latitude and longitude in a decimal degree format), well names, and well IDs. If you are useing method #1 described above, an aquifer ID field is also required.
 
