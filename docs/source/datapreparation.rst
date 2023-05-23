@@ -4,7 +4,7 @@
 **Data Preparation (API)**
 =========================
 
-**Inntroduction**
+**Introduction**
 ---------------
 
 Before importing data into the GWDM app, the following data content needs to be collected and prepared \:\
