@@ -9,6 +9,17 @@ In addition to visualizing well and measurement data, the GWDM app and associate
 
 In previous versions of the GWDM app, this was accomplished using the Interpolation Wizard that was found in the admin control panel. In order to give the user the ability to monitor each step of the process, we have moved the mapping tool to a standalone Google Colab notebook (link below).
 
+To launch the mapping tool, please click on this button. The notebook will open in a new tab. 
+
+.. raw:: html
+
+    <a href="https://colab.research.google.com/github/BYU-Hydroinformatics/gwdm-notebooks/blob/main/GWDM_AquiferMapping.ipynb" target="_blank">
+        <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
+    </a>
+    
+   
+To run the water level mapping algorithm, you will first need to prepare your data. The algorithm requires three input as described in the following table. These are the same files (same content and format) that you would use to upload your original data to the GWDM mapper to visualize your wells and water level measurements. The only difference is that the aquifer file should only contain a single aquifer, while you could upload multiple aquifers at once to the GWDM app.
+
 **Overview of Algorithm**
 --------------------------
 The final aquifer map will include a Water Table Elevation estimate for every point in your aquifer at any time step. Since it is impractical and near impossible to collect all that data, interpolation methods can be applied to fill in for data we do not have. Our interpolation algorithm can be split into two major steps. First, the temporal interpolation of individual well time series. Second, the spatial interpolation between those wells. Each of these is explained in greater detail below.
@@ -41,15 +52,3 @@ Once the time series are complete, the time series curves for each well are samp
 To learn more about these methods, see the papers published in `Remote Sensing <https://www.mdpi.com/2072-4292/12/12/2044>`_ and `Environmental Modelling & Software journals <https://www.sciencedirect.com/science/article/pii/S1364815220301997?via%3Dihub>`_. 
 
 
-**Water Level Mapping Google Colab Notebook**
-----------------------------------------------
-To launch the mapping tool, please click on this button. The notebook will open in a new tab. 
-
-.. raw:: html
-
-    <a href="https://colab.research.google.com/github/BYU-Hydroinformatics/gwdm-notebooks/blob/main/GWDM_AquiferMapping.ipynb" target="_blank">
-        <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
-    </a>
-    
-   
-To run the water level mapping algorithm, you will first need to prepare your data. The algorithm requires three input as described in the following table. These are the same files (same content and format) that you would use to upload your original data to the GWDM mapper to visualize your wells and water level measurements. The only difference is that the aquifer file should only contain a single aquifer, while you could upload multiple aquifers at once to the GWDM app.
