@@ -23,7 +23,6 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.extlinks',
     'sphinxext.photofinish',
-     'sphinx_panels',
 ]
 
 
@@ -52,5 +51,6 @@ html_sidebars = {
 
 def setup(app):
     app.add_css_file('screen_width.css')
-
+    app.add_css_file('container.css') 
 html_static_path = ['_static']
+
