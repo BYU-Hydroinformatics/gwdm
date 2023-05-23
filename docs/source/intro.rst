@@ -153,15 +153,5 @@ The table of content can be used to explore a set of documentation and tutorials
 
 *Installation*. This section describes how to intall the GWDM app in your own Tethys portal.
 
-.. toctree::
-    :maxdepth: 2
-    :hidden:
-    :caption: TABLE OF CONTENT
 
-    intro
-    datapreparation
-    supportscripts
-    importingdata
-    mapping
-    installation
 
