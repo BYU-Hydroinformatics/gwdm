@@ -45,7 +45,8 @@ An example set of files has been provided; however, you are welcome to use your 
                     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
  
                 </a>
-    
+      .. rubric::
+      
 **Aquifer Assignment Tool**
 --------------------------   
 
@@ -67,7 +68,7 @@ An example set of files has been provided; however, you are welcome to use your 
                              <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
                          </a>
 
-
+         .. rubric::
 
     
 **File Formatter**
@@ -95,7 +96,7 @@ An example set of files has been provided; however, you are welcome to use your 
                       <a href="https://colab.research.google.com/gist/mdstev1/ed7fa793b3e09501ddba9b90df015e74/file_formatter.ipynb" target="_blank">
                           <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
                       </a>
-    
+         .. rubric::
     
 **NWIS File Retriever**
 -----------------------  
@@ -124,5 +125,5 @@ An example set of files has been provided; however, you are welcome to use your 
                    <a href="colab.research.google.com/gist/mdstev1/8086be08d3c7c753dad2ada31aafb85f/nwis-file-retriever.ipynb" target="_blank">
                        <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
                    </a>
-    
+         .. rubric::
 
