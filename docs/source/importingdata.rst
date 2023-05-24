@@ -63,21 +63,97 @@ Our example file includes measurements of water table elevation from wells acros
 
 .. image:: images_import/add_measurements.png
    :scale: 90%
+
+.. list-table:: Common Python Date/Time Formats
    
-+--------------------+--------------------+-------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-|Date/Time Format	   |Example             | 	Python Format	  |Notes                                                                                                                                |
-+--------------------+--------------------+-------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-|YYYY-MM-DD          |	2020-01-09        |	%Y-%m-%d         |	                                                                                                                                  |
-+--------------------+--------------------+-------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-|M/D/YY	            |1/9/20	            | %m/%d/%y	        | Note that 2-digit years will cause errors if  before 1970 (see Data Prep Section). 4-digit years are best                           | 
-+--------------------+--------------------+-------------------+-------------------------------------------------------------------------------------------------------------------------------------+ 
-|D/M/YY	            |9/1/20	            |%d/%m/%y	        | See above                                                                                                                           |
-+--------------------+--------------------+-------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-|MM/DD/YYYY	         |01/09/2020          |	%m/%d/%Y	        |                                                                                                                                     |
-+--------------------+--------------------+-------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-|DD/MM/YYYY	         |09/01/2020	         |%d/%m/%Y	        |                                                                                                                                     |
-+--------------------+--------------------+-------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-|DD/MM/YYYY HH:MM:SS	|09/01/2020 13:35:10	| %d/%m/%Y %H:%M:%S |For groundwater data, the time is generally not recorded and is not normally required for the GWDM app, considering the time scales  |
-|                    |                    |                   |typically encountered. Therefore, we recommend only using the date portion of the date field.                                        |
-+--------------------+--------------------+-------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+   *  - **Date/Time Format**
+      - **Example**
+      - **Python Format**
+      - **Notes**
+   *  - YYYY-MM-DD  
+      - 2020-01-09
+      - %Y-%m-%d 
+      - ---
+   *  - M/D/YY	
+      - 1/9/20	
+      - %m/%d/%y	
+      - Please note that 2-digit years will cause errors if you have dates in your dataset before 1970 (please see Data Prep Section). 4-digit years are best.
+   *  - D/M/YY	  
+      - 	9/1/20
+      - %d/%m/%y
+      - 	See above
+   *  - MM/DD/YYYY
+      - 01/09/2020
+      - %m/%d/%Y
+      -  ---
+   *  - DD/MM/YYYY
+      - 09/01/2020
+      - %d/%m/%Y
+      -   ---
+   *  - DD/MM/YYYY or HH:MM:SS
+      - 09/01/2020 or 13:35:10
+      - %d/%m/%Y  or %H:%M:%S
+      - For groundwater data, the time is generally not recorded and is not normally required for the GWDM app, considering the time scales typically encountered. Therefore, we recommend only using the date portion of the date field.
+
+For a complete description, visit: https://strftime.org/.
+
+.. warning::
+     If you receive an error while trying to upload measurements, the first thing that you should check is that you specified the correct date format.
+
+Measurements can be deleted by aquifer and variable type through the **Delete Measurements** tab.
+When adding measurements, care should be taken to only upload measurements associated with wells that have previously been uploaded to the GWDM. Otherwise, the measurements will be skipped when uploading and after the uploading process is complete, a message similar to this will appear:
+
+.. image:: images_import/skipped_measurements.PNG
+   :scale: 30%
+
+**Rasters**
+----------
+One of the main functions of the GWDM app is to use temporal and spatial interpolation to create time-varying rasters of groundwater data (water level, depth to groundwater, etc). This process is described in the Mapping section. Interpolated rasters can be animated in the main map window using the Leaflet animation plug-in used by the GWDM.
+
+In some cases, users may elect to use external interpolation algorithms to generate rasters for their aquifers. The Rasters section in the admin control panel can be used to upload and manage these externally generated rasters. Once uploaded, they can be animated and visualized in the GWDM map window.
+
+The **Upload Rasters** command is used to upload raster dataset in netCDF format. The user must first select the region, aquifer, and variable and then choose the netCDF file.
+
+.. image:: images_import/upload_raster.png
+   :scale: 65%
+
+Once a raster has been uploaded, it can be selected for visualization choosing the View Region option, selecting the region, and then selecting the aquifer and variable. The uploaded raster can then be selected using the Interpolation Layer option.
+
+.. image:: images_import/select_raster.png
+   :scale: 65%
+
+The **Delete Rasters** command is used to delete previously uploaded rasters. The user selects the region, aquifer, variable, and raster and then selects the Delete Rasters button. If the "All Aquifers" option is selected in the "Select an Aquifer" list, all rasters associated with the region are deleted. Likewise, the Variable and Interpolation Layer options both have an "All ___" option to delete all rasters for any variable or all rasters for a selected variable.
+
+.. image:: images_import/delete_raster.png
+   :scale: 70%
+
+
+**Trouble Shooting**
+------------------
+If you are having trouble getting your data to upload correctly, this section includes several common problems and how to fix them.
+
+**CSV Encoding**
+~~~~~~~~~~~~~~~~
+
+If your CSV files are encoded intentionally or accidentally the wizard that gets the attributes will not be able to recognize the attributes. When you open the wizard, it will only show one of the attributes. One way to fix this error is to resave the file with the option highlighted in blue as opposed to the option highlighted in red in the figure below. If this does not work, we recommend copying your data into a new document being sure to save it without the encoding.
+
+.. image:: images_import/csv_encoding.png
+   :scale: 70%
    
+ **Selecting an Aquifer**
+ ~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ .. warning:: 
+      The truth value of a Series is ambigiious. Use .empty, a.bool(), a.item(), a.any() or a.all()
+      
+If you have received the error pictured above, you selected an aquifer when you did not need to. If you have organized your data using aquifer IDs then the aquifer option blank must be left blank when you are adding wells and measurements. You will need to refresh the page to make the aquifer option blank again and then leave it blank while you are adding your wells. After you refresh be sure to reselect your region.
+
+**Dropped Data**
+~~~~~~~~~~~~~~~~~~
+
+When adding measurements, care should be taken to only upload measurements associated with wells that have previously been uploaded to the GWDM. Otherwise, the measurements will be skipped when uploading and after the uploading process is complete, a message similar to this will appear: 
+
+.. image:: images_import/skipped_measurements.PNG
+   :scale: 70%
+   
+There are two ways to fix this issue depending on what is causing it. In some cases, the measurements are dropped because the well ID refers to a non-existent well. To fix this you can run our file formatter tool located in the supporting scripts section of this webpage. In other cases, the well is assigned to a non-existent aquifer which can be fixed by running our aquifer assignment tool which can also be found on our supporting scripts page.
