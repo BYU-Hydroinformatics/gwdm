@@ -104,7 +104,7 @@ Measurements can be deleted by aquifer and variable type through the **Delete Me
 When adding measurements, care should be taken to only upload measurements associated with wells that have previously been uploaded to the GWDM. Otherwise, the measurements will be skipped when uploading and after the uploading process is complete, a message similar to this will appear:
 
 .. image:: images_import/skipped_measurements.PNG
-   :scale: 30%
+   :scale: 80%
 
 **Rasters**
 ----------
@@ -115,7 +115,7 @@ In some cases, users may elect to use external interpolation algorithms to gener
 The **Upload Rasters** command is used to upload raster dataset in netCDF format. The user must first select the region, aquifer, and variable and then choose the netCDF file.
 
 .. image:: images_import/upload_raster.png
-   :scale: 65%
+   :scale: 80%
 
 Once a raster has been uploaded, it can be selected for visualization choosing the View Region option, selecting the region, and then selecting the aquifer and variable. The uploaded raster can then be selected using the Interpolation Layer option.
 
@@ -125,7 +125,7 @@ Once a raster has been uploaded, it can be selected for visualization choosing t
 The **Delete Rasters** command is used to delete previously uploaded rasters. The user selects the region, aquifer, variable, and raster and then selects the Delete Rasters button. If the "All Aquifers" option is selected in the "Select an Aquifer" list, all rasters associated with the region are deleted. Likewise, the Variable and Interpolation Layer options both have an "All ___" option to delete all rasters for any variable or all rasters for a selected variable.
 
 .. image:: images_import/delete_raster.png
-   :scale: 70%
+   :scale: 80%
 
 
 **Trouble Shooting**
@@ -136,8 +136,8 @@ If you are having trouble getting your data to upload correctly, this section in
 
 If your CSV files are encoded intentionally or accidentally the wizard that gets the attributes will not be able to recognize the attributes. When you open the wizard, it will only show one of the attributes. One way to fix this error is to resave the file with the option highlighted in blue as opposed to the option highlighted in red in the figure below. If this does not work, we recommend copying your data into a new document being sure to save it without the encoding.
 
-.. image:: images_import/csv_encoding.png
-    :scale: 70%
+ .. image:: images_import/csv_encoding.png
+     :scale: 80%
  
  
  **Selecting an Aquifer**
@@ -151,6 +151,6 @@ If you have received the error pictured above, you selected an aquifer when you 
 When adding measurements, care should be taken to only upload measurements associated with wells that have previously been uploaded to the GWDM. Otherwise, the measurements will be skipped when uploading and after the uploading process is complete, a message similar to this will appear: 
 
 .. image:: images_import/skipped_measurements.PNG
-   :scale: 70%
+   :scale: 80%
    
 There are two ways to fix this issue depending on what is causing it. In some cases, the measurements are dropped because the well ID refers to a non-existent well. To fix this you can run our file formatter tool located in the supporting scripts section of this webpage. In other cases, the well is assigned to a non-existent aquifer which can be fixed by running our aquifer assignment tool which can also be found on our supporting scripts page.
