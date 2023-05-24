@@ -75,7 +75,7 @@ Wells are organized by aquifers in the app. There are two ways to prepare well l
 2. Create a separate CSV file that contains only wells belonging to a single aquifer. This method does not require an aquifer ID as all of the wells are imported to a assigned aquifer. With this method, you create multiple well files - one per aquifer, and then import the wells one at a time. Each time you import the wells, you explicitly select the aquifer polygon the wells should be assigned to.
 
 .. image:: images_dataprep/wells.png
-      :scale: 65%
+      :scale: 60%
 
 A well location file must include the well coordinates (latitude and longitude in a decimal degree format), well names, and well IDs. If you are useing method #1 described above, an aquifer ID field is also required.
 
