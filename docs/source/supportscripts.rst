@@ -6,7 +6,7 @@
 
 **Introduction**
 ------------------
-dThese scripts can aid in the data preparation process required prior to using the GWDM tool. They have all been created in a cloud-based environment called Google Colaboratory, or Colab for short. Colab is built on Jupyter Notebook, which allows users to write, execute, and visualize Python code quickly and easily.
+eThese scripts can aid in the data preparation process required prior to using the GWDM tool. They have all been created in a cloud-based environment called Google Colaboratory, or Colab for short. Colab is built on Jupyter Notebook, which allows users to write, execute, and visualize Python code quickly and easily.
 
 These notebooks have been shared as Github Gists. A gist allows the notebook to be opened, run, and modified by an individual user without affecting the experience of another user.
 
@@ -48,27 +48,7 @@ An example set of files has been provided; however, you are welcome to use your 
  
                 </a>
      
-.. line-block::
 
-**Aquifer Assignment Tool**
---------------------------   
-
-.. container:: twocol2
-
-    .. container:: leftside
-   
-         .. image:: images_scripts/aquifer_assignment.png
-         
-    .. container:: rightside
-    
-            This tool can be used for assigning an aquifer name and ID to each well. This requires an aquifers file with aquifer IDs and names assigned to each polygon and a wells                               file with lat/long locations for each well. Aquifers can also be assigned to a separate time series file with well IDs that correspond to the well IDs in the wells file.
-            To practice using this script, download and open the attached set of files and locate the UtahMajorAquifers json file and the Utah wells and TS (time series) csv files.
-                       
-            .. raw:: html
-
-                         <a href="https://colab.research.google.com/gist/mdstev1/3670653eafe6cbb1424c17846273b2b5/aquifer-assignment-tool.ipynb" target="_blank">
-                             <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
-                         </a>
 
 \\\\\\\\\\\\\\\\
 
@@ -99,7 +79,30 @@ An example set of files has been provided; however, you are welcome to use your 
                       <a href="https://colab.research.google.com/gist/mdstev1/ed7fa793b3e09501ddba9b90df015e74/file_formatter.ipynb" target="_blank">
                           <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
                       </a>
-                                           
+
+.. line-block::
+
+**Aquifer Assignment Tool**
+--------------------------   
+
+.. container:: twocol2
+
+    .. container:: leftside
+   
+         .. image:: images_scripts/aquifer_assignment.png
+         
+    .. container:: rightside
+    
+            This tool can be used for assigning an aquifer name and ID to each well. This requires an aquifers file with aquifer IDs and names assigned to each polygon and a wells                               file with lat/long locations for each well. Aquifers can also be assigned to a separate time series file with well IDs that correspond to the well IDs in the wells file.
+            To practice using this script, download and open the attached set of files and locate the UtahMajorAquifers json file and the Utah wells and TS (time series) csv files.
+                       
+            .. raw:: html
+
+                         <a href="https://colab.research.google.com/gist/mdstev1/3670653eafe6cbb1424c17846273b2b5/aquifer-assignment-tool.ipynb" target="_blank">
+                             <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
+                         </a>
+
+
 .. line-block::
 
 **NWIS File Retriever**
