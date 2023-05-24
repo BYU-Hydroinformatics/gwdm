@@ -17,25 +17,25 @@ Follow the tethys installation steps (`link here <https://docs.tethysplatform.or
 
                    conda create -n tethys -c tethysplatform -c conda-forge tethys-platform
 
-              Instead, install a development build of the Tethys Platform by executing
+             Instead, install a development build of the Tethys Platform by executing
 
                .. code-block:: bash
 
-                    conda create -n tethys -c tethysplatform/label/dev -c tethysplatform -c conda-forge tethys-platform
+                   conda create -n tethys -c tethysplatform/label/dev -c tethysplatform -c conda-forge tethys-platform
    
    
 After the installation is complete, go to http://127.0.0.1:8000/ and make sure the following page is displayed.
  
  .. image:: images_install/tethys_landing.png
+   :scale: 65%
                   
 **Step 2: Clone/Copy the GWDM Appliclation**
 ------------------------------------------
 
 .. warning::
       If the Tethys server is running from the previous step, make sure to quit the serve with CONTROL-C before proceeding to the next step.
-1. Create a directory (folder) in the home directly and name it (e.g. "tethys_dev"). In this directory, GWDM app will be cloned from the following link:                                https://github.com/BYUHydroinformatics/gwdm
+1. Create a directory (folder) in the home directly and name it (e.g. "tethys_dev"). In this directory, GWDM app will be cloned from the following link: https://github.com/BYUHydroinformatics/gwdm
 2. On the right side of the repository, click on ``Code`` green box and then click on the button to copy the URL
-
 3. Bring up a terminal windown and go to the directory just created by executing the following command.
     
          .. code-block:: bash
@@ -89,7 +89,7 @@ After the installation is complete, go to http://127.0.0.1:8000/ and make sure t
             Username: admin
             Password: pass
       
-    .. image:: source/images_install/gwdm_app.png
+    .. image:: images_install/gwdm_app.png
           
 
 **Step 3: Set Up Docker Containers**
@@ -116,7 +116,8 @@ After the installation is complete, go to http://127.0.0.1:8000/ and make sure t
             The next option will ask you to specify the location. Respond with the file path to the Thredds directory that you created earlier
     
    
-   .. image:: source/images_install/respond_enter.png
+   .. image:: images_install/respond_enter.png
+   
 **OPTIONAL: Set Up Portainer.io**
 ---------------------------------
 Portainer gives a detail status and health check of the docker containers. In the Command Line, type:
@@ -191,8 +192,8 @@ Now, save the settings.
          - Username: admin
          - password: geoserver
 
-   .. image:: source/images_install/spatial.png
-   .. image:: source/images_install/geoserver.png
+   .. image:: images_install/spatial.png
+   .. image:: images_install/geoserver.png
 
 3. Add another Spatial Dataset Service (for thredds) and select it in the app settings
 
@@ -233,6 +234,7 @@ Remove one of the “include” tags and change the other one to say ``<include 
 If you need help, the screenshot below shows what it should look like.
 
 .. image:: images_install/catalog_xml.png
+   :scale: 75%
 
 2. Open the “threddsConfig.xml” file
 
