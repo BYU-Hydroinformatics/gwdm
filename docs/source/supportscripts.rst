@@ -6,7 +6,7 @@
 
 **Introduction**
 ------------------
-aaThese scripts can aid in the data preparation process required prior to using the GWDM tool. They have all been created in a cloud-based environment called Google Colaboratory, or Colab for short. Colab is built on Jupyter Notebook, which allows users to write, execute, and visualize Python code quickly and easily.
+bThese scripts can aid in the data preparation process required prior to using the GWDM tool. They have all been created in a cloud-based environment called Google Colaboratory, or Colab for short. Colab is built on Jupyter Notebook, which allows users to write, execute, and visualize Python code quickly and easily.
 
 These notebooks have been shared as Github Gists. A gist allows the notebook to be opened, run, and modified by an individual user without affecting the experience of another user.
 
@@ -72,19 +72,18 @@ An example set of files has been provided; however, you are welcome to use your 
 
 
 
-.. line-block:: 
+
 .. line-block::
 
 **File Formatter**
 ------------------ 
-
 .. container:: twocol3
 
-  .. container:: leftside
+   .. container:: leftside
     
          .. image:: images_scripts/file_format.png
          
-  .. container:: rightside
+   .. container:: rightside
        
             This tool is meant for cleaning and restructuring data files for import into the GWDM app. It accepts a wells file, time series file, and an aquifers file as inputs - each of which are             optional, depending on your needs. Options include:
 
@@ -93,9 +92,9 @@ An example set of files has been provided; however, you are welcome to use your 
                        * accepting different date formats (which Excel sometimes corrupts)
                        * calculating water table elevation (WTE) from depth to groundwater measurements
                        
-            To practice using this script, download and open the attached set of files and locate the UtahMajorAquifers geojson file and the ut_2015-2020_wells and ut_2015-2020_TS csv files.
+             To practice using this script, download and open the attached set of files and locate the UtahMajorAquifers geojson file and the ut_2015-2020_wells and ut_2015-2020_TS csv files.
 
-                    .. raw:: html
+             .. raw:: html
 
                       <a href="https://colab.research.google.com/gist/mdstev1/ed7fa793b3e09501ddba9b90df015e74/file_formatter.ipynb" target="_blank">
                           <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
