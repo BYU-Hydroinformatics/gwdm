@@ -193,6 +193,7 @@ Now, save the settings.
                - password: geoserver
 
    .. image:: images_install/spatial.png
+   
    .. image:: images_install/geoserver.png
 
 3. Add another Spatial Dataset Service (for thredds) and select it in the app settings
@@ -234,7 +235,7 @@ Remove one of the “include” tags and change the other one to say ``<include 
 If you need help, the screenshot below shows what it should look like.
 
 .. image:: images_install/catalog_xml.png
-   :scale: 55%
+   :scale: 20%
 
 2. Open the “threddsConfig.xml” file
 
