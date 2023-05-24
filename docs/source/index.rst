@@ -21,8 +21,7 @@ These interpolated water table maps can be used to evaluate the sustainability o
 We have incorporated our groundwater level mapping algorithms in a simple, easy-to-use web application created using Tethys Platform, developed in our hydroinformatics laboratory. In addition to the water level mapping, the system provides a powerful online database of historical groundwater data where users can zoom in to areas of interest, select wells, and view the historical water level record and meta-data about each well.
 
 .. image:: images_overview/niger_screenshot.png
-      :width: 1143px
-      :height: 771px
+      :scale: 75%
 
 The GWDM app can be accessed in the following locations:
 
@@ -105,8 +104,7 @@ Here is an image of the results from our previous selection. Notice that the cha
 Here is a rendering;
 
 .. image:: images_overview/individuallyselectedwells.png
-   :width: 857px
-   :height: 675px
+   :scale: 75%
 
 **Displaying Rasters**
 ---------------
@@ -152,6 +150,7 @@ The table of content can be used to explore a set of documentation and tutorials
 *Mapping*. This section describes the interpolation algorithms and shows to generate time-varying rasters of your groundwater data for display and animation.
 
 *Installation*. This section describes how to intall the GWDM app in your own Tethys portal.
+
 
 .. toctree::
     :maxdepth: 2
