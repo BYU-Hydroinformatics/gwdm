@@ -6,7 +6,7 @@
 
 **Introduction**
 ------------------
-These scripts can aid in the data preparation process required prior to using the GWDM tool. They have all been created in a cloud-based environment called Google Colaboratory, or Colab for short. Colab is built on Jupyter Notebook, which allows users to write, execute, and visualize Python code quickly and easily.
+BBThese scripts can aid in the data preparation process required prior to using the GWDM tool. They have all been created in a cloud-based environment called Google Colaboratory, or Colab for short. Colab is built on Jupyter Notebook, which allows users to write, execute, and visualize Python code quickly and easily.
 
 These notebooks have been shared as Github Gists. A gist allows the notebook to be opened, run, and modified by an individual user without affecting the experience of another user.
 
@@ -96,10 +96,8 @@ An example set of files has been provided; however, you are welcome to use your 
 
                       <a href="https://colab.research.google.com/gist/mdstev1/ed7fa793b3e09501ddba9b90df015e74/file_formatter.ipynb" target="_blank">
                           <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
-                      </a>
-                      
-                      
-                      
+                      </a>                      
+                                           
 .. line-block::
 
 **NWIS File Retriever**
