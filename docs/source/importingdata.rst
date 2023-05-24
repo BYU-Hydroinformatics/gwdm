@@ -133,23 +133,20 @@ The **Delete Rasters** command is used to delete previously uploaded rasters. Th
 If you are having trouble getting your data to upload correctly, this section includes several common problems and how to fix them.
 
 **CSV Encoding**
-~~~~~~~~~~~~~~~~
 
 If your CSV files are encoded intentionally or accidentally the wizard that gets the attributes will not be able to recognize the attributes. When you open the wizard, it will only show one of the attributes. One way to fix this error is to resave the file with the option highlighted in blue as opposed to the option highlighted in red in the figure below. If this does not work, we recommend copying your data into a new document being sure to save it without the encoding.
 
 .. image:: images_import/csv_encoding.png
-   :scale: 70%
-   
- **Selecting an Aquifer**
- ~~~~~~~~~~~~~~~~~~~~~~~
+    :scale: 70%
  
- .. warning:: 
-      The truth value of a Series is ambigiious. Use .empty, a.bool(), a.item(), a.any() or a.all()
-      
+ 
+ **Selecting an Aquifer**
+ 
+.. image:: images_import/trouble_unnecessaryaquifererror.png
+   
 If you have received the error pictured above, you selected an aquifer when you did not need to. If you have organized your data using aquifer IDs then the aquifer option blank must be left blank when you are adding wells and measurements. You will need to refresh the page to make the aquifer option blank again and then leave it blank while you are adding your wells. After you refresh be sure to reselect your region.
 
 **Dropped Data**
-~~~~~~~~~~~~~~~~~~
 
 When adding measurements, care should be taken to only upload measurements associated with wells that have previously been uploaded to the GWDM. Otherwise, the measurements will be skipped when uploading and after the uploading process is complete, a message similar to this will appear: 
 
