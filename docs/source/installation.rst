@@ -185,12 +185,12 @@ Now, save the settings.
 
 2. Add a Spatial Dataset Service (for geoserver) and select it in the app settings
 
-  .. note::
-         - Name: Arbitrary Name (e.g. geoserver)
-         - Engine: Geoserver
-         - Endpoint: http://127.0.0.1:8081/geoserver/
-         - Username: admin
-         - password: geoserver
+        .. note::
+               - Name: Arbitrary Name (e.g. geoserver)
+               - Engine: Geoserver
+               - Endpoint: http://127.0.0.1:8081/geoserver/
+               - Username: admin
+               - password: geoserver
 
    .. image:: images_install/spatial.png
    .. image:: images_install/geoserver.png
@@ -234,7 +234,7 @@ Remove one of the “include” tags and change the other one to say ``<include 
 If you need help, the screenshot below shows what it should look like.
 
 .. image:: images_install/catalog_xml.png
-   :scale: 75%
+   :scale: 55%
 
 2. Open the “threddsConfig.xml” file
 
