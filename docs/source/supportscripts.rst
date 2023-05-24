@@ -24,7 +24,7 @@ An example set of files has been provided; however, you are welcome to use your 
 **Elevation Generator** 
 -------------------------- 
 
-.. container:: twocol
+.. container:: twocol1
 
    .. container:: leftside
    
@@ -49,7 +49,7 @@ An example set of files has been provided; however, you are welcome to use your 
 **Aquifer Assignment Tool**
 --------------------------   
 
-.. container:: twocol
+.. container:: twocol2
 
    .. container:: leftside
    
@@ -73,7 +73,7 @@ An example set of files has been provided; however, you are welcome to use your 
 **File Formatter**
 ------------------ 
 
-.. container:: twocol
+.. container:: twocol3
 
       .. container:: leftside
     
@@ -100,7 +100,7 @@ An example set of files has been provided; however, you are welcome to use your 
 **NWIS File Retriever**
 -----------------------  
 
-.. container:: twocol
+.. container:: twocol4
 
    .. container:: leftside
    
