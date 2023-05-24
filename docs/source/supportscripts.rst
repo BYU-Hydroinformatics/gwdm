@@ -7,7 +7,7 @@
 **Introduction**
 ------------------
 
-These scripts can aid in the data preparation process required prior to using the GWDM tool. They have all been created in a cloud-based environment called Google Colaboratory, or Colab for short. Colab is built on Jupyter Notebook, which allows users to write, execute, and visualize Python code quickly and easily.
+SSThese scripts can aid in the data preparation process required prior to using the GWDM tool. They have all been created in a cloud-based environment called Google Colaboratory, or Colab for short. Colab is built on Jupyter Notebook, which allows users to write, execute, and visualize Python code quickly and easily.
 
 These notebooks have been shared as Github Gists. A gist allows the notebook to be opened, run, and modified by an individual user without affecting the experience of another user.
 
@@ -20,13 +20,15 @@ An example set of files has been provided; however, you are welcome to use your 
 .. button-link:: https://github.com/BYU-Hydroinformatics/gwdm/blob/ReadtheDocs-Documentation/docs/source/test_files/SupportScriptFileSet.zip
     :color: secondary
     :expand:
-    
+
+.. line-block::
+
 **Elevation Generator** 
 -------------------------- 
 
 .. container:: twocol1
 
-   .. container:: leftside
+     .. container:: leftside
    
             .. image:: images_scripts/mountain_elevation.png 
                
@@ -45,8 +47,10 @@ An example set of files has been provided; however, you are welcome to use your 
                     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
  
                 </a>
-      .. rubric::
-      
+     
+ 
+.. line-block::
+
 **Aquifer Assignment Tool**
 --------------------------   
 
@@ -68,9 +72,10 @@ An example set of files has been provided; however, you are welcome to use your 
                              <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
                          </a>
 
-         .. rubric::
+ 
 
-    
+.. line-block:: 
+
 **File Formatter**
 ------------------ 
 
@@ -97,7 +102,9 @@ An example set of files has been provided; however, you are welcome to use your 
                           <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
                       </a>
          .. rubric::
-    
+
+.. line-block::
+
 **NWIS File Retriever**
 -----------------------  
 
@@ -125,5 +132,4 @@ An example set of files has been provided; however, you are welcome to use your 
                    <a href="colab.research.google.com/gist/mdstev1/8086be08d3c7c753dad2ada31aafb85f/nwis-file-retriever.ipynb" target="_blank">
                        <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
                    </a>
-         .. rubric::
 
