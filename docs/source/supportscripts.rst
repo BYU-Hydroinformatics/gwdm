@@ -71,9 +71,16 @@ An example set of files has been provided; however, you are welcome to use your 
                          </a>
 .. line-block::
 
-..container::
-   .. container:: leftside
-   .. container:: rightside
+.. container:: twocol2
+
+     .. container:: leftside
+   
+            
+         
+     .. container:: rightside
+    
+ 
+.. line-block::
 
 **File Formatter**
 ------------------ 
