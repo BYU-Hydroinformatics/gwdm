@@ -69,7 +69,7 @@ An example set of files has been provided; however, you are welcome to use your 
                          <a href="https://colab.research.google.com/gist/mdstev1/3670653eafe6cbb1424c17846273b2b5/aquifer-assignment-tool.ipynb" target="_blank">
                              <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
                          </a>
-.. line-block::
+
 
 .. container:: twocol2
 
@@ -79,18 +79,19 @@ An example set of files has been provided; however, you are welcome to use your 
          
      .. container:: rightside
     
- 
-.. line-block::
+|
+|
+|
 
 **File Formatter**
 ------------------ 
 .. container:: twocol3
 
-       .. container:: leftside
+    .. container:: leftside
     
             .. image:: images_scripts/file_format.png
          
-       .. container:: rightside
+    .. container:: rightside
        
             This tool is meant for cleaning and restructuring data files for import into the GWDM app. It accepts a wells file, time series file, and an aquifers file as inputs - each of which are optional, depending on your needs.             Options include:
 
@@ -101,7 +102,7 @@ An example set of files has been provided; however, you are welcome to use your 
                        
             To practice using this script, download and open the attached set of files and locate the UtahMajorAquifers geojson file and the ut_2015-2020_wells and ut_2015-2020_TS csv files.
 
-            .. raw:: html
+           .. raw:: html
 
                          <a href="https://colab.research.google.com/gist/mdstev1/ed7fa793b3e09501ddba9b90df015e74/file_formatter.ipynb" target="_blank">
                              <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
