@@ -74,14 +74,13 @@ An example set of files has been provided; however, you are welcome to use your 
 
 **File Formatter**
 ------------------ 
-
 .. container:: twocol3
 
-     .. container:: leftside
+       .. container:: leftside
     
             .. image:: images_scripts/file_format.png
          
-     .. container:: rightside
+       .. container:: rightside
        
             This tool is meant for cleaning and restructuring data files for import into the GWDM app. It accepts a wells file, time series file, and an aquifers file as inputs - each of which are optional, depending on your needs.             Options include:
 
