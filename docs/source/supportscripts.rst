@@ -75,7 +75,8 @@ An example set of files has been provided; however, you are welcome to use your 
 
      .. container:: leftside
    
-    
+|
+|
 **File Formatter**
 ------------------ 
 
