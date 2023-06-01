@@ -82,13 +82,14 @@ An example set of files has been provided; however, you are welcome to use your 
 |
 |
 |
-
 **File Formatter**
 ------------------ 
+
+
 .. container:: twocol3
 
     .. container:: leftside
-    
+   
             .. image:: images_scripts/file_format.png
          
     .. container:: rightside
@@ -102,7 +103,7 @@ An example set of files has been provided; however, you are welcome to use your 
                        
             To practice using this script, download and open the attached set of files and locate the UtahMajorAquifers geojson file and the ut_2015-2020_wells and ut_2015-2020_TS csv files.
 
-           .. raw:: html
+            .. raw:: html
 
                          <a href="https://colab.research.google.com/gist/mdstev1/ed7fa793b3e09501ddba9b90df015e74/file_formatter.ipynb" target="_blank">
                              <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
