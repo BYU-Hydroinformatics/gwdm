@@ -26,14 +26,7 @@ An example set of files has been provided; however, you are welcome to use your 
 **Elevation Generator** 
 -------------------------- 
 
-.. container:: twocol1
 
-     .. container:: leftside
-   
-            .. image:: images_scripts/mountain_elevation.png 
-               
-                
-     .. container:: rightside
      
             This tool can be used to retrieve elevations for wells that are missing ground surface elevations. These ground surface elevations are used for calculating Water Table Elevation (WTE) and are included as well metadata in             the app. It samples a global, 30-meter DEM for each well location, providing a reasonable estimate for each missing GSE. Please note that its accuracy is limited and that field-measured GSE measurements are preferable. A             file with well locations (lat/long coordinates) is required as input and a file with GSE's generated for each well will be ouptut.
 
@@ -48,18 +41,10 @@ An example set of files has been provided; however, you are welcome to use your 
                 </a>
 
 
-.. line-block::
 
 **Aquifer Assignment Tool**
 --------------------------   
 
-.. container:: twocol2
-
-     .. container:: leftside
-   
-            .. image:: images_scripts/aquifer_assignment.png
-         
-     .. container:: rightside
     
             This tool can be used for assigning an aquifer name and ID to each well. This requires an aquifers file with aquifer IDs and names assigned to each polygon and a wells file with lat/long locations for each well. Aquifers             can also be assigned to a separate time series file with well IDs that correspond to the well IDs in the wells file.
             To practice using this script, download and open the attached set of files and locate the UtahMajorAquifers json file and the Utah wells and TS (time series) csv files.
@@ -70,22 +55,10 @@ An example set of files has been provided; however, you are welcome to use your 
                              <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
                         </a>
 
-.. container:: twocol4
-   .. container:: leftside
-   .. container:: rightside
-|  
-|
+
 **File Formatterdd**
 ------------------ 
 
-
-.. container:: twocol3
-
-    .. container:: leftside
-   
-            .. image:: images_scripts/file_format.png
-         
-    .. container:: rightside
        
             This tool is meant for cleaning and restructuring data files for import into the GWDM app. It accepts a wells file, time series file, and an aquifers file as inputs - each of which are optional, depending on your needs.             Options include:
 
@@ -103,20 +76,9 @@ An example set of files has been provided; however, you are welcome to use your 
                          </a>
 
 
-
-
-.. line-block::
-
 **NWIS File Retriever**
 -----------------------  
 
-.. container:: twocol4
-
-     .. container:: leftside
-   
-            .. image:: images_scripts/usgs_logo.png
-   
-     .. container:: rightside
    
             This tool is meant for retrieving groundwater data files from the USGS National Water Information System (NWIS) data repository. The data from NWIS is only available for areas maintained by USGS. This tool:
 
