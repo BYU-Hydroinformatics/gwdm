@@ -68,14 +68,18 @@ An example set of files has been provided; however, you are welcome to use your 
 
                          <a href="https://colab.research.google.com/gist/mdstev1/3670653eafe6cbb1424c17846273b2b5/aquifer-assignment-tool.ipynb" target="_blank">
                              <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
-                         </a>
-| 
+                        </a>
+
+.. container:: twocol4
+   .. container:: leftside
+   .. container:: rightside
 |  
- **File Formatter**
+|
+**File Formatterdd**
 ------------------ 
 
 
- .. container:: twocol3
+.. container:: twocol3
 
     .. container:: leftside
    
