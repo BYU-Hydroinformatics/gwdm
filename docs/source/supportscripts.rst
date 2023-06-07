@@ -71,11 +71,11 @@ An example set of files has been provided; however, you are welcome to use your 
                          </a>
 | 
 |  
-**File Formatterd**
+ **File Formatter**
 ------------------ 
 
 
-.. container:: twocol3
+ .. container:: twocol3
 
     .. container:: leftside
    
