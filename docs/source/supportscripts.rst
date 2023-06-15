@@ -79,9 +79,8 @@ To practice using this tool, download and open the attached set of files and loc
 
 .. raw:: html
 
-        <a href="colab.research.google.com/gist/mdstev1/8086be08d3c7c753dad2ada31aafb85f/nwis-file-retriever.ipynb" target="_blank">
+        <a href="https://colab.research.google.com/gist/mdstev1/8086be08d3c7c753dad2ada31aafb85f/nwis-file-retriever.ipynb" target="_blank">
         <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
         </a>
-
 
             
