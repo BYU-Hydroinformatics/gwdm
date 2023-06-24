@@ -48,7 +48,7 @@ To practice using this script, download and open the attached set of files and l
    </a>
 
 
-**File Formatterdd**
+**File Formatter**
 ------------------ 
 This tool is meant for cleaning and restructuring data files for import into the GWDM app. It accepts a wells file, time series file, and an aquifers file as inputs - each of which are optional, depending on your needs. Options include:
 
