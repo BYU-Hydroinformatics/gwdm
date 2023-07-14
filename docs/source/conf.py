@@ -2,7 +2,7 @@
 
 # -- Project information
 
-project = 'Ground Water Datta Mapping'
+project = 'Ground Water Data Mapping'
 copyright = '2021, Dr. Norm L. Jones'
 author = 'Dr. Norm Jones and Research Assistants'
 
