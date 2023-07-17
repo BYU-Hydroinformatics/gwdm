@@ -7,14 +7,14 @@
 **Introduction**
 ---------------
 
-Before importing data into the GWDM app, the following data content needs to be collected and prepared \:\
+Before importing data into the GWDM app, the following data content needs to be collected and prepared\:\
 
   * Region Boundary
   * Aquifers
   * Well locations
   * Measurements (Time Series Data)
   
-A region is typically a state, country, or water management agency boundary and represents the top of the data heirarchy. In one region, there may be one or more aquifers in which wells are located. Each well may have time series data in one or multiple files that show historical trends of groundwater data such as water table elevations, water quality, etc. The following diagram graphically illustrates the relationship of the different data components:
+A region is typically a state, country, or water management agency boundary and represents the top of the data hierarchy. In one region, there may be one or more aquifers in which wells are located. Each well may have time series data in one or multiple files that show historical trends of groundwater data such as water table elevations, water quality, etc. The following diagram graphically illustrates the relationship of the different data components:
 
 .. image:: images_dataprep/data_tree.png
       :height: 811px
@@ -32,7 +32,7 @@ The first step of organizing groundwater data in the GWDM app is uploading regio
 
 Region and aquifers files have to be one of the following data types:
 
-   * Shapefile (.shp, .shx, and.dbf are required)
+   * Shapefile (.shp, .shx, and. dbf are required)
    * GeoJSON file (.geojson)
  
 In the examples used on this page, the state of Utah (USA) was used as a region boundary in a shapefile and Utah's major aquifers were prepared in a .geojson file.
@@ -67,11 +67,12 @@ The aquifers in your region will also need to be organized in either a geojson f
 
 **Well Locations File**
 ------------------------
-Well locations are organized in CSV files where each row represents a well location and the columns represents well attributes. These typically can be exported from Excel or from a well database.
+Well locations are organized in CSV files where each row represents a well location and the columns represent well attributes. These typically can be exported from Excel or from a well database.
 
 Wells are organized by aquifers in the app. There are two ways to prepare well locations files.
 
-1. Create a single CSV file with all wells and assign each well an aquifer ID corresponding to the aquifer it is located in. This allows the GWDM app to match the aquifer ID attribute from the well location file to the aquifer ID that was inputed with the aquifer polygons in the previous step. This allows you to import all of the wells associated with your region in a single step. However, it does require that you have aquifer IDs associated with your wells. If you do not have Aquifer IDs, you can use one of the support scripts we have provided to automatically generated the IDs based on the aquifer polygon files and the well coordinates.
+1. Create a single CSV file with all wells and assign each well an aquifer ID corresponding to the aquifer it is located in. This allows the GWDM app to match the aquifer ID attribute from the well location file to the aquifer ID that was input with the aquifer polygons in the previous step. This allows you to import all of the wells associated with your region in a single step. However, it does require that you have aquifer IDs associated with your wells. If you do not have Aquifer IDs, you can use one of the support scripts we have provided to automatically generate the IDs based on the aquifer polygon files and the well coordinates.
+
 2. Create a separate CSV file that contains only wells belonging to a single aquifer. This method does not require an aquifer ID as all of the wells are imported to a assigned aquifer. With this method, you create multiple well files - one per aquifer, and then import the wells one at a time. Each time you import the wells, you explicitly select the aquifer polygon the wells should be assigned to.
 
 .. image:: images_dataprep/wells.png
