@@ -73,12 +73,12 @@ Wells are organized by aquifers in the app. There are two ways to prepare well l
 
 1. Create a single CSV file with all wells and assign each well an aquifer ID corresponding to the aquifer it is located in. This allows the GWDM app to match the aquifer ID attribute from the well location file to the aquifer ID that was input with the aquifer polygons in the previous step. This allows you to import all of the wells associated with your region in a single step. However, it does require that you have aquifer IDs associated with your wells. If you do not have Aquifer IDs, you can use one of the support scripts we have provided to automatically generate the IDs based on the aquifer polygon files and the well coordinates.
 
-2. Create a separate CSV file that contains only wells belonging to a single aquifer. This method does not require an aquifer ID as all of the wells are imported to a assigned aquifer. With this method, you create multiple well files - one per aquifer, and then import the wells one at a time. Each time you import the wells, you explicitly select the aquifer polygon the wells should be assigned to.
+2. Create a separate CSV file that contains only wells belonging to a single aquifer. This method does not require an aquifer ID as all of the wells are imported to an assigned aquifer. With this method, you create multiple well files, one per aquifer, and then import the wells one at a time. Each time you import the wells, you explicitly select the aquifer polygon the wells should be assigned to.
 
 .. image:: images_dataprep/wells.png
       :scale: 60%
 
-A well location file must include the well coordinates (latitude and longitude in a decimal degree format), well names, and well IDs. If you are useing method #1 described above, an aquifer ID field is also required.
+A well location file must include the well coordinates (latitude and longitude in a decimal degree format), well names, and well IDs. If you are using method #1 described above, an aquifer ID field is also required.
 
 The required fields (columns) for a wells file are:
 
@@ -87,16 +87,16 @@ The required fields (columns) for a wells file are:
 +--------------------------+----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Latitude                 | Numeric        | Latitude must be input in a decimal degree format.                                                                                                                                                  |
 +--------------------------+----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Longitude                | Numeric        | Longtitude must be input in a decimal degree format.                                                                                                                                                |
+| Longitude                | Numeric        | Longitude must be input in a decimal degree format.                                                                                                                                                |
 +--------------------------+----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Well name                | Text or Numeric| This is a text string or number used to identify the well.                                                                                                                                          |
 +--------------------------+----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Well ID                  | Text or Numeric| Well ID has to be an unique value and must not have duplicates within an aquifer. There can be duplicate well IDs in different aquifers (i.e. There can be the same well ID in different aquifers)  |
+| Well ID                  | Text or Numeric| Well ID has to be a unique value and must not have duplicates within an aquifer. There can be duplicate well IDs in different aquifers (i.e. There can be the same well ID in different aquifers)  |
 +--------------------------+----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Ground Surface Elevation | Numeric        | OPTIONAL: This field only serves as a metadata purpose.                                                                                                                                             |
 +--------------------------+----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Aquifer ID               | Text or Integer|If a file contains wells from multiple aquifers, this field is mandadory.                                                                                                                            |
-|                          |                |OPTIONAL if a file only contains wells from single aquifer. See the description above for the two methods for importing well locations.                                                              |
+| Aquifer ID               | Text or Integer|If a file contains wells from multiple aquifers, this field is mandatory.                                                                                                                            |
+|                          |                |OPTIONAL if a file only contains wells from a single aquifer. See the description above for the two methods for importing well locations.                                                              |
 +--------------------------+----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -108,10 +108,10 @@ This is a sample well locations file:
 --------------------
 A measurement file is a CSV file containing the groundwater data measurements. Each measurement has a date, a data value, and a well ID that relates the measurements to the corresponding well. An aquifer ID column is optional depending on how the measurement file is prepared. Like a well locations file, there are two ways to prepare a measurement file.
 
-        1. Create a single CSV file with all wells and groundwater measurements and assign each measurement/well an aquifer ID corresponding to the aquifer it is located in. This allows having the same Well IDs from different aquifers in a single file (i.e. There can be wells with the same well IDs if they are located in different aquifers).
-        This method allows you to import all of the measurements and wells in a single step. However, it does require that you have aquifer IDs associated with your measurement/wells. We also provided the support scripts to automatically format the uploading file with the well and aquifer IDs.
+        1. Create a single CSV file with all wells and groundwater measurements and assign each measurement/well an aquifer ID corresponding to the aquifer it is located in. This allows having the same well IDs from different aquifers in a single file (i.e. There can be wells with the same well IDs if they are located in different aquifers).
+        This method allows you to import all of the measurements and wells in a single step. However, it does require that you have aquifer IDs associated with your measurements/wells. We also provided the support scripts to automatically format the uploading file with the well and aquifer IDs.
         
-        2. Create a separate CSV file that contains only measurements/wells belonging to a single aquifer. This method does not require an aquifer ID as all of the measurements/wells are imported to an assigned aquifer. With this method, you create multiple well files - one per aquifer, and then import the measurements/wells one at a time. Each time you import the measurements/wells, you explicitly select the aquifer polygon the wells should be assigned to.
+        2. Create a separate CSV file that contains only measurements/wells belonging to a single aquifer. This method does not require an aquifer ID as all of the measurements/wells are imported to an assigned aquifer. With this method, you create multiple well files, one per aquifer, and then import the measurements/wells one at a time. Each time you import the measurements/wells, you explicitly select the aquifer polygon the wells should be assigned to.
         In the GWDM app, the measurements associated with a well can be displayed as a time series curve as shown below. Measurements are also interpolated in time and space using the Mapping Google Collab Notebook to created time-varying rasters that can be animated or used to compute changes in aquifer storage vs time.
         
 .. image:: images_dataprep/well_time_series.png
@@ -126,14 +126,14 @@ The required fields (columns) for a measurements file are:
 | Well ID               | Numeric        | This well ID should be related to one of the well ID values defined in the Well Locations file described above.                             |
 +-----------------------+----------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | Date                  | Date           | The date that the measurement was taken. The dates can be in almost any format*.                                                            |
-|                       |                | When the measurments are imported, the user has the option to define the date format so that the dates are properly interpreted.            |
+|                       |                | When the measurements are imported, the user has the option to define the date format so that the dates are properly interpreted.            |
 |                       |                | *The Unix Epoch begins in 1970, so any dates before 1970 will need to be 4-digit years; otherwise, they will be converted to the next       |
 |                       |                | century (e.g. 1/1/69 will be converted to 1/1/2069; 1/1/1969 will remain 1/1/1969)                                                          |
 +-----------------------+----------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | Measurement(s)        | Numeric        | This column contains the actual measurements (water table elevation, depth to groundwater, water quality, etc). You can have one or multiple| 
 |                       |                | data columns.                                                                                                                               |
 +-----------------------+----------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| Aquifer ID            | Text or Integer| This field is optional if all the measurements are from a single aquifer. This field is required if an uploading files contain              |
+| Aquifer ID            | Text or Integer| This field is optional if all the measurements are from a single aquifer. This field is required if the uploaded files contain              |
 |                       |                | measurements/wells from multiple aquifers. This aquifer ID should be related to one of the aquifer ID values defined in the Well Locations  |
 |                       |                | file described above.                                                                                                                       | 
 +-----------------------+----------------+---------------------------------------------------------------------------------------------------------------------------------------------+
@@ -144,13 +144,13 @@ This is a sample measurements file. Note that a measurements file can contain ex
 
 **Support Tools**
 -----------------
-Collecting, filtering, and formatting well and measurement data can be a complicated process, especially with large datasets. To assist in this process, we have created a set of Python scripts that aid in the generation of ground surface elevations (GSEs), obtaining existing well data from USGS, adding Aquifer IDs, and other formatting options. Each script is contained within a Google Colaboratory notebook. For more information regarding these scripts, go to the Support Scripts page. The scripts include tools for the following tasks:
+Collecting, filtering, and formatting well and measurement data can be a complicated process, especially with large datasets. To assist in this process, we have created a set of Python scripts that aid in the generation of ground surface elevations (GSEs), obtaining existing well data from USGS, adding Aquifer IDs, and other formatting options. Each script is contained within a Google Collaboratory notebook. For more information regarding these scripts, go to the Support Scripts page. The scripts include tools for the following tasks:
 
      * Ground surface elevations are necessary to convert depth-to-water-table measurements to water table elevations. If your wells do not include ground surface elevations, the elevations can be sampled from a 30-meter DEM using the **Elevation Generator Tool**.
 
-     * For locations in the United States, both well locations and measurements can be downloaded directly from the USGS NWIS database using the **NWIS Data Retrieval Tool**.
+     * For locations in the United States, both well locations and measurements can be downloaded directly from the USGS NWIS database using the **NWIS Data Retriever Tool**.
 
-     * You can assign Aquifer IDs to wells, calculate water table elevations from depth to water table measurements, and clean up your data with other formatting options using the **Data Formatting Tool**.
+     * You can assign aquifer names and IDs to wells, calculate water table elevations from depth to water table measurements, and clean up your data with other formatting options using the **Data Formatting Tool**.
      
 **Summary**
 ----------
