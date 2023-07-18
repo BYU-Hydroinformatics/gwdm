@@ -5,7 +5,7 @@
 =============================
 **Introduction**
 -------------------
-In addition to visualizing well and measurement data, the GWDM app and associated tools can generate and display rasters of time varying water levels and time series of aquifer storage change. These groundwater maps are in the form of netCDF rasters at selected intervals (yearly for example) over a selected time range. They are generated using a multi-step process that involves imputing gaps in water level time series at wells using Earth observations and machine learning, spatial interpolation of water levels using kriging, and volumetic analysis of the raster results. While the app supports any kind of groundwater data measurements, the mapping tool is designed for water level data. When using the mapping tool, the user selects a start date and an end date and a time interval for the interpolation process. For example, one could choose start = 1980, end = 2010, step = 5 years and the algorithm would generate a raster for 1980, 1985, 1990, ... 2005, 2010. The rasters are compiled into a netCDF file that can then be uploaded and animated in the map interface. Also, the mapping algorithm calculates the volume between each pair of rasters and multiplies the volume by a user-specified storage coefficient to compute a chart of groundwater storage change vs time. This chart can be especially useful in determining if an aquifer is being used in a sustainable fashion as it can demonstrate groundwater depletion.
+In addition to visualizing well and measurement data, the GWDM app and associated tools can generate and display rasters of time varying water levels and time series of aquifer storage change. These groundwater maps are in the form of netCDF rasters at selected intervals (yearly for example) over a selected time range. They are generated using a multi-step process that involves imputing gaps in water level time series at wells using Earth observations and machine learning, spatial interpolation of water levels using kriging, and volumetric analysis of the raster results. While the app supports any kind of groundwater data measurements, the mapping tool is designed for water level data. When using the mapping tool, the user selects a start date and an end date and a time interval for the interpolation process. For example, one could choose start = 1980, end = 2010, step = 5 years and the algorithm would generate a raster for 1980, 1985, 1990, ... 2005, 2010. The rasters are compiled into a netCDF file that can then be uploaded and animated in the map interface. Also, the mapping algorithm calculates the volume between each pair of rasters and multiplies the volume by a user-specified storage coefficient to compute a chart of groundwater storage change vs time. This chart can be especially useful in determining if an aquifer is being used in a sustainable fashion as it can demonstrate groundwater depletion.
 
 In previous versions of the GWDM app, this was accomplished using the Interpolation Wizard that was found in the admin control panel. In order to give the user the ability to monitor each step of the process, we have moved the mapping tool to a standalone Google Colab notebook (link below).
 
@@ -27,14 +27,13 @@ While some wells have a relatively complete dataset over the period of interest,
 
 **Simple PCHIP Interpolation**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-For reference, PCHIP stands for Piecewise Cubic Hermite Interpolating Polynomial. During this step we decide how close measurements must be to justify the use of PCHIP interpolation. We call this value the pad value. The image below shows an example results of PCHIP interpolation. In this example, the pad value was 365 days. Note that PCHIP only interpolates between measurements.
-installation.
+For reference, PCHIP stands for Piecewise Cubic Hermite Interpolating Polynomial. During this step we decide how close measurements must be to justify the use of PCHIP interpolation. We call this value the pad value. The image below shows some example results of PCHIP interpolation. In this example, the pad value was 365 days. Note that PCHIP only interpolates between measurements.
 
 .. image:: images_mapping/PCHIP_NBimage.png
     
 **Machine Learning**
 ~~~~~~~~~~~~~~~~~~~~
-For longer periods of interpolation that are harder to predict, we use machine learning to fill in the missing data. The machine learning finds correlations between Earth observations and water level measurements and then uses data imputation to fill in the gaps. For example, groundwater levels generally rise during wet periods due to increases recharge and decreased pumping. Alternately, water levels drop during dry periods due to reduced recharge and increased pumping. The following charts illustrate this relationship using soil moisture anomaly from the Global Land Data Assimilation System (GLDAS) model.
+For longer periods of interpolation that are harder to predict, we use machine learning to fill in the missing data. The machine learning finds correlations between Earth observations and water level measurements and then uses data imputation to fill in the gaps. For example, groundwater levels generally rise during wet periods due to increased recharge and decreased pumping. Alternately, water levels drop during dry periods due to reduced recharge and increased pumping. The following charts illustrate this relationship using soil moisture anomaly from the Global Land Data Assimilation System (GLDAS) model.
 
 .. image:: images_mapping/soil_moisture_correlation.png
 
@@ -44,24 +43,24 @@ The machine learning algorithms use these correlations to predict missing water 
 
 **Spatial Interpolation**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-Once the time series are complete, the time series curves for each well are sampled at the selected dates and spatial interpolation is performed to build the rasters. The algorithm applies GSLIB Kriging code to generate rasters user specified time steps. For the kriging algorithm, we auto-fit a variogram to the data in the aquifer based on the size of the aquifer.
+Once the time series are complete, the time series curves for each well are sampled at the selected dates and spatial interpolation is performed to build the rasters. The algorithm applies GSLIB(Geostatistical Software Library) Kriging code to generate rasters with the user specified time steps. For the Kriging algorithm, we autofit a variogram to the data in the aquifer based on the size of the aquifer.
 
 To learn more about these methods, see the papers published in `Remote Sensing <https://www.mdpi.com/2072-4292/12/12/2044>`_ and `Environmental Modelling & Software journals <https://www.sciencedirect.com/science/article/pii/S1364815220301997?via%3Dihub>`_. 
 
 
 **Water Level Mapping Google Colab Notebook**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-To run the water level mapping algorithm, you will first need to prepare your data. The algorithm requires three input as described in the following table. These are the same files (same content and format) that you would use to upload your original data to the GWDM mapper to visualize your wells and water level measurements. The only difference is that the aquifer file should only contain a single aquifer, while you could upload multiple aquifers at once to the GWDM app.
+To run the water level mapping algorithm, you will first need to prepare your data. The algorithm requires three inputs as described in the following table. These are the same files (same content and format) that you would use to upload your original data to the GWDM mapper to visualize your wells and water level measurements. The only difference is that the aquifer file should only contain a single aquifer, while you could upload multiple aquifers at once to the GWDM app.
 
 +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | File                    | Description                                                                                                                                                           |
 +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Aquifer boundary        | This file contains a polygon of the aquifer boundary and can be in either shapefile or GEOJSON format. If it is a shapefile, you should include the *.shp, *.shx, and |
-|                         | *.dbf files and they should be combined into a single ZIP archive. The file should contain only one aquifer.                                                          |
+| Aquifer boundary        | This file contains a polygon of the aquifer boundary and can be in either shapefile or GEOJSON format. If it is a shapefile, you should include the .shp, .shx, and |
+|                         | .dbf files and they should be combined into a single ZIP archive. The file should contain only one aquifer.                                                          |
 +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Well locations          | This is a CSV file of the well locations formatted as described in the Data Preparation page.                                                                         |   
 +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|Water Level Measurements | This is a CSV file of the groundwater level measurements formatted as described in the Data Preparation page.                                                         |
+|Water level measurements | This is a CSV file of the groundwater level measurements formatted as described in the Data Preparation page.                                                         |
 +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 As you follow the instructions in the notebook and move from section to section, you will be prompted to select a series of options. The following table provides a guide on these options:
@@ -71,17 +70,17 @@ As you follow the instructions in the notebook and move from section to section,
    * - Parameter
      - Description
    * - Select Drawdown Volume Units
-     - These units are used to compute the groundwater storage change vs. time curve. The options are Acre-Ft, Metric (m3), and Cubic-Ft. The units you select should match the units associated with the selected variable. If your            variable is in meters, you should select the Metric (m3) option. If your variable is in feet, you can select either of the other two options.
+     - These units are used to compute the groundwater storage change vs. time curve. The options are Acre-Ft, Cubic Metric (m^3), and Cubic-Ft. The units you select should match the units associated with the selected variable. If your            variable is in meters, you should select the Cubic Meter (m3) option. If your variable is in feet, you can select either of the other two options.
    * - Output file name
-     - A default name will be generated by the application. The default name will be appended to your input. The format will be yourinput_regionname_interp_some number.
+     - A default name will be generated by the application. The default name will be appended to your input. The format will be yourinput_regionname_interp_somenumber.
    * - Storage Coefficient
-     - A typical value would be 0.15 to 0.20. For unconfined aquifers, this should be the specific yield. For more information on storage coefficients, visit this link. This parameter is used to compute the groundwater storage              change vs time curve that is generated as part of the intepolation process.
+     - A typical value would be 0.15 to 0.20. For unconfined aquifers, this should be the specific yield. For more information on storage coefficients, visit this link. This parameter is used to compute the groundwater storage              change vs time curve that is generated as part of the interpolation process.
    * - Raster Extent
-     - The extent of the interpolated raster based on either the extent of the wells or the aquifer. If the wells option is selected, the resulting raster will be a rectangular box that just surrounds the wells and it is clipped by        the aquifer boundary. If the aquifer option is selected, the spatial interpolation process extrapolates out to the limit of the aquifer and is clipped by the aquifer. In order to get a storage change vs time curve for the            entire aquifer, you should generally select the aquifer option.
+     - The extent of the interpolated raster is based on either the extent of the wells or the aquifer. If the wells option is selected, the resulting raster will be a rectangular box that just surrounds the wells and it is clipped by        the aquifer boundary. If the aquifer option is selected, the spatial interpolation process extrapolates out to the limit of the aquifer and is clipped by the aquifer. In order to get a storage change vs time curve for the            entire aquifer, you should generally select the aquifer option.
    * - Time Interval
-     - This indicates the frequency at which the spatial interpolation process generates a raster using kriging over the interpolation interval. For example, you select 1980 and 2020 as the starting and ending date and a time              interval of 5 years, you would get interpolated rasters at 1980, 1985, 1990, ... 2020.
+     - This indicates the frequency at which the spatial interpolation process generates a raster using kriging over the interpolation interval. For example, you select 1980 and 2020 as the starting and ending dates and a time              interval of 5 years, you would get interpolated rasters at 1980, 1985, 1990, ... 2020.
    * - Interpolation start and end dates
-     - These two parameters set the date range for interpolation (i.e., the beginning and ending of the raster data set). For better results, select a range that is at least 10 years in length
+     - These two parameters set the date range for interpolation (i.e., the beginning and ending of the raster data set). For better results, select a range that is at least 10 years in length.
    * - Gap Size
      - The maximum length of time over which the application will generate spatial interpolation layers using ELM (Extreme Machine Learning) for an individual well. If the time series for a well contains a gap longer than this size,        the well is not included in the spatial and temporal interpolation process. We recommend a minimum of 10 years (3650 days) for best results.
    * - Pad Value
