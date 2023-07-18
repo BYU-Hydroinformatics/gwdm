@@ -41,7 +41,7 @@ Once the file is added, we click **Get Attributes** to define the aquifer name a
 
 **Add Wells**
 --------------
-Next, we will add the wells using the **Add Wells** command in the Wells section. These wells have already been assigned to their respective aquifers, so we can add them all at once. If you would like to add wells to a single aquifer at a time, pre-assigning aquifer IDs is unneccessary.
+Next, we will add the wells using the **Add Wells** command in the Wells section. These wells have already been assigned to their respective aquifers, so we can add them all at once. If you would like to add wells to a single aquifer at a time, pre-assigning aquifer IDs is unnecessary.
 
 To add a list of wells, we select the region of interest. Since we have pre-assigned aquifer IDs, we will not select a single aquifer from the list; rather, we will leave the field blank. This time, we will use a csv file (although shapefiles can also be used). We again use the **Get Attributes** button to retrieve the column headers from the file. The **Wells Wizard** will automatically open up, wherein we can select the columns for latitude, longitude, aquifer ID (not necessary if a single aquifer was selected previously), well name, well ID, and ground surface elevation (GSE). For this example file, the appropriate headers are lat_dec, long_dec, AquiferID, Well_Name, Well_ID, and GSE, respectively. Finally, we click the **Add Wells** button to add the wells to the app.
 
@@ -108,21 +108,21 @@ When adding measurements, care should be taken to only upload measurements assoc
 
 **Rasters**
 ----------
-One of the main functions of the GWDM app is to use temporal and spatial interpolation to create time-varying rasters of groundwater data (water level, depth to groundwater, etc). This process is described in the Mapping section. Interpolated rasters can be animated in the main map window using the Leaflet animation plug-in used by the GWDM.
+One of the main functions of the GWDM app is to use temporal and spatial interpolation to create time-varying rasters of groundwater data (water level, depth to groundwater, etc). This process is described in the Groundwater Level Mapping section. Interpolated rasters can be animated in the main map window using the Leaflet animation plug-in used by the GWDM.
 
 In some cases, users may elect to use external interpolation algorithms to generate rasters for their aquifers. The Rasters section in the admin control panel can be used to upload and manage these externally generated rasters. Once uploaded, they can be animated and visualized in the GWDM map window.
 
-The **Upload Rasters** command is used to upload raster dataset in netCDF format. The user must first select the region, aquifer, and variable and then choose the netCDF file.
+The **Upload Rasters** command is used to upload raster datasets in netCDF format. The user must first select the region, aquifer, and variable and then choose the netCDF file.
 
 .. image:: images_import/upload_raster.png
    :scale: 80%
 
-Once a raster has been uploaded, it can be selected for visualization choosing the View Region option, selecting the region, and then selecting the aquifer and variable. The uploaded raster can then be selected using the Interpolation Layer option.
+Once a raster has been uploaded, it can be selected for visualization by choosing the View Region option, selecting the region, and then selecting the aquifer and variable. The uploaded raster can then be selected using the Interpolation Layer option.
 
 .. image:: images_import/select_raster.png
    :scale: 65%
 
-The **Delete Rasters** command is used to delete previously uploaded rasters. The user selects the region, aquifer, variable, and raster and then selects the Delete Rasters button. If the "All Aquifers" option is selected in the "Select an Aquifer" list, all rasters associated with the region are deleted. Likewise, the Variable and Interpolation Layer options both have an "All ___" option to delete all rasters for any variable or all rasters for a selected variable.
+The **Delete Rasters** command is used to delete previously uploaded rasters. The user selects the region, aquifer, variable, and raster and then selects the Delete Rasters button. If the "All Aquifers" option is selected in the "Select an Aquifer" list, all rasters associated with the region are deleted. Likewise, the "Select Variable" and "Interpolation Layer" options both have an "All ___" option to delete all rasters for any variable or all rasters for a selected variable.
 
 .. image:: images_import/delete_raster.png
    :scale: 80%
@@ -134,7 +134,7 @@ If you are having trouble getting your data to upload correctly, this section in
 
 **CSV Encoding**
 
-If your CSV files are encoded intentionally or accidentally the wizard that gets the attributes will not be able to recognize the attributes. When you open the wizard, it will only show one of the attributes. One way to fix this error is to resave the file with the option highlighted in blue as opposed to the option highlighted in red in the figure below. If this does not work, we recommend copying your data into a new document being sure to save it without the encoding.
+If your CSV files are encoded (intentionally or accidentally), the app's wizard will not recognize your files' attributes. When you open the wizard, only one attribute will display. To fix this error, save a copy of your file with the option highlighted in blue as opposed to the option highlighted in red in the figure below. If the error persists, copy your data into a new document and save without encoding.
 
  .. image:: images_import/csv_encoding.png
      :scale: 80%
@@ -153,4 +153,4 @@ When adding measurements, care should be taken to only upload measurements assoc
 .. image:: images_import/skipped_measurements.PNG
    :scale: 80%
    
-There are two ways to fix this issue depending on what is causing it. In some cases, the measurements are dropped because the well ID refers to a non-existent well. To fix this you can run our file formatter tool located in the supporting scripts section of this webpage. In other cases, the well is assigned to a non-existent aquifer which can be fixed by running our aquifer assignment tool which can also be found on our supporting scripts page.
+There are two ways to fix this issue depending on what is causing it. In some cases, the measurements are dropped because the well ID refers to a non-existent well. To fix this you can run our file formatter tool located in the Data Preparation Scripts section. In other cases, the well is assigned to a non-existent aquifer which can be fixed by running our aquifer assignment tool which can also be found on our Data Preparation scripts page.
