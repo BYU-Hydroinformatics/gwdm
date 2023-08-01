@@ -120,7 +120,7 @@ After the installation is complete, go to http://127.0.0.1:8000/ and make sure t
    
 **OPTIONAL: Set Up Portainer.io**
 ---------------------------------
-Portainer gives a detail status and health check of the docker containers. In the Command Line, type:
+Portainer gives a detailed status and health check of the Docker containers. In the Command Line, type:
 
       .. code-block:: bash
             docker volume create portainer_data
@@ -132,7 +132,7 @@ Go to localhost:9000 to set up the userID and the password. On the next page, se
 
 .. image:: images_install/portainer_setup.png
 
-After the installation, Portainer should show up on Docker. Follow the steps below and make sure all the containers are healthy and running (you may have to start the new tethys containers with the "Start" button).
+After the installation, Portainer should show up on Docker. Follow the steps below and make sure all the containers are healthy and running (you may have to start the new Tethys containers with the "Start" button).
 
 .. image:: images_install/pass_thredds.png
 
@@ -145,7 +145,7 @@ Open the application and add a new server
 
 .. image:: images_install/pgAdmin_server.png
 
-Name it as you desire (e.g. "postgis_thethys_docker"). Click the "Connection" tab and enter the following setting
+Name it as you desire (e.g. "postgis_thethys_docker"). Click the "Connection" tab and enter the following settings:
 
 .. image:: images_install/pgAdmin_setting.png
 .. image:: images_install/pgAdmin_after_setting.png
@@ -171,11 +171,11 @@ Go to the Tethys homepage (http://127.0.0.1:8000/apps/) and click the app icon. 
 
 .. image:: images_install/persistent.png
 
-On the next page, set up the setting to:
+On the next page, set up the settings to:
 
    .. note::
          - Name: Arbitrary Name (e.g. Postgresql)
-         - Engine: Postgresql   
+         - Engine: PostgreSQL   
          - Port: 5435     
          - Username: postgres     
          
@@ -183,11 +183,11 @@ On the next page, set up the setting to:
 
 Now, save the settings.
 
-2. Add a Spatial Dataset Service (for geoserver) and select it in the app settings
+2. Add a Spatial Dataset Service (for GeoServer) and select it in the app settings
 
         .. note::
                - Name: Arbitrary Name (e.g. geoserver)
-               - Engine: Geoserver
+               - Engine: GeoServer
                - Endpoint: http://127.0.0.1:8081/geoserver/
                - Username: admin
                - password: geoserver
@@ -200,14 +200,14 @@ Now, save the settings.
 
    .. note:: 
       - Name: Arbitrary Name (e.g. Thredds)
-      - Engine: Thredds
+      - Engine: THREDDS
       - Endpoint: http://127.0.0.1:8383/thredds/
       - Username: admin
       - password: pass
    
 .. image:: images_install/thredds_app_setting.png
 
-4. Make a directory in your Thredds directory in **thredds/public/testdata** and call it **“groundwater”** .
+4. Make a directory in your Thredds directory in **thredds/public/testdata** and call it **“groundwater”**.
    Add the file path to this new groundwater directory to the thredds file path in the app settings
 
     .. code-block:: bash
@@ -215,16 +215,16 @@ Now, save the settings.
                          tethys syncstores gwdm
 
 
-   Open up Pgadmin4 again to check that the database is initialized.
-   Under databases, **“gwdm_gwdb”** should now show up
-   Within gwdm_gwdb, if you select schemas>public>Tables the different parameters should be visible (aquifer, measurement, well, etc.)
+   Open up PGAdmin4 again to check that the database is initialized.
+   Under Databases, **“gwdm_gwdb”** should now show up.
+   Within gwdm_gwdb, if you select Schemas>public>Tables the different parameters should be visible (aquifer, measurement, well, etc.)
 
 .. image:: images_install/pgadmin.png
    
 
 **Step 6: Edit Thredds Files**
 ------------------------------
-1. Go into thredds directory and open “Catalog.xml” file with an editor (Pycharm, Notepad++, etc.)
+1. Go into the thredds directory and open the “Catalog.xml” file with an editor (Pycharm, Notepad++, etc.)
 
    - Uncomment the wms, wcs, and ncss service tags within the service section
    - In the “datasetScan” tag, change the name attribute from ``Test all files in a directory`` to ``All Datasets``
@@ -254,20 +254,20 @@ If you need help, the screenshot below shows what it should look like.
   
 .. image:: images_install/thredds_edit3.png
                     
-**Step 7: Set Up Geoserver**
+**Step 7: Set Up GeoServer**
 ----------------------------
 
-1. Open Geoserver browser and log in (localhost:8081/geoserver)
+1. Open GeoServer browser and log in (localhost:8081/geoserver)
 
 **Add a new workspace:**
 
-Go to “Workspaces” tab > “Add New Workspace” link
+Go to “Workspaces” tab > “Add New Workspace” link.
 Name it “gwdm” (Namespace can be anything)
 
 **Add a new store:**
 
-Stores tab > “Add New Store” link > “Postgis” link
-Select gwdm workspace from dropdown and set
+Stores tab > “Add New Store” link > “Postgis” link.
+Select gwdm workspace from dropdown and set:
 
 .. note::
    - Name: postgis
@@ -285,7 +285,7 @@ Select gwdm workspace from dropdown and set
 Go to “Layers” tab > “Add a new resource” link > “gwdm:postgis” from dropdown
 
    - Click “Publish” for the region layer
-   - Under the “Bounding Boxes” section, click “Compute from data” and “compute from native bounds”
+   - Under the “Bounding Boxes” section, click “Compute from data” and “Compute from native bounds”
    - Save it
    - Repeat the process for the aquifer and well layers
    
