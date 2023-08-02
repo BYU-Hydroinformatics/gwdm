@@ -86,11 +86,11 @@ As you follow the instructions in the notebook and move from section to section,
    * - Pad Value
      - The pad value determines when to use PCHIP interpolation as opposed to ELM. If the time between measurements is less than the pad value, it will interpolate using the PCHIP method. Otherwise, it will interpolate using ELM. We        recommend a value between 90 to 180 days.
    * - Spacing
-     - Time between two points in the well data interpolation process, a month apart (1MS = 1 Month spacing, at the Start of the month). This is typically 1 month. The algorithm then creates a time series for each well with one            month intervals. The entries are filled with actual measurements and then PCHIP interpolation is used to fill gaps smaller than the pad size. Any remaining gaps are filled using the ELM machine learning process. Once the gaps        are filled, values are extracted at each time interval and spatial interpolation is performed.
+     - Time between two points in the well data interpolation process, a month apart (1MS = 1 Month spacing, at the Start of the month). This is typically 1 month. The algorithm then creates a time series for each well with one-           month intervals. The entries are filled with actual measurements and then PCHIP interpolation is used to fill gaps smaller than the pad size. Any remaining gaps are filled using the ELM machine learning process. Once the gaps        are filled, values are extracted at each time interval and spatial interpolation is performed.
    * - Min water level samples per well
      - The minimum number of measurements a well needs to be included in the temporal and spatial interpolation process. Wells with less than this number are ignored.
 
-The graphic below illustrates the parameters of pad value, gap size, and interpolation start and end dates also referred to as the interpolation range. As you can see in the figure, the interpolation is only completed within the range given. If the time between measurements is smaller than the pad value PCHIP interpolation is used. If it is larger, then ELM is used. However, if the time between measurement is larger than the gap size, then that particular well is dropped during interpollation.
+The graphic below illustrates the parameters of pad value, gap size, and interpolation start and end dates also referred to as the interpolation range. As you can see in the figure, the interpolation is only completed within the range given. If the time between measurements is smaller than the pad value PCHIP interpolation is used. If it is larger, then ELM is used. However, if the time between measurements is larger than the gap size, then that particular well is dropped during interpolation.
 
 .. image:: images_mapping/interp_type_graphic.jpg
    :scale: 65%
@@ -105,7 +105,7 @@ To get started, here are two data sets of files; however, you are welcome to use
         - `Korama test files <https://github.com/BYU-Hydroinformatics/gwdm/blob/ReadtheDocs-Documentation/docs/source/test_files/korama_test_files.zip>`_
 
   
-The Mapping Google Colab has parameters that can be set and changed by the user to obtain desired results. Here is a summary of each parameter with a suggestion. We will use the sample data provided ( Sunflower Test Files)
+The Mapping Google Colab Notebook has parameters that can be set and changed by the user to obtain desired results. Here is a summary of each parameter with a suggestion. We will use the sample data provided ( Sunflower test files)
 
 .. list-table::
    :widths: 20 20
@@ -116,11 +116,11 @@ The Mapping Google Colab has parameters that can be set and changed by the user 
      - 2001
    * - Interpolation End Date
      - 2021
-   * - GAP size
+   * - GAP Size
      - 3650 days
    * - Minimum Water Level Samples per Well
      - 5 samples
-   * - Temporal Interpolation method
+   * - Temporal Interpolation Method
      - P-chip & Extreme Learning Machine
 
 **Uploading and Viewing the Mapping Results**
