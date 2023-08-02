@@ -7,11 +7,11 @@ For this instruction, Mac OS was used.
 
 **Step 1: Install Tethys**
 ----------------------
-Follow the tethys installation steps (`link here <https://docs.tethysplatform.org/en/stable/installation.html>`_) and install the Tethys Platform on your computer. Before doing so, be sure to view the warning listed below.
+Follow the Tethys installation steps (`link here <https://docs.tethysplatform.org/en/stable/installation.html>`_) and install the Tethys Platform on your computer. Before doing so, be sure to view the warning listed below.
 
          .. warning::
-             As of April 1, 2021, the initial step creates an error when conda create -n tethys -c tethysplatform -c conda-forge tethys-platform
-             understand to avoid negative consequences.
+             As of April 1, 2021, the initial step creates an error when executing conda create -n tethys -c tethysplatform -c conda-forge tethys-platform.
+             Understand to avoid negative consequences.
 
               .. code-block:: bash
 
@@ -33,16 +33,16 @@ After the installation is complete, go to http://127.0.0.1:8000/ and make sure t
 ------------------------------------------
 
 .. warning::
-      If the Tethys server is running from the previous step, make sure to quit the serve with CONTROL-C before proceeding to the next step.
-1. Create a directory (folder) in the home directly and name it (e.g. "tethys_dev"). In this directory, GWDM app will be cloned from the following link: https://github.com/BYUHydroinformatics/gwdm
+      If the Tethys server is running from the previous step, make sure to quit the server with CONTROL-C before proceeding to the next step.
+1. Create a directory (folder) in the home directly and name it (e.g. "tethys_dev"). In this directory, the GWDM app will be cloned from the following link: https://github.com/BYUHydroinformatics/gwdm
 2. On the right side of the repository, click on ``Code`` green box and then click on the button to copy the URL
-3. Bring up a terminal windown and go to the directory just created by executing the following command.
+3. Bring up a terminal window and go to the directory just created by executing the following command.
     
          .. code-block:: bash
 
              cd tethys_dev
              
-   ``tethys_dev`` should be modified if the directly is named differently.
+   ``tethys_dev`` should be modified if the directory is named differently.
              
 4. The GDWM app will be cloned here. To clone the app, type the following:
  
@@ -64,19 +64,19 @@ After the installation is complete, go to http://127.0.0.1:8000/ and make sure t
 
             conda activate tethys
             
-   Next, make sure you are at the top level of the new directory you just created (e.g. tethys_dev). There should a new directory/folder called ``gwdm`` and the folder should contain              ``setup.py``.  Go to the ``gwdm`` directly by executing:
+   Next, make sure you are at the top level of the new directory you just created (e.g. tethys_dev). There should be a new directory/folder called ``gwdm`` and the folder should contain              ``setup.py``.  Go to the ``gwdm`` directly by executing:
           
         .. code-block:: bash
 
              cd tethys_dev/gwdm
              
-   Finally, this command is used to install the app on your portal
+   Finally, this command is used to install the app on your portal:
          
              .. code-block:: bash
 
                    tethys install
                    
-   To make sure that the app is installed on your local Tethys Platform, launch the Tethys portal by typing on the Command Line
+   To make sure that the app is installed on your local Tethys Platform, launch the Tethys portal by typing on the Command Line:
       
               .. code-block:: bash
 
@@ -95,7 +95,7 @@ After the installation is complete, go to http://127.0.0.1:8000/ and make sure t
 **Step 3: Set Up Docker Containers**
 ------------------------------------
 1. Create a new directory/folder in your home directory and name it ``Thredds``.
-   Make the Thredds directory public by typin in the Command Line:
+   Make the Thredds directory public by typing in the Command Line:
 
             .. code-block:: bash
 
@@ -107,13 +107,13 @@ After the installation is complete, go to http://127.0.0.1:8000/ and make sure t
 
                                     tethys docker init
                                     
-   This will initiate downloading necessary elements and may take anywhere from a few minutes to hours depending on the internet connection. After the docker initialize, the Command Line will      ask for several settings. For most of the cases, simply accept the defaults by hitting ``Enter``.
+   This will initiate downloading necessary elements and may take anywhere from a few minutes to hours depending on the internet connection. After the Docker initializes, the Command Line will      ask for several settings. For most of the cases, simply accept the defaults by hitting ``Enter``.
    
    .. note::
-         1. For password, put pass to keep them simple. If a different password is selected, that needs to be remembered as this password will be required in leter steps.
+         1. For the password, put pass to keep it simple. If a different password is selected, that needs to be remembered as this password will be required in later steps.
 
          2. For the Thredds container, it will ask “Bind the THREDDS data directory to the host?” To which you will respond “Y” for yes.
-            The next option will ask you to specify the location. Respond with the file path to the Thredds directory that you created earlier
+            The next option will ask you to specify the location. Respond with the file path to the Thredds directory that you created earlier.
     
    
    .. image:: images_install/respond_enter.png
