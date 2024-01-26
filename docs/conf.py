@@ -26,7 +26,7 @@ MOCK_MODULES = [
     'channels',
     'conda', 'conda.cli', 'conda.cli.python_api',
     'condorpy',
-    'django_gravatar',
+    'django', 'django_gravatar',
     'dask', 'dask.delayed', 'dask.distributed',
     'distributed', 'distributed.protocol', 'distributed.protocol.serialize',
     'distro',
