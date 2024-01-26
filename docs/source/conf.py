@@ -1,4 +1,4 @@
-#Configuration file for the Sphinx documentation builder.
+# Configuration file for the Sphinx documentation builder.
 
 # -- Project information
 
@@ -12,6 +12,7 @@ version = '0.1.0'
 # -- General configuration
 
 extensions = [
+    'sphinx_rtd_theme',
     'sphinx.ext.autodoc',
     'sphinx.ext.doctest',
     'sphinx.ext.duration',
@@ -23,8 +24,6 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.extlinks',
 ]
-
-
 
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3/', None),
@@ -41,16 +40,18 @@ html_theme = 'sphinx_rtd_theme'
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
 
-#Include the index in the content page
+# Include the index in the content page
 
 html_sidebars = {
     '**': ['globaltoc.html', 'localtoc.html', 'searchbox.html'],
     '**/index': ['globaltoc.html', 'localtoc.html', 'searchbox.html'],
 }
 
+
 def setup(app):
     app.add_css_file('screen_width.css')
     app.add_css_file('container.css')
     app.add_css_file('table_fixer.css')
-html_static_path = ['_static']
 
+
+html_static_path = ['_static']
