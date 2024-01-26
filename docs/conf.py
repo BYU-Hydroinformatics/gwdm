@@ -14,8 +14,8 @@ import sys
 import os
 from unittest import mock
 
-from django.conf import settings
-import django
+# from django.conf import settings
+# import django
 
 # Mock Dependencies
 # NOTE: No obvious way to automatically anticipate all the sub modules without
@@ -60,22 +60,22 @@ sys.modules.update((mod_name, MockModule()) for mod_name in MOCK_MODULES)
 sys.path.insert(0, os.path.abspath('.'))
 autodoc_mock_imports = ["django", "sqlalchemy", "geoalchemy2"]
 
-installed_apps = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'tethys_config',
-    'tethys_quotas',
-    'tethys_apps',
-    'tethys_gizmos',
-    'tethys_services',
-    'tethys_compute',
-]
-settings.configure(INSTALLED_APPS=installed_apps)
-django.setup()
+# installed_apps = [
+#     'django.contrib.admin',
+#     'django.contrib.auth',
+#     'django.contrib.contenttypes',
+#     'django.contrib.sessions',
+#     'django.contrib.messages',
+#     'django.contrib.staticfiles',
+#     'tethys_config',
+#     'tethys_quotas',
+#     'tethys_apps',
+#     'tethys_gizmos',
+#     'tethys_services',
+#     'tethys_compute',
+# ]
+# settings.configure(INSTALLED_APPS=installed_apps)
+# django.setup()
 # -- Project information -----------------------------------------------------
 
 project = 'Groundwater Data Mapper'
