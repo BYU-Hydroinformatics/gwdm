@@ -93,7 +93,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.extlinks',
     'sphinx.ext.todo',
-    'sphinxcontrib.napoleon'
+    # 'sphinxcontrib.napoleon'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
