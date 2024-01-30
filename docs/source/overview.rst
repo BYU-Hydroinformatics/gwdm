@@ -104,7 +104,8 @@ Here is an image of the results from our previous selection. Notice that the cha
 Here is a rendering;
 
 .. image:: images_overview/individuallyselectedwells.png
-   :scale: 75%
+   :width: 888px
+   :height: 704px
 
 **Displaying Rasters**
 ---------------
