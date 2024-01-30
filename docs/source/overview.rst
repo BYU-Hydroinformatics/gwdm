@@ -88,8 +88,8 @@ It may be helpful to compare wells within the same aquifer that may not necessar
 Once the polygon created is closed, a message box will appear giving you an option to view the time series. When you click on the view time series, a Multi Wells Chart will appear on your screen comparing the time series of the selected wells. If you click cancel, you can still visualize your selected wells by clicking on Graph Option 2 whose icon looks like a bar graph.
 
 .. image:: images_overview/popmessageselectedwells.png
-   :width: 857px
-   :height: 460px
+   :width: 812px
+   :height: 603px
 
 Here is an image of the results from our previous selection. Notice that the chart only shows available data and skips any missing data.
 
