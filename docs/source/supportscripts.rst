@@ -14,7 +14,7 @@ There is a tool for retrieving elevations at wells that are missing ground surfa
 
 An example set of files has been provided; however, you are welcome to use your own files if you would prefer.
  
-`Download API Test Files <https://github.com/BYU-Hydroinformatics/gwdm/blob/ReadtheDocs-Documentation/docs/source/test_files/SupportScriptFileSet.zip>`_
+:download:`SupportScriptFileSet.zip </test_files/SupportScriptFileSet.zip>`
 
 .. button-link:: https://github.com/BYU-Hydroinformatics/gwdm/blob/ReadtheDocs-Documentation/docs/source/test_files/SupportScriptFileSet.zip
     :color: secondary
