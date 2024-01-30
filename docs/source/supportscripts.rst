@@ -16,13 +16,6 @@ An example set of files has been provided; however, you are welcome to use your 
  
 :download:`SupportScriptFileSet.zip </test_files/SupportScriptFileSet.zip>`
 
-.. button-link:: https://github.com/BYU-Hydroinformatics/gwdm/blob/ReadtheDocs-Documentation/docs/source/test_files/SupportScriptFileSet.zip
-    :color: secondary
-    :expand:
-
-
-.. line-block::
-
 **Elevation Generator** 
 -------------------------- 
 This tool can be used to retrieve elevations for wells that are missing ground surface elevations. These ground surface elevations are used for calculating Water Table Elevation (WTE) and are included as well metadata in the app. It samples a global, 30-meter DEM for each well location, providing a reasonable estimate for each missing GSE. Please note that its accuracy is limited and that field-measured GSE measurements are preferable. A file with well locations (lat/long coordinates) is required as input and a file with GSEs generated for each well will be output.
