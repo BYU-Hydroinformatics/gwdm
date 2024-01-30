@@ -7,7 +7,8 @@
 **Introduction**
 ----------------
 To demonstrate the data import process, an example set of data has been provided. Download and unzip the attached files or organize your own files to follow along.
-`Download API Test Files <https://github.com/BYU-Hydroinformatics/gwdm/blob/ReadtheDocs-Documentation/docs/source/test_files/SupportScriptFileSet.zip>`_
+
+:download:`SupportScriptFileSet.zip </test_files/SupportScriptFileSet.zip>`
 
 **Add Region**
 ---------------
