@@ -3,11 +3,11 @@
 # -- Project information
 
 project = 'Ground Water Data Mapping'
-copyright = '2021, Dr. Norm L. Jones'
-author = 'Dr. Norm Jones and Research Assistants'
+copyright = '2024, Norman L. Jones'
+author = 'Norm Jones and Sarva Pulla'
 
-release = '0.1'
-version = '0.1.0'
+release = '2.0'
+version = '2.0.0'
 
 # -- General configuration
 
