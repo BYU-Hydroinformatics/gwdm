@@ -2,7 +2,7 @@
 
 # -- Project information
 
-project = 'Ground Water Data Mapping'
+project = 'Ground Water Data Mapper'
 copyright = '2024, Norman L. Jones'
 author = 'Norm Jones and Sarva Pulla'
 
