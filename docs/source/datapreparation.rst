@@ -1,7 +1,7 @@
 .. raw:: html
    :file: translate.html
 
-**Data Preparation (API)**
+**Data Preparation**
 =========================
 
 **Introduction**
