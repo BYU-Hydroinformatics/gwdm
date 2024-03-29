@@ -13,7 +13,7 @@ To launch the mapping tool, please click on this button. The notebook will open 
 
 .. raw:: html
 
-    <a href="https://colab.research.google.com/github/BYU-Hydroinformatics/gwdm-notebooks/blob/main/GWDM_AquiferMapping.ipynb" target="_blank">
+    <a href="https://colab.research.google.com/github/BYU-Hydroinformatics/gwdm-notebooks/blob/main/gwdm_aquifermapping.ipynb" target="_blank">
         <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
     </a>
 
