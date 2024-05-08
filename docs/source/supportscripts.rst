@@ -23,7 +23,7 @@ To use this tool, you will need to register your Google account with Google Eart
 
 .. raw:: html
 
-     <a href="https://colab.research.google.com/gist/mdstev1/72f338dbb9f4fbaeb875bd8f6b20cb7b/elevation_generator_using_google_ee.ipynb" target="_blank">
+     <a href="https://colab.research.google.com/github/BYU-Hydroinformatics/gwdm-notebooks/blob/main/elevation_generator_using_google_ee.ipynb" target="_blank">
      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
      </a>
 
@@ -36,7 +36,7 @@ To practice using this script, download and open the attached set of files and l
             
 .. raw:: html
 
-   <a href="https://colab.research.google.com/gist/mdstev1/3670653eafe6cbb1424c17846273b2b5/aquifer-assignment-tool.ipynb" target="_blank">
+   <a href="https://colab.research.google.com/github/BYU-Hydroinformatics/gwdm-notebooks/blob/main/aquifer_assignment_tool.ipynb" target="_blank">
    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
    </a>
 
@@ -54,7 +54,7 @@ To practice using this script, download and open the attached set of files and l
 
 .. raw:: html
 
-        <a href="https://colab.research.google.com/gist/mdstev1/ed7fa793b3e09501ddba9b90df015e74/file_formatter.ipynb" target="_blank">
+        <a href="https://colab.research.google.com/github/BYU-Hydroinformatics/gwdm-notebooks/blob/main/file_formatter.ipynb" target="_blank">
         <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
          </a>
 
@@ -72,7 +72,7 @@ To practice using this tool, download and open the attached set of files and loc
 
 .. raw:: html
 
-        <a href="https://colab.research.google.com/gist/mdstev1/8086be08d3c7c753dad2ada31aafb85f/nwis-file-retriever.ipynb" target="_blank">
+        <a href="https://colab.research.google.com/github/BYU-Hydroinformatics/gwdm-notebooks/blob/main/nwis_file_retriever.ipynb" target="_blank">
         <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
         </a>
 
