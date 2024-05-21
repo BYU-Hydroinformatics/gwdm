@@ -38,7 +38,7 @@ Region and aquifers files have to be one of the following data types:
 In the examples used on this page, the state of Utah (USA) was used as a region boundary in a shapefile and Utah's major aquifers were prepared in a .geojson file.
 When exporting shapefiles from a utility such as Esri ArcGIS or QGIS, the shapefile should be exported as a 2D object, not a 3D object (no Z coordinate). This is because the PostGIS database used to store the objects in the GWDM only supports 2D shapes. Shapefiles with Z coordinates will result in an error message when importing to ArcGIS. In our experience, shapefiles and GeoJSON objects exported from QGIS are more likely to import correctly than shapes exported from ArcGIS.
 
-**Region (State Boundary)**:
+**Region (State Boundary)**
 ---------------------
 For this example, QGIS was used to export the region boundary (the state of Utah) as a shapefile. You can often find regional shapefiles on the internet. Regardless of where you get your shapefile, the exported files should consist of multiple files as seen below.
 
@@ -48,7 +48,7 @@ For this example, QGIS was used to export the region boundary (the state of Utah
 
 Also, make sure the shapefile does NOT include Z coordinates as this will generate an error when you attempt to import the file. The PostGIS database used by the GWDM to store the region and aquifer boundaries only supports two-dimensional shapes.
 
-**Aquifer**:
+**Aquifer**
 ------------
 The aquifers in your region will also need to be organized in either a geojson file or a shapefile. The attribute table for the aquifer file has two fields (columns) that are required to upload the file to the app: an aquifer name representing the unique name of the aquifer and an **aquifer ID**, a unique integer ID.
 
