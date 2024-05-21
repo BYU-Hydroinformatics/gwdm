@@ -2,10 +2,10 @@
    :file: translate.html
 
 **Data Preparation**
-=========================
+====================
 
 **Introduction**
----------------
+----------------
 
 Before importing data into the GWDM app, the following data content needs to be collected and prepared\:\
 
@@ -23,7 +23,7 @@ A region is typically a state, country, or water management agency boundary and 
 This page will walk you through how to prepare the appropriate files needed to import data into the app and provide links to complementary tools designed to aid in this data preparation process.
 
 **Regions & Aquifers**
----------------------
+----------------------
 The first step of organizing groundwater data in the GWDM app is uploading region and aquifer files where the wells are located. In the app, region is the first "filter" that users see on the landing page. Data are then organized by aquifer in the next page.
 
 .. image:: images_dataprep/GWDM_Region1.png
@@ -39,7 +39,7 @@ In the examples used on this page, the state of Utah (USA) was used as a region 
 When exporting shapefiles from a utility such as Esri ArcGIS or QGIS, the shapefile should be exported as a 2D object, not a 3D object (no Z coordinate). This is because the PostGIS database used to store the objects in the GWDM only supports 2D shapes. Shapefiles with Z coordinates will result in an error message when importing to ArcGIS. In our experience, shapefiles and GeoJSON objects exported from QGIS are more likely to import correctly than shapes exported from ArcGIS.
 
 **Region (State Boundary)**
----------------------
+----------------------------
 For this example, QGIS was used to export the region boundary (the state of Utah) as a shapefile. You can often find regional shapefiles on the internet. Regardless of where you get your shapefile, the exported files should consist of multiple files as seen below.
 
 .. image:: images_dataprep/utah_shapefiles.png
@@ -49,7 +49,7 @@ For this example, QGIS was used to export the region boundary (the state of Utah
 Also, make sure the shapefile does NOT include Z coordinates as this will generate an error when you attempt to import the file. The PostGIS database used by the GWDM to store the region and aquifer boundaries only supports two-dimensional shapes.
 
 **Aquifer**
-------------
+-----------
 The aquifers in your region will also need to be organized in either a geojson file or a shapefile. The attribute table for the aquifer file has two fields (columns) that are required to upload the file to the app: an aquifer name representing the unique name of the aquifer and an **aquifer ID**, a unique integer ID.
 
 +---------------+-----------+-------------------------------------------------------------+
@@ -66,7 +66,7 @@ The aquifers in your region will also need to be organized in either a geojson f
 
 
 **Well Locations File**
-------------------------
+-----------------------
 Well locations are organized in CSV files where each row represents a well location and the columns represent well attributes. These typically can be exported from Excel or from a well database.
 
 Wells are organized by aquifers in the app. There are two ways to prepare well locations files.
@@ -105,7 +105,7 @@ This is a sample well locations file:
 .. image:: images_dataprep/well_locations.png
 
 **Measurements File**
---------------------
+---------------------
 A measurement file is a CSV file containing the groundwater data measurements. Each measurement has a date, a data value, and a well ID that relates the measurements to the corresponding well. An aquifer ID column is optional depending on how the measurement file is prepared. Like a well locations file, there are two ways to prepare a measurement file.
 
         1. Create a single CSV file with all wells and groundwater measurements and assign each measurement/well an aquifer ID corresponding to the aquifer it is located in. This allows having the same well IDs from different aquifers in a single file (i.e. There can be wells with the same well IDs if they are located in different aquifers).
@@ -153,7 +153,7 @@ Collecting, filtering, and formatting well and measurement data can be a complic
      * You can assign aquifer names and IDs to wells, calculate water table elevations from depth to water table measurements, and clean up your data with other formatting options using the **Data Formatting Tool**.
      
 **Summary**
-----------
+------------
 In summary, the app organizes aquifers, wells, and measurements in the relationship presented below under a region. Note how the various feature IDs are used to create relationships between regions, aquifers, wells, and measurements.
 
 
