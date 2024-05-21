@@ -2,7 +2,7 @@
    :file: translate.html
    
 **Importing Data**
-===================
+==================
  
 **Introduction**
 ----------------
@@ -11,7 +11,7 @@ To demonstrate the data import process, an example set of data has been provided
 :download:`SupportScriptFileSet.zip </test_files/SupportScriptFileSet.zip>`
 
 **Add Region**
----------------
+--------------
 First, we must add a region. To do this, navigate to the main landing page (if you are not logged in with admin privileges, you will need to first obtain these credentials). Select the region tab on the left, then click on the **Add Region** link on the dropdown.
 
 .. image:: images_import/add_region.png
@@ -26,7 +26,7 @@ To ensure that your region was loaded properly, you can go to the **Edit Region*
    :scale: 75%
 
 **Add Aquifer**
------------------
+---------------
 Next, we will add the aquifers. To do this, we will follow a similar process to that of adding a region. First, we select the region where the aquifers are located. The dropdown list will display all previously uploaded regions.
 
 .. image:: images_import/add_aquifer_main.png
@@ -41,7 +41,7 @@ Once the file is added, we click **Get Attributes** to define the aquifer name a
    :scale: 85%
 
 **Add Wells**
---------------
+-------------
 Next, we will add the wells using the **Add Wells** command in the Wells section. These wells have already been assigned to their respective aquifers, so we can add them all at once. If you would like to add wells to a single aquifer at a time, pre-assigning aquifer IDs is unnecessary.
 
 To add a list of wells, we select the region of interest. Since we have pre-assigned aquifer IDs, we will not select a single aquifer from the list; rather, we will leave the field blank. This time, we will use a csv file (although shapefiles can also be used). We again use the **Get Attributes** button to retrieve the column headers from the file. The **Wells Wizard** will automatically open up, wherein we can select the columns for latitude, longitude, aquifer ID (not necessary if a single aquifer was selected previously), well name, well ID, and ground surface elevation (GSE). For this example file, the appropriate headers are lat_dec, long_dec, AquiferID, Well_Name, Well_ID, and GSE, respectively. Finally, we click the **Add Wells** button to add the wells to the app.
@@ -108,7 +108,7 @@ When adding measurements, care should be taken to only upload measurements assoc
    :scale: 80%
 
 **Rasters**
-----------
+-----------
 One of the main functions of the GWDM app is to use temporal and spatial interpolation to create time-varying rasters of groundwater data (water level, depth to groundwater, etc). This process is described in the Groundwater Level Mapping section. Interpolated rasters can be animated in the main map window using the Leaflet animation plug-in used by the GWDM.
 
 In some cases, users may elect to use external interpolation algorithms to generate rasters for their aquifers. The Rasters section in the admin control panel can be used to upload and manage these externally generated rasters. Once uploaded, they can be animated and visualized in the GWDM map window.
@@ -130,7 +130,7 @@ The **Delete Rasters** command is used to delete previously uploaded rasters. Th
 
 
 **Trouble Shooting**
-------------------
+--------------------
 If you are having trouble getting your data to upload correctly, this section includes several common problems and how to fix them.
 
 **CSV Encoding**

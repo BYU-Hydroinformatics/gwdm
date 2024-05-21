@@ -3,8 +3,7 @@
    
 **Groundwater Level Mapping**
 =============================
-**Introduction**
--------------------
+
 In addition to visualizing well and measurement data, the GWDM app and associated tools can generate and display rasters of time varying water levels and time series of aquifer storage change. These groundwater maps are in the form of netCDF rasters at selected intervals (yearly for example) over a selected time range. They are generated using a multi-step process that involves imputing gaps in water level time series at wells using Earth observations and machine learning, spatial interpolation of water levels using kriging, and volumetric analysis of the raster results. While the app supports any kind of groundwater data measurements, the mapping tool is designed for water level data. When using the mapping tool, the user selects a start date and an end date and a time interval for the interpolation process. For example, one could choose start = 1980, end = 2010, step = 5 years and the algorithm would generate a raster for 1980, 1985, 1990, ... 2005, 2010. The rasters are compiled into a netCDF file that can then be uploaded and animated in the map interface. Also, the mapping algorithm calculates the volume between each pair of rasters and multiplies the volume by a user-specified storage coefficient to compute a chart of groundwater storage change vs time. This chart can be especially useful in determining if an aquifer is being used in a sustainable fashion as it can demonstrate groundwater depletion.
 
 In previous versions of the GWDM app, this was accomplished using the Interpolation Wizard that was found in the admin control panel. In order to give the user the ability to monitor each step of the process, we have moved the mapping tool to a standalone Google Colab notebook (link below).
@@ -18,11 +17,11 @@ To launch the mapping tool, please click on this button. The notebook will open 
     </a>
 
 **Overview of Algorithm**
---------------------------
+-------------------------
 The final aquifer map will include a Water Table Elevation estimate for every point in your aquifer at any time step. Since it is impractical and near impossible to collect all that data, interpolation methods can be applied to fill in for data we do not have. Our interpolation algorithm can be split into two major steps. First, the temporal interpolation of individual well time series. Second, the spatial interpolation between those wells. Each of these is explained in greater detail below.
 
 **Temporal Interpolation**
----------------------------
+--------------------------
 While some wells have a relatively complete dataset over the period of interest, it is very common to have large gaps in the data record. The goal of temporal interpolation is to create a complete time series for each well that can be easily compared to other wells. The final output of this step will be a timeseries with measurements every month during the entire period of interest. Some measurements are close enough together that it is easy to predict the value at the beginning of the month. This can be done using simple PCHIP interpolation. Some measurements are more difficult to predict. We estimate these values using machine learning.
 
 **Simple PCHIP Interpolation**
@@ -42,14 +41,14 @@ The machine learning algorithms use these correlations to predict missing water 
 .. image:: images_mapping/imputation_results.png
 
 **Spatial Interpolation**
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 Once the time series are complete, the time series curves for each well are sampled at the selected dates and spatial interpolation is performed to build the rasters. The algorithm applies GSLIB(Geostatistical Software Library) Kriging code to generate rasters with the user specified time steps. For the Kriging algorithm, we autofit a variogram to the data in the aquifer based on the size of the aquifer.
 
 To learn more about these methods, see the papers published in `Remote Sensing <https://www.mdpi.com/2072-4292/12/12/2044>`_ and `Environmental Modelling & Software journals <https://www.sciencedirect.com/science/article/pii/S1364815220301997?via%3Dihub>`_. 
 
 
 **Water Level Mapping Google Colab Notebook**
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 To run the water level mapping algorithm, you will first need to prepare your data. The algorithm requires three inputs as described in the following table. These are the same files (same content and format) that you would use to upload your original data to the GWDM mapper to visualize your wells and water level measurements. The only difference is that the aquifer file should only contain a single aquifer, while you could upload multiple aquifers at once to the GWDM app.
 
 +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -96,7 +95,7 @@ The graphic below illustrates the parameters of pad value, gap size, and interpo
    :scale: 65%
    
 **Sample Data and Parameters**
------------------------------
+------------------------------
 To get started, here are two data sets of files; however, you are welcome to use your own files if you would prefer.
 
 :download:`sunflower_test_files.zip </test_files/sunflower_test_files.zip>`
@@ -122,7 +121,7 @@ The Mapping Google Colab Notebook has parameters that can be set and changed by 
      - P-chip & Extreme Learning Machine
 
 **Uploading and Viewing the Mapping Results**
-------------
+---------------------------------------------
 When the algorithm completes the calculations in the Colab notebook, it will generate a netCDF file containing the time varying rasters and the groundwater storage change time series. You can download that file from your Google Drive and then upload it to the GWDM app using the tools in the Rasters section of the admin control panel. This process is described in the Rasters section near the bottom of the Importing Data page.
 
 .. image:: images_import/upload_raster.png
@@ -133,13 +132,13 @@ To view your uploaded rasters, return to the region's map by navigating to the h
 .. figure:: images_mapping/interp_CedarValley.gif
    :scale: 65%
    
-   **Cedar Valley, Utah Interpollation Results**
+   **Cedar Valley, Utah Interpolation Results**
    
    
 .. figure:: images_mapping/interp_niger_goulbi.gif
    :scale: 65%
    
-   **Goulbi Maradi, Niger Interpollation Results**
+   **Goulbi Maradi, Niger Interpolation Results**
   
    
 To view the storage change vs time curve, click on the **View Drawdown Volume** button. The storage change curve will then appear in a new window.

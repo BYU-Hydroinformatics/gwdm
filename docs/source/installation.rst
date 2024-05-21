@@ -2,11 +2,11 @@
    :file: translate.html
    
 **Installing the GWDM Application**
-=====================================
+===================================
 For this instruction, Mac OS was used.
 
 **Step 1: Install Tethys**
-----------------------
+--------------------------
 Follow the Tethys installation steps (`link here <https://docs.tethysplatform.org/en/stable/installation.html>`_) and install the Tethys Platform on your computer. Before doing so, be sure to view the warning listed below.
 
          .. warning::
@@ -30,7 +30,7 @@ After the installation is complete, go to http://127.0.0.1:8000/ and make sure t
    :scale: 65%
                   
 **Step 2: Clone/Copy the GWDM Appliclation**
-------------------------------------------
+--------------------------------------------
 
 .. warning::
       If the Tethys server is running from the previous step, make sure to quit the server with CONTROL-C before proceeding to the next step.
@@ -138,7 +138,7 @@ After the installation, Portainer should show up on Docker. Follow the steps bel
 
 
 **Step 4: Download PGAdmin 4 for Database Management**
------------------------------------------------------
+------------------------------------------------------
 Download PGAdmin (https://www.pgadmin.org/). Download the macOS version (or whatever operating system you are using).
 
 Open the application and add a new server

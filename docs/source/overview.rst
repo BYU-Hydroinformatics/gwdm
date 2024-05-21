@@ -2,7 +2,7 @@
    :file: translate.html
    
 **Overview**
-=================
+============
 Water managers in Western Africa and around the world face the daunting task of managing freshwater resources in the face of increased demand from industry, agriculture, climate change, and population growth. As surface water resources become fully allocated, groundwater is increasingly targeted to make up surface water deficits, particularly during periods of drought. As a result, many of our aquifers are not being managed in a sustainable fashion, resulting in reduced water quality, land subsidence, increased pumping costs, and in some cases, the complete exhaustion of an aquifer and the loss of groundwater as a buffer during times of drought.
 
 **Mapping Algorithm**
@@ -17,7 +17,7 @@ These interpolated water table maps can be used to evaluate the sustainability o
 
 
 **Tethys Application**
------------------------
+----------------------
 We have incorporated our groundwater level mapping algorithms in a simple, easy-to-use web application created using the Tethys Platform, developed in our hydroinformatics laboratory. In addition to the water level mapping, the system provides a powerful online database of historical groundwater data where users can zoom in to areas of interest, select wells, and view the historical water level record and meta-data about each well.
 
 .. image:: images_overview/niger_screenshot.png
@@ -49,7 +49,7 @@ Select a region and then click on the **View Region** button. In the GWDM tool, 
 The observations are typically water levels that can be represented either as depth to the water table or water table elevations, but any variable is supported and could include water quality data. The regions, aquifers, wells, and measurements are imported through an admin interface that is described in more detail in the subpages associated with the GWDM on this website.
 
 **Controls**
--------------
+------------
 On the left side of the map, you will see a set of controls:
 
 .. image:: images_overview/newcontrols.png
@@ -108,7 +108,7 @@ Here is a rendering;
    :height: 704px
 
 **Displaying Rasters**
----------------
+----------------------
 Once you have created an interpolation layer and selected that layer from the control panel on the right, a new set of controls will appear. The figure below points out each of those controls and the following paragraph explains each of them.
 
 .. image:: images_overview/rasterdisplaycontrolsV1.png
@@ -131,7 +131,7 @@ Once you have created an interpolation layer and selected that layer from the co
    :height: 420px
 
 **Admin Control Panel**
--------------
+-----------------------
 There is also an admin control panel that is used to import and manage the data used by the app and to perform interpolations:
 
 .. image:: images_overview/admincp.png
@@ -139,7 +139,7 @@ There is also an admin control panel that is used to import and manage the data 
    :height: 529px
 
 **Documentation and Tutorials**
---------------
+-------------------------------
 The table of contents can be used to explore a set of documentation and tutorials associated with the GWDM. The sections are as follows:
 
 *Data Preparation*. This section describes how the data are organized in the GWDM and how to format your data before importing the data into the app.

@@ -39,7 +39,7 @@ In the examples used on this page, the state of Utah (USA) was used as a region 
 When exporting shapefiles from a utility such as Esri ArcGIS or QGIS, the shapefile should be exported as a 2D object, not a 3D object (no Z coordinate). This is because the PostGIS database used to store the objects in the GWDM only supports 2D shapes. Shapefiles with Z coordinates will result in an error message when importing to ArcGIS. In our experience, shapefiles and GeoJSON objects exported from QGIS are more likely to import correctly than shapes exported from ArcGIS.
 
 **Region (State Boundary)**
-----------------------------
+---------------------------
 For this example, QGIS was used to export the region boundary (the state of Utah) as a shapefile. You can often find regional shapefiles on the internet. Regardless of where you get your shapefile, the exported files should consist of multiple files as seen below.
 
 .. image:: images_dataprep/utah_shapefiles.png

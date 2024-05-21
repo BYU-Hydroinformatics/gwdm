@@ -4,8 +4,6 @@
 **Data Preparation Scripts**
 ============================
 
-**Introduction**
-------------------
 These scripts can aid in the data preparation process required prior to using the GWDM tool. They have all been created in a cloud-based environment called Google Colaboratory, or Colab for short. Colab is built on Jupyter Notebook, which allows users to write, execute, and visualize Python code quickly and easily.
 
 These notebooks have been shared as GitHub Gists. A gist allows the notebook to be opened, run, and modified by an individual user without affecting the experience of another user.
@@ -17,7 +15,7 @@ An example set of files has been provided; however, you are welcome to use your 
 :download:`SupportScriptFileSet.zip </test_files/SupportScriptFileSet.zip>`
 
 **Elevation Generator** 
--------------------------- 
+-----------------------
 This tool can be used to retrieve elevations for wells that are missing ground surface elevations. These ground surface elevations are used for calculating Water Table Elevation (WTE) and are included as well metadata in the app. It samples a global, 30-meter DEM for each well location, providing a reasonable estimate for each missing GSE. Please note that its accuracy is limited and that field-measured GSE measurements are preferable. A file with well locations (lat/long coordinates) is required as input and a file with GSEs generated for each well will be output.
 To use this tool, you will need to register your Google account with Google Earth Engine to be able to utilize this service. You can do this at: https://signup.earthengine.google.com/#!/    To practice using this script, download and open the attached set of files (top of the page) and locate the ut_2015-2020_wells csv file.
 
@@ -28,9 +26,8 @@ To use this tool, you will need to register your Google account with Google Eart
      </a>
 
 
-
 **Aquifer Assignment Tool**
---------------------------   
+---------------------------
 This tool can be used for assigning an aquifer name and ID to each well. This requires an aquifers file with aquifer IDs and names assigned to each polygon and a wells file with lat/long locations for each well. Aquifers             can also be assigned to a separate time series file with well IDs that correspond to the well IDs in the wells file.
 To practice using this script, download and open the attached set of files and locate the UtahMajorAquifers json file and the Utah wells and TS (time series) csv files.
             
