@@ -91,8 +91,8 @@ As you follow the instructions in the notebook and move from section to section,
 
 The graphic below illustrates the parameters of pad value, gap size, and interpolation start and end dates also referred to as the interpolation range. As you can see in the figure, the interpolation is only completed within the range given. If the time between measurements is smaller than the pad value PCHIP interpolation is used. If it is larger, then ELM is used. However, if the time between measurements is larger than the gap size, then that particular well is dropped during interpolation.
 
-.. image:: images_mapping/interp_type_graphic.jpg
-   :scale: 65%
+.. image:: gap_pad_figure.png
+   :scale: 100%
    
 **Sample Data and Parameters**
 ------------------------------
