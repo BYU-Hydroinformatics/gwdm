@@ -1,10 +1,10 @@
 {% extends "gwdm/base.html" %}
 {% load tethys_gizmos %}
-{% load staticfiles %}
+{% load static %}
 
 {% block app_content %}
 <h3>Add Wells</h3>
-<div id="message" class="alert alert-danger hidden" role="alert"></div>
+<div id="message" class="alert alert-danger d-none" role="alert"></div>
 
 {% gizmo region_select %}
 <p class="help-block">Don't see the Region you want? Add one <a href="{% url 'gwdm:add-region' %}">here</a>.</p>
@@ -19,7 +19,7 @@
 </div>
 {% gizmo attributes_button %}
 
-<div type="button" data-toggle="modal" class="btn btn-primary" data-target="#wells-modal">
+<div type="button" data-bs-toggle="modal" class="btn btn-primary" data-bs-target="#wells-modal">
     Wells Wizard
 </div>
 
@@ -31,53 +31,53 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h5 class="modal-title" id="update-modal-label">Wells Wizard</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body" >
-                <div class="attributes hidden">
+                <div class="attributes d-none">
                     <label for="lat_attributes">
                         Select Lat Column
                     </label>
                     <select  class="lat_attributes" name="lat_attributes" id="lat_attributes" style="width: 100%">
                     </select>
                 </div>
-                <div class="attributes hidden">
+                <div class="attributes d-none">
                     <label for="lon_attributes">
                         Select Lon Column
                     </label>
                     <select  class="lon_attributes" name="lon_attributes" id="lon_attributes" style="width: 100%">
                     </select>
                 </div>
-                <div class="attributes hidden">
+                <div class="attributes d-none">
                     <label for="aquifer_attributes">
                         Select Aquifer Id Column
                     </label>
                     <select  class="aquifer_attributes" name="aquifer_attributes" id="aquifer_attributes" style="width: 100%">
                     </select>
                 </div>
-                <div class="attributes hidden">
+                <div class="attributes d-none">
                     <label for="name_attributes">
                         Select Well Name Column
                     </label>
                     <select  class="name_attributes" name="name_attributes" id="name_attributes" style="width: 100%">
                     </select>
                 </div>
-                <div class="attributes hidden">
+                <div class="attributes d-none">
                     <label for="id_attributes">
                         Select Well Id Column
                     </label>
                     <select  class="id_attributes" name="id_attributes" id="id_attributes" style="width: 100%">
                     </select>
                 </div>
-                <div class="attributes hidden">
+                <div class="attributes d-none">
                     <label for="gse_attributes">
                         Select Ground Surface Elevation Column
                     </label>
                     <select  class="gse_attributes" name="gse_attributes" id="gse_attributes" style="width: 100%">
                     </select>
                 </div>
-                <div class="attributes hidden">
+                <div class="attributes d-none">
                     <label for="meta_attributes">
                         Select Extra Attributes
                     </label>
@@ -87,8 +87,8 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-success submit-add-wells" data-dismiss="modal">Add Wells</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-success submit-add-wells" data-bs-dismiss="modal">Add Wells</button>
             </div>
         </div>
     </div>

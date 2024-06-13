@@ -80,15 +80,15 @@ var LIBRARY_OBJECT = (function() {
     });
 
     var viewIcon = function(cell, formatterParams){ //plain text value
-        return "<span class='glyphicon glyphicon-sunglasses view-region-tabulator'></span>";
+        return "<i class='bi bi-sunglasses view-region-tabulator'></i>";
     };
 
     var deleteIcon = function(cell, formatterParams){ //plain text value
-        return "<span class='glyphicon glyphicon-remove'></span>";
+        return "<i class='bi bi-x-lg'></i>";
     };
 
     var updateIcon = function(cell, formatterParams){ //plain text value
-        return "<span class='glyphicon glyphicon-floppy-disk'></span>";
+        return "<i class='bi bi-device-hdd'></i>";
     };
 
     delete_region = function(e, cell){
@@ -151,9 +151,9 @@ var LIBRARY_OBJECT = (function() {
         //scroll back to top
         window.scrollTo(0,0);
         // clear messages
-        $('#message').addClass('hidden');
+        $('#message').addClass('d-none');
         $('#message').empty()
-            .addClass('hidden')
+            .addClass('d-none')
             .removeClass('alert-success')
             .removeClass('alert-info')
             .removeClass('alert-warning')

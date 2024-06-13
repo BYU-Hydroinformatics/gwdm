@@ -50,10 +50,10 @@ var LIBRARY_OBJECT = (function() {
     };
 
     init_dropdown = function () {
-        $(".lat_attributes").select2();
-        $(".lon_attributes").select2();
-        $(".time_attributes").select2();
-        $(".display_attributes").select2();
+        $(".lat_attributes").select2({dropdownParent: $rasterModal});
+        $(".lon_attributes").select2({dropdownParent: $rasterModal});
+        $(".time_attributes").select2({dropdownParent: $rasterModal});
+        $(".display_attributes").select2({dropdownParent: $rasterModal});
     };
 
     reset_dropdown = function(){
@@ -89,7 +89,7 @@ var LIBRARY_OBJECT = (function() {
         xhr.done(function(return_data){ //Reset the form once the data is added successfully
             if("success" in return_data){
                 submit_button.html(submit_button_html);
-                $(".attributes").removeClass('hidden');
+                $(".attributes").removeClass('d-none');
                 reset_dropdown();
                 var attributes = return_data["attributes"];
                 if("error" in attributes){
@@ -115,7 +115,7 @@ var LIBRARY_OBJECT = (function() {
                         var display_option = new Option(attr, attr);
                         $("#display_attributes").append(display_option);
                     });
-                    $(".add").removeClass('hidden');
+                    $(".add").removeClass('d-none');
                     addSuccessMessage('Got Attributes Successfully!');
                 }
             }else{

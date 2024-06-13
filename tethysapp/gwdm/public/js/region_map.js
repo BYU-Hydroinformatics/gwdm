@@ -239,7 +239,7 @@ var LIBRARY_OBJECT = (function() {
                 $tsToggle = true;
                 map.closePopup();
                 map.addControl(drawControl);
-                $(".selected_wells").removeClass("hidden");
+                $(".selected_wells").removeClass("d-none");
                 // map.editTools.startPolygon();
                 // map.on('editable:drawing:end', (e) => {
                 //     console.log(e);
@@ -248,7 +248,7 @@ var LIBRARY_OBJECT = (function() {
                 $tsToggle = false
                 drawGroup.clearLayers();
                 drawControl.remove();
-                $(".selected_wells").addClass("hidden");
+                $(".selected_wells").addClass("d-none");
                 $("#variable-select").trigger("change");
             }
         });
@@ -271,16 +271,16 @@ var LIBRARY_OBJECT = (function() {
                 if (featuresJson.features.length > 0) {
                     $modalWarning.modal("show");
                     addWarningMessage("Number of Wells selected are " + featuresJson.features.length + ". Are you sure you want to proceed?")
-                    $getMultWellsBtn.removeClass("hidden");
+                    $getMultWellsBtn.removeClass("d-none");
                 } else {
                     addErrorMessage("Unknown error. Please try again.");
-                    $getMultWellsBtn.addClass("hidden");
+                    $getMultWellsBtn.addClass("d-none");
                 }
             } else {
                 $modalWarning.modal("show");
                 // $(".warning").innerHTML("No Wells within the geometry. Please Try again.");
                 addErrorMessage("No Wells were selected. Please try again.");
-                $getMultWellsBtn.addClass("hidden");
+                $getMultWellsBtn.addClass("d-none");
             }
         }
 
@@ -329,7 +329,7 @@ var LIBRARY_OBJECT = (function() {
         L.easyButton({
             states: [{
                 stateName: 'region-home',
-                icon: 'glyphicon-refresh',
+                icon: 'bi bi-house',
                 title: 'Region Home',
                 onClick: function() {
                     // view_region(region, get_region_aquifers);
@@ -341,7 +341,7 @@ var LIBRARY_OBJECT = (function() {
         L.easyButton({
             states: [{
                 stateName: 'multi-chart',
-                icon: 'glyphicon-signal',
+                icon: 'bi bi-graph-up',
                 title: 'Multi Wells Chart',
                 onClick: function() {
                     $("#multi-chart-modal").modal("show");
@@ -371,12 +371,12 @@ var LIBRARY_OBJECT = (function() {
             var div = L.DomUtil.create('div', 'symbology_input lcontrol hidden');
             div.innerHTML = '<select  id="select_symbology">'+
                 '<option value="" selected disabled>Select Symboloy</option>' +
-                '<option value="grace">GRACE</option>' +
-                '<option value="bluered">Red-Blue</option>' +
-                '<option value="greyscale">Grey Scale</option>' +
-                '<option value="alg2">alg2</option>' +
-                '<option value="sst_36">sst_36</option>' +
-                '<option value="rainbow">Rainbow</option>' +
+                '<option value="default">Default</option>' +
+                '<option value="default-inv">Default Inverse</option>' +
+                '<option value="div-RdYlGn-inv">RdYlGn Inv</option>' +
+                '<option value="div-RdYlGn">RdYlGn</option>'
+                '<option value="x-Rainbow">Rainbow</option>' +
+                '<option value="x-Rainbow-inv">Rainbow Inv</option>' +
                 '</select>';
             return div
         };
@@ -443,7 +443,7 @@ var LIBRARY_OBJECT = (function() {
     };
 
     view_region = function(region_id, callback){
-        $(".drawdown").addClass("hidden");
+        $(".drawdown").addClass("d-none");
         var defaultParameters = {
             service : 'WFS',
             version : '2.0.0',
@@ -527,7 +527,7 @@ var LIBRARY_OBJECT = (function() {
     };
 
     view_aquifer = function(aquifer_id){
-        $(".drawdown").addClass("hidden");
+        $(".drawdown").addClass("d-none");
 
         var defaultParameters = {
             service : 'WFS',
@@ -972,9 +972,9 @@ var LIBRARY_OBJECT = (function() {
                 var drawdown_dict = return_data['drawdown'];
                 $("#leg_min").val(range_min);
                 $("#leg_max").val(range_max);
-                add_wms(wms_endpoint, range_min, range_max, 'rainbow');
+                add_wms(wms_endpoint, range_min, range_max, 'x-Rainbow');
                 if("units" in drawdown_dict){
-                    $(".drawdown").removeClass("hidden");
+                    $(".drawdown").removeClass("d-none");
                 }
                 generate_drawdown_chart(drawdown_dict);
             }
@@ -984,8 +984,8 @@ var LIBRARY_OBJECT = (function() {
     add_wms = function(wmsUrl, range_min, range_max, style){
         // map.removeLayer(tdWmsLayer);
         // map.removeLayer(contourTimeLayer);
-        $('.lcontrol').removeClass('hidden');
-        $('.leaflet-bar-timecontrol').removeClass('hidden');
+        $('.lcontrol').removeClass('d-none');
+        $('.leaflet-bar-timecontrol').removeClass('d-none');
         interpolationGroup.clearLayers();
         contourGroup.clearLayers();
 
@@ -993,7 +993,7 @@ var LIBRARY_OBJECT = (function() {
             layers: 'tsvalue',
             format: 'image/png',
             transparent: true,
-            styles: 'contour/'+style,
+            styles: 'contours',
             crs: L.CRS.EPSG4326,
             opacity: '1.0',
             colorscalerange: [range_min, range_max],
@@ -1012,7 +1012,7 @@ var LIBRARY_OBJECT = (function() {
             format: 'image/png',
             // dimension: 'time',
             transparent: true,
-            styles: 'boxfill/'+style,
+            styles: 'raster/'+style,
             opacity: '1.0',
             colorscalerange: [range_min, range_max],
             version:'1.3.0',
@@ -1030,9 +1030,8 @@ var LIBRARY_OBJECT = (function() {
         interpolationGroup.addLayer(tdWmsLayer);
         contourGroup.addLayer(contourTimeLayer);
         contourTimeLayer.bringToFront();
-
         var src = wmsUrl + "?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetLegendGraphic&LAYER=tsvalue"+
-            "&colorscalerange="+range_min+","+range_max+"&PALETTE=boxfill/"+style+"&transparent=TRUE";
+            "&colorscalerange="+range_min+","+range_max+"&PALETTE=raster/"+style+"&transparent=TRUE";
         $("#legend-image").attr("src", src);
         if(ts_chart !== undefined){
             get_ts(lastPopup);
@@ -1148,14 +1147,14 @@ var LIBRARY_OBJECT = (function() {
             $("#legend-image").attr("src", '');
             interpolationGroup.clearLayers();
             contourGroup.clearLayers();
-            $('.lcontrol').addClass('hidden');
-            $('.leaflet-bar-timecontrol').addClass('hidden');
+            $('.lcontrol').addClass('d-none');
+            $('.leaflet-bar-timecontrol').addClass('d-none');
             // map.removeLayer(tdWmsLayer);
             // map.removeLayer(contourTimeLayer);
         });
 
         $("#variable-select").change(function(){
-            $(".drawdown").addClass("hidden");
+            $(".drawdown").addClass("d-none");
 
             var aquifer_id = $("#aquifer-select option:selected").val();
             var aquifer_name = $("#aquifer-select option:selected").text();
@@ -1166,8 +1165,8 @@ var LIBRARY_OBJECT = (function() {
             }
             original_map_chart();
             $("#legend-image").attr("src", '');
-            $('.lcontrol').addClass('hidden');
-            $('.leaflet-bar-timecontrol').addClass('hidden');
+            $('.lcontrol').addClass('d-none');
+            $('.leaflet-bar-timecontrol').addClass('d-none');
             // map.removeLayer(tdWmsLayer);
             // map.removeLayer(contourTimeLayer);
             interpolationGroup.clearLayers();
@@ -1187,12 +1186,12 @@ var LIBRARY_OBJECT = (function() {
         $("#select_symbology").change(function(){
             var symbology = $("#select_symbology option:selected").val();
             var current_wms_layer = interpolationGroup.getLayers()[0];
-            current_wms_layer.setParams({styles: 'boxfill/'+symbology});
+            current_wms_layer.setParams({styles: 'raster/'+symbology});
             var wmsUrl = current_wms_layer._baseLayer._url;
             var range_min = current_wms_layer._baseLayer.wmsParams.colorscalerange[0];
             var range_max = current_wms_layer._baseLayer.wmsParams.colorscalerange[1];
             var src = wmsUrl + "?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetLegendGraphic&LAYER=tsvalue"+
-                "&colorscalerange="+range_min+","+range_max+"&PALETTE="+symbology+"&transparent=TRUE";
+                "&colorscalerange="+range_min+","+range_max+"&STYLES=raster/"+symbology+"&transparent=TRUE";
             $("#legend-image").attr("src", src);
         });
 
