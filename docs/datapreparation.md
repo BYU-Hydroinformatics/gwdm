@@ -1,3 +1,4 @@
+{{ include_file('docs/translate.html') }}
 
 # **Data Preparation**
 

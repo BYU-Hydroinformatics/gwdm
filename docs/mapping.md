@@ -1,3 +1,4 @@
+{{ include_file('docs/translate.html') }}
 
 # **Groundwater Level Mapping**
 
