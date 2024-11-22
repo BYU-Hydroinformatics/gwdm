@@ -8,8 +8,7 @@ To demonstrate the data import process, an example set of data has been
 provided. Download and unzip the attached files or organize your own
 files to follow along.
 
-`utah_test_files.zip </test_files/utah_test_files.zip>`{.interpreted-text
-role="download"}
+[utah_test_files.zip](test_files/utah_test_files.zip)
 
 ## **Add Region**
 

@@ -115,7 +115,7 @@ On the left side of the map, you will see a set of controls:
 region as described above.
 
 **Select Variable**: The well data may have historical measurements of
-different types. You can use this to select the type you\'d like to
+different types. You can use this to select the type you'd like to
 explore.
 
 **Interpolation Layer**: If the interpolation algorithm has been used to
@@ -138,7 +138,7 @@ For example, to only show wells that contain at least one measurement,
 change the min value on the left to something other than zero.
 
 **Reset**: The reset button is located just above the graphing button to
-the right of the control panel and is used to return to the region\'s
+the right of the control panel and is used to return to the region's
 home
 
 To explore the well data, you can click on individual wells to see

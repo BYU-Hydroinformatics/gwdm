@@ -6,10 +6,10 @@
 
 Before importing data into the GWDM app, the following data content needs to be collected and prepared:
 
-:   -   Region Boundary
-    -   Aquifers
-    -   Well locations
-    -   Measurements (Time Series Data)
+ > -   Region Boundary
+ > -   Aquifers
+ > -   Well locations
+ > -   Measurements (Time Series Data)
 
 A region is typically a state, country, or water management agency
 boundary and represents the top of the data hierarchy. In one region,
@@ -74,15 +74,24 @@ has two fields (columns) that are required to upload the file to the
 app: an aquifer name representing the unique name of the aquifer and an
 **aquifer ID**, a unique integer ID.
 
-+-----------+--------+------------------------------------------------+
-| Field     | Type   | Description                                    |
-+===========+========+================================================+
-| Aquifer   | Text   | The names should uniquely describe the         |
-| Name      |        | aquifers                                       |
-+-----------+--------+------------------------------------------------+
-| Aquifer   | > N    | The integer IDs should be unique (not have     |
-| ID        | umeric | duplicate values)                              |
-+-----------+--------+------------------------------------------------+
+<table class="docutils align-default">
+    <thead>
+        <tr class="row-odd"><th class="head"><p>Field</p></th>
+            <th class="head"><p>Type</p></th>
+            <th class="head"><p>Description</p></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="row-even"><td><p>Aquifer  Name</p></td>
+            <td><p>Text</p></td>
+            <td><p>The names should uniquely describe the aquifers</p></td>
+        </tr>
+        <tr class="row-odd"><td><p>Aquifer ID</p></td>
+            <td><p>Numeric</p></td>
+            <td><p>The integer IDs should be unique (not have duplicate values)</p></td>
+        </tr>
+    </tbody>
+</table>
 
 ![image](images_dataprep/utah_aquifer.png){width="629px" height="335px"}
 

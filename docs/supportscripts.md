@@ -21,8 +21,7 @@ from the USGS NWIS database (U.S. only).
 An example set of files has been provided; however, you are welcome to
 use your own files if you would prefer.
 
-`SupportScriptFileSet.zip </test_files/SupportScriptFileSet.zip>`{.interpreted-text
-role="download"}
+[SupportScriptFileSet.zip](test_files/SupportScriptFileSet.zip)
 
 ## **Elevation Generator**
 

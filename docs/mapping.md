@@ -170,11 +170,9 @@ size, then that particular well is dropped during interpolation.
 To get started, here are two data sets of files; however, you are
 welcome to use your own files if you would prefer.
 
-`sunflower_test_files.zip </test_files/sunflower_test_files.zip>`{.interpreted-text
-role="download"}
+[sunflower_test_files.zip](test_files/sunflower_test_files.zip)
 
-`korama_test_files.zip </test_files/korama_test_files.zip>`{.interpreted-text
-role="download"}
+[korama_test_files.zip](test_files/korama_test_files.zip)
 
 The Mapping Google Colab Notebook has parameters that can be set and
 changed by the user to obtain desired results. Here is a summary of each
