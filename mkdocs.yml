@@ -1,0 +1,33 @@
+site_name: Ground Water Data Mapper
+site_url: https://gwdm.readthedocs.io/en/latest/
+site_description: This is the documentation for the Ground Water Data Mapper.
+site_author: BYU Hydroinformatics Laboratory
+repo_url: https://github.com/BYU-Hydroinformatics/gwdm
+extra_javascript:
+    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+markdown_extensions:
+    - mdx_math
+    - attr_list
+    - sane_lists
+    - admonition
+
+plugins:
+    - search
+    - macros
+
+theme:
+  name: readthedocs
+
+nav:
+  - Home: index.md
+  - Overview: overview.md
+  - Data Preparation: datapreparation.md
+  - Data Preparation Scripts: supportscripts.md
+  - Importing Data: importingdata.md
+  - Groundwater Level Mapping: mapping.md
+  - Installing the GWDM Application: installation.md
+
+extra_css:
+  - css/custom.css
+
+copyright: Copyright &copy; 2018 - 2024 Norman L. Jones, Ph.D. All rights reserved.
