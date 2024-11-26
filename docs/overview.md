@@ -95,7 +95,7 @@ select an aquifer. Once you select an aquifer, the app will zoom in on
 the aquifer and display all wells associated with the aquifer. The well
 data consists of two parts:
 
-1)  Well locations
+1)  Well locations<br>
 2)  Historical observations at the wells.
 
 The observations are typically water levels that can be represented
