@@ -128,30 +128,15 @@ required.
 
 The required fields (columns) for a wells file are:
 
-  ----------- ---------- --------------------------------------------------------- --
-  **Field**   **Type**   **Description**                                           
+| Field |       Type       | Description |
+|--------|:----------------:|---------------------------------------------------------|
+| Latitude |     Numeric      | Latitude must be input in a decimal degree format. |
+| Longitude |     Numeric      | Longitude must be input in a decimal degree format. |
+| Well name | Text or Numeric  | This is a text string or number used to identify the well. |
+| Well ID | Text or Numeric  | Well ID has to be a unique value and must not have duplicates within an aquifer. There can be duplicate well IDs in different aquifers (i.e. There can be the same well ID in different aquifers) |
+| Ground Surface Elevation |     Numeric      | OPTIONAL: This field only serves as a metadata purpose. |
+| Aquifer ID | Text or Integer  | If a file contains wells from multiple aquifers, this field is mandatory. OPTIONAL if a file only contains wells from a single aquifer. See the description above for the two methods for importing well locations. |
 
-  Latitude    Numeric    Latitude must be input in a decimal degree format.        
-
-  Longitude   Numeric    Longitude must be input in a decimal degree format. \|    
-
-  Well name   Text or    This is a text string or number used to identify the      
-              Numeric    well.                                                     
-
-  Well ID     Text or    Well ID has to be a unique value and must not have        
-              Numeric    duplicates within an aquifer. There can be duplicate well 
-                         IDs in different aquifers (i.e. There can be the same     
-                         well ID in different aquifers) \|                         
-
-  Ground      Numeric    OPTIONAL: This field only serves as a metadata purpose.   
-  Surface                                                                          
-  Elevation                                                                        
-
-  Aquifer ID  Text or    If a file contains wells from multiple aquifers, this     
-              Integer    field is mandatory. \| OPTIONAL if a file only contains   
-                         wells from a single aquifer. See the description above    
-                         for the two methods for importing well locations.         
-  ----------- ---------- --------------------------------------------------------- --
 
 This is a sample well locations file:
 

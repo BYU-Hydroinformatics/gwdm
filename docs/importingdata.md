@@ -130,18 +130,11 @@ measurements to the wells in the region.
 | DD/MM/YYYY               | 09/01/2020               | %d/%m/%Y               | \-\-                                                                                                                                                                                                                                                                                            |
 | DD/MM/YYYY or HH:MM:SS   | 09/01/2020 or 13:35:10   | %d/%m/%Y or %H:%M:%S   | For groundwater data, the time is generally not recorded and is not normally required for the GWDM app, considering the time scales typically encountered. Therefore, we recommend only using the date portion of the date field. |
 
-
 For a complete description, visit: <https://strftime.org/>.
 
-:::: warning
-::: title
-Warning
-:::
+!!! Warning
+    If you receive an error while trying to upload measurements, the first thing that you should check is that you specified the correct date format.
 
-If you receive an error while trying to upload measurements, the first
-thing that you should check is that you specified the correct date
-format.
-::::
 
 Measurements can be deleted by aquifer and variable type through the
 **Delete Measurements** tab. When adding measurements, care should be
