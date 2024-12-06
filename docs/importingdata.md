@@ -120,17 +120,16 @@ measurements to the wells in the region.
 
 ![image](images_import/add_measurements.png)
 
-  ------------------------ ------------------------ ---------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  **Date/Time Format**     **Example**              **Python Format**      **Notes**
-  YYYY-MM-DD               2020-01-09               %Y-%m-%d               \-\--
-  M/D/YY                   1/9/20                   %m/%d/%y               Please note that 2-digit years will cause errors if you have dates in your dataset before 1970 (please see Data Prep Section). 4-digit years are best.
-  D/M/YY                   9/1/20                   %d/%m/%y               See above
-  MM/DD/YYYY               01/09/2020               %m/%d/%Y               \-\--
-  DD/MM/YYYY               09/01/2020               %d/%m/%Y               \-\--
-  DD/MM/YYYY or HH:MM:SS   09/01/2020 or 13:35:10   %d/%m/%Y or %H:%M:%S   For groundwater data, the time is generally not recorded and is not normally required for the GWDM app, considering the time scales typically encountered. Therefore, we recommend only using the date portion of the date field.
-  ------------------------ ------------------------ ---------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-  : Common Python Date/Time Formats
+| **Date/Time Format**     | **Example**              | **Python Format**      | **Notes**                                                                                                                                                                                                                                                                                    |   
+|------------------------|------------------------|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| YYYY-MM-DD               | 2020-01-09               | %Y-%m-%d               | \-\-                                                                                                                                                                                                                                                                                            |
+| M/D/YY                   | 1/9/20                   | %m/%d/%y               | Please note that 2-digit years will cause errors if you have dates in your dataset before 1970 (please see Data Prep Section). 4-digit years are best.                                                                                                                                      |
+| D/M/YY                   | 9/1/20                   | %d/%m/%y               | See above                                                                                                                                                                                                                                                                                       |
+| MM/DD/YYYY               | 01/09/2020               | %m/%d/%Y               | \-\-                                                                                                                                                                                                                                                                                            |
+| DD/MM/YYYY               | 09/01/2020               | %d/%m/%Y               | \-\-                                                                                                                                                                                                                                                                                            |
+| DD/MM/YYYY or HH:MM:SS   | 09/01/2020 or 13:35:10   | %d/%m/%Y or %H:%M:%S   | For groundwater data, the time is generally not recorded and is not normally required for the GWDM app, considering the time scales typically encountered. Therefore, we recommend only using the date portion of the date field. |
+
 
 For a complete description, visit: <https://strftime.org/>.
 

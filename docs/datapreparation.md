@@ -19,7 +19,7 @@ trends of groundwater data such as water table elevations, water
 quality, etc. The following diagram graphically illustrates the
 relationship of the different data components:
 
-![image](images_dataprep/data_tree.png){width="765px" height="811px"}
+![image](images_dataprep/data_tree.png){width=800}
 
 This page will walk you through how to prepare the appropriate files
 needed to import data into the app and provide links to complementary
@@ -32,8 +32,7 @@ uploading region and aquifer files where the wells are located. In the
 app, region is the first \"filter\" that users see on the landing page.
 Data are then organized by aquifer in the next page.
 
-![image](images_dataprep/GWDM_Region1.png){width="1070px"
-height="473px"}
+![image](images_dataprep/GWDM_Region1.png){width=800}
 
 Region and aquifers files have to be one of the following data types:
 
@@ -58,8 +57,7 @@ of Utah) as a shapefile. You can often find regional shapefiles on the
 internet. Regardless of where you get your shapefile, the exported files
 should consist of multiple files as seen below.
 
-![image](images_dataprep/utah_shapefiles.png){width="662px"
-height="274px"}
+![image](images_dataprep/utah_shapefiles.png){width=800}
 
 Also, make sure the shapefile does NOT include Z coordinates as this
 will generate an error when you attempt to import the file. The PostGIS
@@ -93,7 +91,7 @@ app: an aquifer name representing the unique name of the aquifer and an
     </tbody>
 </table>
 
-![image](images_dataprep/utah_aquifer.png){width="629px" height="335px"}
+![image](images_dataprep/utah_aquifer.png){width=800}
 
 ## **Well Locations File**
 
@@ -157,7 +155,7 @@ The required fields (columns) for a wells file are:
 
 This is a sample well locations file:
 
-![image](images_dataprep/well_locations.png)
+![image](images_dataprep/well_locations.png){width=800}
 
 ## **Measurements File**
 
@@ -192,9 +190,9 @@ file.
 > rasters that can be animated or used to compute changes in aquifer
 > storage vs time.
 
-![image](images_dataprep/well_time_series.png)
+![image](images_dataprep/well_time_series.png){width=800}
 
-![image](images_dataprep/well_chart.png)
+![image](images_dataprep/well_chart.png){width=800}
 
 The required fields (columns) for a measurements file are:
 

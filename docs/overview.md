@@ -95,8 +95,8 @@ select an aquifer. Once you select an aquifer, the app will zoom in on
 the aquifer and display all wells associated with the aquifer. The well
 data consists of two parts:
 
-1)  Well locations<br>
-2)  Historical observations at the wells.
+1. Well locations<br>
+2. Historical observations at the wells.
 
 The observations are typically water levels that can be represented
 either as depth to the water table or water table elevations, but any
@@ -109,7 +109,7 @@ with the GWDM on this website.
 
 On the left side of the map, you will see a set of controls:
 
-![image](images_overview/newcontrols.png){width="250px" height="441px"}
+![image](images_overview/newcontrols.png){width=400}
 
 **Select an Aquifer**: This is used to switch between aquifers in the
 region as described above.
@@ -155,15 +155,13 @@ green and three more options will be added to the screen. Here is a
 picture of all the options that will be available once the Multiple Well
 Select is activated:
 
-![image](images_overview/Selecting_multiple_wells.png){width="857px"
-height="465px"}
+![image](images_overview/Selecting_multiple_wells.png){width=800}
 
 **Select Option 1**: This select method allows the user to draw a
 polygon by clicking around the wells interested in. This option allows
 one to draw any closed polygon around any wells one wishes to visualize.
 
-![image](images_overview/sected_wells_option_1.png){width="857px"
-height="465px"}
+![image](images_overview/sected_wells_option_1.png){width=800}
 
 Once the polygon created is closed, a message box will appear giving you
 an option to view the time series. When you click on the view time
@@ -172,14 +170,12 @@ time series of the selected wells. If you click cancel, you can still
 visualize your selected wells by clicking on Graph Option 2 whose icon
 looks like a bar graph.
 
-![image](images_overview/popmessageselectedwells.png){width="812px"
-height="603px"}
+![image](images_overview/popmessageselectedwells.png){width=800}
 
 Here is an image of the results from our previous selection. Notice that
 the chart only shows available data and skips any missing data.
 
-![image](images_overview/5wellsmultichart.png){width="857px"
-height="465px"}
+![image](images_overview/5wellsmultichart.png){width=800}
 
 **Select Option 2**: This option is similar to the first option. The
 only difference is that this shape is fixed to be a rectangle. You may
@@ -192,8 +188,7 @@ upon selection. This is the only way to graph the selected wells.
 
 Here is a rendering;
 
-![image](images_overview/individuallyselectedwells.png){width="888px"
-height="704px"}
+![image](images_overview/individuallyselectedwells.png){width=800}
 
 ## **Displaying Rasters**
 
@@ -202,8 +197,7 @@ from the control panel on the right, a new set of controls will appear.
 The figure below points out each of those controls and the following
 paragraph explains each of them.
 
-![image](images_overview/rasterdisplaycontrolsV1.png){width="807px"
-height="420px"}
+![image](images_overview/rasterdisplaycontrolsV1.png){width=800}
 
 **Animation Bar**: You can slide the bar to move through the time
 interpolation or you can hit play to run through the animation
@@ -225,15 +219,14 @@ wish to see some of the features on the base map.
 table elevations over time to an increase or decrease in total volume in
 the aquifer. An example of the drawdown volume curve is included below.
 
-![image](images_overview/DrawdownVolume.png){width="807px"
-height="420px"}
+![image](images_overview/DrawdownVolume.png){width=800}
 
 ## **Admin Control Panel**
 
 There is also an admin control panel that is used to import and manage
 the data used by the app and to perform interpolations:
 
-![image](images_overview/admincp.png){width="510px" height="529px"}
+![image](images_overview/admincp.png){width=800}
 
 ## **Documentation and Tutorials**
 

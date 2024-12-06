@@ -11,6 +11,7 @@ here](https://docs.tethysplatform.org/en/stable/installation.html)) and
 install the Tethys Platform on your computer. Before doing so, be sure
 to view the warning listed below.
 
+
 > :::: warning
 > ::: title
 > Warning
