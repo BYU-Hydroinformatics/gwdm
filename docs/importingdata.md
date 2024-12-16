@@ -112,7 +112,7 @@ blank. We assign the attributes to the appropriate column using the
 **Get Attributes** button and **Measurements Wizard** window. The
 headers for our example file are AquiferID, Well_ID, Date, and WTE, as
 seen below. The date format must be in the Python Date Format, which can
-be referenced at: <https://strftime.org/>. A list of common date formats
+be referenced at: [https://strftime.org/](https://strftime.org/){:target="blank"}. A list of common date formats
 can be found below (to determine which date format your file uses, it is
 strongly recommended to open your file in a text editor, as MS Excel
 often reformats data). The **Add Measurements** button will add the
@@ -130,11 +130,18 @@ measurements to the wells in the region.
 | DD/MM/YYYY               | 09/01/2020               | %d/%m/%Y               | \-\-                                                                                                                                                                                                                                                                                            |
 | DD/MM/YYYY or HH:MM:SS   | 09/01/2020 or 13:35:10   | %d/%m/%Y or %H:%M:%S   | For groundwater data, the time is generally not recorded and is not normally required for the GWDM app, considering the time scales typically encountered. Therefore, we recommend only using the date portion of the date field. |
 
-For a complete description, visit: <https://strftime.org/>.
 
-!!! Warning
-    If you receive an error while trying to upload measurements, the first thing that you should check is that you specified the correct date format.
+For a complete description, visit: [https://strftime.org/](https://strftime.org/){target="blank"}.
 
+:::: warning
+::: title
+Warning
+:::
+
+If you receive an error while trying to upload measurements, the first
+thing that you should check is that you specified the correct date
+format.
+::::
 
 Measurements can be deleted by aquifer and variable type through the
 **Delete Measurements** tab. When adding measurements, care should be

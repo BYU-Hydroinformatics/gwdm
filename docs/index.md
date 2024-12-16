@@ -26,4 +26,4 @@ These tools were originally developed via funding from the National
 Aeronautics and Space Administration: 80NSSC20K0155; United States
 Agency for International Development: Cooperative Agreement with SERVIR
 West Africa Hub. More details about this project can be found here:
-<https://hydroinf.groups.et.byu.net/servir-wa/>
+[https://hydroinf.groups.et.byu.net/servir-wa/](https://hydroinf.groups.et.byu.net/servir-wa/){:target="_blank"}

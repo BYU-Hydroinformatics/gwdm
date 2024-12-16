@@ -7,7 +7,7 @@ For this instruction, Mac OS was used.
 ## **Step 1: Install Tethys**
 
 Follow the Tethys installation steps ([link
-here](https://docs.tethysplatform.org/en/stable/installation.html)) and
+here](https://docs.tethysplatform.org/en/stable/installation.html){:target="blank"}) and
 install the Tethys Platform on your computer. Before doing so, be sure
 to view the warning listed below.
 
@@ -33,7 +33,7 @@ to view the warning listed below.
 > > ```
 > ::::
 
-After the installation is complete, go to <http://127.0.0.1:8000/> and
+After the installation is complete, go to [http://127.0.0.1:8000/](http://127.0.0.1:8000/){:target="blank"} and
 make sure the following page is displayed.
 
 > ![image](images_install/tethys_landing.png)
@@ -51,7 +51,7 @@ quit the server with CONTROL-C before proceeding to the next step.
 
 1.  Create a directory (folder) in the home directly and name it (e.g.
     \"tethys_dev\"). In this directory, the GWDM app will be cloned from
-    the following link: <https://github.com/BYUHydroinformatics/gwdm>
+    the following link: [https://github.com/BYUHydroinformatics/gwdm](https://github.com/BYUHydroinformatics/gwdm){:target="blank"}.
 
 2.  On the right side of the repository, click on `Code` green box and
     then click on the button to copy the URL
@@ -111,7 +111,7 @@ quit the server with CONTROL-C before proceeding to the next step.
     > tethys manage start
     > ```
 
-    Then, go to <http://127.0.0.1:8000/apps/> and the app should be
+    Then, go to [http://127.0.0.1:8000/apps/](http://127.0.0.1:8000/apps/){:target="blank"} and the app should be
     displayed.
 
     > :::: note
@@ -135,7 +135,7 @@ quit the server with CONTROL-C before proceeding to the next step.
     > sudo chmod -R 777 Thredds
     > ```
 
-2.  Next, install Docker from <https://docs.docker.com/engine/install/>
+2.  Next, install Docker from [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/){:target="blank"}.
     . Docker will be installed as an app on Mac. In the Command Line,
     type:
 
@@ -193,7 +193,7 @@ button).
 
 ## **Step 4: Download PGAdmin 4 for Database Management**
 
-Download PGAdmin (<https://www.pgadmin.org/>). Download the macOS
+Download PGAdmin ([https://www.pgadmin.org/](https://www.pgadmin.org/){:target="blank"). Download the macOS
 version (or whatever operating system you are using).
 
 Open the application and add a new server
@@ -221,7 +221,7 @@ and
 > tethys manage start
 > ```
 
-Go to the Tethys homepage (<http://127.0.0.1:8000/apps/>) and click the
+Go to the Tethys homepage ([http://127.0.0.1:8000/apps/](http://127.0.0.1:8000/apps/){:target="blank") and click the
 app icon. You should land on the page titled \"Change Tethys App.\"
 
 1.  Click the **plus mark** under **PERSISTENT STORE DATABASE
@@ -254,7 +254,7 @@ Now, save the settings.
     >
     > -   Name: Arbitrary Name (e.g. geoserver)
     > -   Engine: GeoServer
-    > -   Endpoint: <http://127.0.0.1:8081/geoserver/>
+    > -   Endpoint: [http://127.0.0.1:8081/geoserver/](ttp://127.0.0.1:8081/geoserver/){:target="blank"}
     > -   Username: admin
     > -   password: geoserver
     > ::::
@@ -273,7 +273,7 @@ Now, save the settings.
 
     -   Name: Arbitrary Name (e.g. Thredds)
     -   Engine: THREDDS
-    -   Endpoint: <http://127.0.0.1:8383/thredds/>
+    -   Endpoint: [http://127.0.0.1:8383/thredds/](http://127.0.0.1:8383/thredds/){:target="blank"}
     -   Username: admin
     -   password: pass
     ::::
