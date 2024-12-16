@@ -133,15 +133,10 @@ measurements to the wells in the region.
 
 For a complete description, visit: [https://strftime.org/](https://strftime.org/){target="blank"}.
 
-:::: warning
-::: title
-Warning
-:::
-
-If you receive an error while trying to upload measurements, the first
-thing that you should check is that you specified the correct date
-format.
-::::
+!!! Warning
+    If you receive an error while trying to upload measurements, the first
+    thing that you should check is that you specified the correct date
+    format.
 
 Measurements can be deleted by aquifer and variable type through the
 **Delete Measurements** tab. When adding measurements, care should be

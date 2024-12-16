@@ -11,27 +11,21 @@ here](https://docs.tethysplatform.org/en/stable/installation.html){:target="blan
 install the Tethys Platform on your computer. Before doing so, be sure
 to view the warning listed below.
 
-
-> :::: warning
-> ::: title
-> Warning
-> :::
->
-> As of April 1, 2021, the initial step creates an error when executing
-> conda create -n tethys -c tethysplatform -c conda-forge
-> tethys-platform. Understand to avoid negative consequences.
->
-> ``` bash
-> conda create -n tethys -c tethysplatform -c conda-forge tethys-platform
-> ```
->
-> Instead, install a development build of the Tethys Platform by
-> executing
->
-> > ``` bash
-> > conda create -n tethys -c tethysplatform/label/dev -c tethysplatform -c conda-forge tethys-platform
-> > ```
-> ::::
+!!! Warning
+    As of April 1, 2021, the initial step creates an error when executing
+    conda create -n tethys -c tethysplatform -c conda-forge
+    tethys-platform. Understand to avoid negative consequences.
+    
+    ```
+    conda create -n tethys -c tethysplatform -c conda-forge tethys-platform
+    ```
+    
+    Instead, install a development build of the Tethys Platform by
+    executing
+    
+    ``` 
+    conda create -n tethys -c tethysplatform/label/dev -c tethysplatform -c conda-forge tethys-platform
+    ```
 
 After the installation is complete, go to [http://127.0.0.1:8000/](http://127.0.0.1:8000/){:target="blank"} and
 make sure the following page is displayed.
@@ -40,14 +34,9 @@ make sure the following page is displayed.
 
 ## **Step 2: Clone/Copy the GWDM Appliclation**
 
-:::: warning
-::: title
-Warning
-:::
-
-If the Tethys server is running from the previous step, make sure to
-quit the server with CONTROL-C before proceeding to the next step.
-::::
+!!! Warning
+    If the Tethys server is running from the previous step, make sure to
+    quit the server with CONTROL-C before proceeding to the next step.
 
 1.  Create a directory (folder) in the home directly and name it (e.g.
     \"tethys_dev\"). In this directory, the GWDM app will be cloned from
@@ -114,16 +103,12 @@ quit the server with CONTROL-C before proceeding to the next step.
     Then, go to [http://127.0.0.1:8000/apps/](http://127.0.0.1:8000/apps/){:target="blank"} and the app should be
     displayed.
 
-    > :::: note
-    > ::: title
-    > Note
-    > :::
-    >
-    > The initial admin login ID and password is: Username: admin
-    > Password: pass
-    > ::::
-    >
-    > ![image](images_install/gwdm_app.png)
+
+    !!! Note
+        The initial admin login ID and password is: Username: admin
+        Password: pass
+    
+![image](images_install/gwdm_app.png)
 
 ## **Step 3: Set Up Docker Containers**
 
@@ -149,20 +134,15 @@ quit the server with CONTROL-C before proceeding to the next step.
     for several settings. For most of the cases, simply accept the
     defaults by hitting `Enter`.
 
-    :::: note
-    ::: title
-    Note
-    :::
-
-    1.  For the password, put pass to keep it simple. If a different
+    !!!Note
+        1.  For the password, put pass to keep it simple. If a different
         password is selected, that needs to be remembered as this
         password will be required in later steps.
-    2.  For the Thredds container, it will ask "Bind the THREDDS data
+        2.  For the Thredds container, it will ask "Bind the THREDDS data
         directory to the host?" To which you will respond "Y" for yes.
         The next option will ask you to specify the location. Respond
         with the file path to the Thredds directory that you created
         earlier.
-    ::::
 
     ![image](images_install/respond_enter.png)
 
@@ -230,15 +210,11 @@ app icon. You should land on the page titled \"Change Tethys App.\"
 ![image](images_install/persistent.png)
 
 On the next page, set up the settings to:
-
-> :::: note
-> ::: title
-> Note
-> :::
->
-> \- Name: Arbitrary Name (e.g. Postgresql) - Engine: PostgreSQL - Port:
-> 5435 - Username: postgres
-> ::::
+!!!Note
+    - Name: Arbitrary Name (e.g. Postgresql) 
+    - Engine: PostgreSQL 
+    - Port: 5435 
+    - Username: postgres
 
 ![image](images_install/persistent_setting.png)
 
@@ -247,36 +223,26 @@ Now, save the settings.
 2.  Add a Spatial Dataset Service (for GeoServer) and select it in the
     app settings
 
-    > :::: note
-    > ::: title
-    > Note
-    > :::
-    >
-    > -   Name: Arbitrary Name (e.g. geoserver)
-    > -   Engine: GeoServer
-    > -   Endpoint: [http://127.0.0.1:8081/geoserver/](ttp://127.0.0.1:8081/geoserver/){:target="blank"}
-    > -   Username: admin
-    > -   password: geoserver
-    > ::::
+!!!Note
+    -   Name: Arbitrary Name (e.g. geoserver)
+    -   Engine: GeoServer
+    -   Endpoint: [http://127.0.0.1:8081/geoserver/](ttp://127.0.0.1:8081/geoserver/){:target="blank"}
+    -   Username: admin
+    -   password: geoserver
 
-    ![image](images_install/spatial.png)
+![image](images_install/spatial.png)
 
-    ![image](images_install/geoserver.png)
+![image](images_install/geoserver.png)
 
 3.  Add another Spatial Dataset Service (for thredds) and select it in
     the app settings
 
-    :::: note
-    ::: title
-    Note
-    :::
-
+!!!Note
     -   Name: Arbitrary Name (e.g. Thredds)
     -   Engine: THREDDS
     -   Endpoint: [http://127.0.0.1:8383/thredds/](http://127.0.0.1:8383/thredds/){:target="blank"}
     -   Username: admin
     -   password: pass
-    ::::
 
 ![image](images_install/thredds_app_setting.png)
 
