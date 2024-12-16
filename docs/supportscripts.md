@@ -35,7 +35,7 @@ measurements are preferable. A file with well locations (lat/long
 coordinates) is required as input and a file with GSEs generated for
 each well will be output. To use this tool, you will need to register
 your Google account with Google Earth Engine to be able to utilize this
-service. You can do this at: <https://signup.earthengine.google.com/#!/>
+service. You can do this at: [https://signup.earthengine.google.com/#!/](https://signup.earthengine.google.com/#!/){:target="_blank"}
 To practice using this script, download and open the attached set of
 files (top of the page) and locate the ut_2015-2020_wells csv file.
 

@@ -107,9 +107,9 @@ specified time steps. For the Kriging algorithm, we autofit a variogram
 to the data in the aquifer based on the size of the aquifer.
 
 To learn more about these methods, see the papers published in [Remote
-Sensing](https://www.mdpi.com/2072-4292/12/12/2044) and [Environmental
+Sensing](https://www.mdpi.com/2072-4292/12/12/2044){:target="blank"} and [Environmental
 Modelling & Software
-journals](https://www.sciencedirect.com/science/article/pii/S1364815220301997?via%3Dihub).
+journals](https://www.sciencedirect.com/science/article/pii/S1364815220301997?via%3Dihub){:target="blank"}.
 
 ### **Water Level Mapping Google Colab Notebook**
 

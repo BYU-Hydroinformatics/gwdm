@@ -68,16 +68,16 @@ The GWDM app can be accessed in the following locations:
 
 -   **Servir West Africa Portal**: Official Tethys portal hosted by the
     SERVIR Science Coordination Office (SCO) for the West Africa Hub
-    (<https://tethyswa.servirglobal.net/apps/>).
+    ([https://tethyswa.servirglobal.net/apps/](https://tethyswa.servirglobal.net/apps/){:target="blank"}).
 -   **BYU Portal**: A Tethys portal hosted by Brigham Young University
-    for all completed apps (<https://tethys.byu.edu>).
+    for all completed apps ([https://tethys.byu.edu](https://tethys.byu.edu){:target="blank"}).
 -   **GEOGloWS Portal**: A portal associated with the GEOGloWS
-    organization (<https://apps.geoglows.org/apps/>).
+    organization ([https://apps.geoglows.org/apps/](https://apps.geoglows.org/apps/){:target="blank"}).
 -   **INDRHI GEOGloWS Portal**: A Tethys portal used by INDRHI, the
     national institute for hydraulics in the Dominican Republic
-    (<https://indrhi.geoglows.org/apps/>).
+    ([https://indrhi.geoglows.org/apps/](https://indrhi.geoglows.org/apps/){:target="blank"}).
 -   **GEOGloWS Portal**: A portal associated with the GEOGloWS
-    organization (<https://apps.geoglows.org/apps/>).
+    organization ([https://apps.geoglows.org/apps/](https://apps.geoglows.org/apps/){:target="blank"}).
 
 ## **Regions, Aquifers, and Well Data**
 
