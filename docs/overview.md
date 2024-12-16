@@ -76,8 +76,7 @@ The GWDM app can be accessed in the following locations:
 -   **INDRHI GEOGloWS Portal**: A Tethys portal used by INDRHI, the
     national institute for hydraulics in the Dominican Republic
     ([https://indrhi.geoglows.org/apps/](https://indrhi.geoglows.org/apps/){:target="blank"}).
--   **GEOGloWS Portal**: A portal associated with the GEOGloWS
-    organization ([https://apps.geoglows.org/apps/](https://apps.geoglows.org/apps/){:target="blank"}).
+
 
 ## **Regions, Aquifers, and Well Data**
 
