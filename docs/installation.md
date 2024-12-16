@@ -223,12 +223,12 @@ Now, save the settings.
 2.  Add a Spatial Dataset Service (for GeoServer) and select it in the
     app settings
 
-!!!Note
-    -   Name: Arbitrary Name (e.g. geoserver)
-    -   Engine: GeoServer
-    -   Endpoint: [http://127.0.0.1:8081/geoserver/](ttp://127.0.0.1:8081/geoserver/){:target="blank"}
-    -   Username: admin
-    -   password: geoserver
+    !!!Note
+        -   Name: Arbitrary Name (e.g. geoserver)
+        -   Engine: GeoServer
+        -   Endpoint: [http://127.0.0.1:8081/geoserver/](ttp://127.0.0.1:8081/geoserver/){:target="blank"}
+        -   Username: admin
+        -   password: geoserver
 
 ![image](images_install/spatial.png)
 
@@ -237,12 +237,12 @@ Now, save the settings.
 3.  Add another Spatial Dataset Service (for thredds) and select it in
     the app settings
 
-!!!Note
-    -   Name: Arbitrary Name (e.g. Thredds)
-    -   Engine: THREDDS
-    -   Endpoint: [http://127.0.0.1:8383/thredds/](http://127.0.0.1:8383/thredds/){:target="blank"}
-    -   Username: admin
-    -   password: pass
+    !!!Note
+        -   Name: Arbitrary Name (e.g. Thredds)
+        -   Engine: THREDDS
+        -   Endpoint: [http://127.0.0.1:8383/thredds/](http://127.0.0.1:8383/thredds/){:target="blank"}
+        -   Username: admin
+        -   password: pass
 
 ![image](images_install/thredds_app_setting.png)
 
