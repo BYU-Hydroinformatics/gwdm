@@ -48,12 +48,12 @@ make sure the following page is displayed.
 3.  Bring up a terminal window and go to the directory just created by
     executing the following command.
 
-    > ``` bash
-    > cd tethys_dev
-    > ```
+```bash
+cd tethys_dev
+```
 
-    `tethys_dev` should be modified if the directory is named
-    differently.
+>The directory `tethys_dev` should be modified if the directory is named
+differently.
 
 4.  The GDWM app will be cloned here. To clone the app, type the
     following:
@@ -113,38 +113,38 @@ make sure the following page is displayed.
 ## **Step 3: Set Up Docker Containers**
 
 1.  Create a new directory/folder in your home directory and name it
-    `Thredds`. Make the Thredds directory public by typing in the
+    `thredds`. Make the thredds directory public by typing in the
     Command Line:
 
     > ``` bash
-    > sudo chmod -R 777 Thredds
+    > sudo chmod -R 777 thredds
     > ```
 
-2.  Next, install Docker from [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/){:target="blank"}.
-    . Docker will be installed as an app on Mac. In the Command Line,
-    type:
+   2.  Next, install Docker from [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/){:target="blank"}.
+       . Docker will be installed as an app on Mac. In the Command Line,
+       type:
 
-    > ``` bash
-    > tethys docker init
-    > ```
+    >    ``` bash
+    >    tethys docker init
+    >    ```
 
-    This will initiate downloading necessary elements and may take
-    anywhere from a few minutes to hours depending on the internet
-    connection. After the Docker initializes, the Command Line will ask
-    for several settings. For most of the cases, simply accept the
-    defaults by hitting `Enter`.
+       This will initiate downloading necessary elements and may take
+       anywhere from a few minutes to hours depending on the internet
+       connection. After the Docker initializes, the Command Line will ask
+       for several settings. For most of the cases, simply accept the
+       defaults by hitting `Enter`.
 
-    !!!Note
-        1.  For the password, put pass to keep it simple. If a different
-        password is selected, that needs to be remembered as this
-        password will be required in later steps.
-        2.  For the Thredds container, it will ask "Bind the THREDDS data
-        directory to the host?" To which you will respond "Y" for yes.
-        The next option will ask you to specify the location. Respond
-        with the file path to the Thredds directory that you created
-        earlier.
+       !!!Note
+           1.  For the password, put pass to keep it simple. If a different
+           password is selected, that needs to be remembered as this
+           password will be required in later steps.
+           2.  For the THREDDS container, it will ask "Bind the THREDDS data
+           directory to the host?" To which you will respond "Y" for yes.
+           The next option will ask you to specify the location. Respond
+           with the file path to the thredds directory that you created
+           earlier.
 
-    ![image](images_install/respond_enter.png)
+       ![image](images_install/respond_enter.png)
 
 ## **OPTIONAL: Set Up Portainer.io**
 
@@ -246,7 +246,7 @@ Now, save the settings.
 
 ![image](images_install/thredds_app_setting.png)
 
-4.  Make a directory in your Thredds directory in
+4.  Make a directory in your thredds directory in
     **thredds/public/testdata** and call it **"groundwater"**. Add the
     file path to this new groundwater directory to the thredds file path
     in the app settings
@@ -262,7 +262,7 @@ Now, save the settings.
 
 ![image](images_install/pgadmin.png)
 
-## **Step 6: Edit Thredds Files**
+## **Step 6: Edit THREDDS Files**
 
 1.  Go into the thredds directory and open the "Catalog.xml" file with
     an editor (Pycharm, Notepad++, etc.)
