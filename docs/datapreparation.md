@@ -72,24 +72,11 @@ has two fields (columns) that are required to upload the file to the
 app: an aquifer name representing the unique name of the aquifer and an
 **aquifer ID**, a unique integer ID.
 
-<table class="docutils align-default">
-    <thead>
-        <tr class="row-odd"><th class="head"><p>Field</p></th>
-            <th class="head"><p>Type</p></th>
-            <th class="head"><p>Description</p></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr class="row-even"><td><p>Aquifer  Name</p></td>
-            <td><p>Text</p></td>
-            <td><p>The names should uniquely describe the aquifers</p></td>
-        </tr>
-        <tr class="row-odd"><td><p>Aquifer ID</p></td>
-            <td><p>Numeric</p></td>
-            <td><p>The integer IDs should be unique (not have duplicate values)</p></td>
-        </tr>
-    </tbody>
-</table>
+| Field | Type | Description |
+|--------|:----:|---------------------------------------------------------|
+| Aquifer Name | Text | The names should uniquely describe the aquifers. |
+| Aquifer ID | Numeric | The integer IDs should be unique (not have duplicate values). |
+
 
 ![image](images_dataprep/utah_aquifer.png){width=800}
 
@@ -128,30 +115,15 @@ required.
 
 The required fields (columns) for a wells file are:
 
-  ----------- ---------- --------------------------------------------------------- --
-  **Field**   **Type**   **Description**                                           
+| Field |       Type       | Description |
+|--------|:----------------:|---------------------------------------------------------|
+| Latitude |     Numeric      | Latitude must be input in a decimal degree format. |
+| Longitude |     Numeric      | Longitude must be input in a decimal degree format. |
+| Well name | Text or Numeric  | This is a text string or number used to identify the well. |
+| Well ID | Text or Numeric  | Well ID has to be a unique value and must not have duplicates within an aquifer. There can be duplicate well IDs in different aquifers (i.e. There can be the same well ID in different aquifers) |
+| Ground Surface Elevation |     Numeric      | OPTIONAL: This field only serves as a metadata purpose. |
+| Aquifer ID | Text or Integer  | If a file contains wells from multiple aquifers, this field is mandatory. OPTIONAL if a file only contains wells from a single aquifer. See the description above for the two methods for importing well locations. |
 
-  Latitude    Numeric    Latitude must be input in a decimal degree format.        
-
-  Longitude   Numeric    Longitude must be input in a decimal degree format. \|    
-
-  Well name   Text or    This is a text string or number used to identify the      
-              Numeric    well.                                                     
-
-  Well ID     Text or    Well ID has to be a unique value and must not have        
-              Numeric    duplicates within an aquifer. There can be duplicate well 
-                         IDs in different aquifers (i.e. There can be the same     
-                         well ID in different aquifers) \|                         
-
-  Ground      Numeric    OPTIONAL: This field only serves as a metadata purpose.   
-  Surface                                                                          
-  Elevation                                                                        
-
-  Aquifer ID  Text or    If a file contains wells from multiple aquifers, this     
-              Integer    field is mandatory. \| OPTIONAL if a file only contains   
-                         wells from a single aquifer. See the description above    
-                         for the two methods for importing well locations.         
-  ----------- ---------- --------------------------------------------------------- --
 
 This is a sample well locations file:
 
@@ -196,34 +168,13 @@ file.
 
 The required fields (columns) for a measurements file are:
 
-  ------------------------------------------------------------------------------------
-  Field            Type      Description                                            
-  ---------------- --------- ------------------------------------------------------ --
-  Well ID          Numeric   This well ID should be related to one of the well ID   
-                             values defined in the Well Locations file described    
-                             above.                                                 
+| Field | Type | Description |
+|--------|:----:|---------------------------------------------------------|
+| Well ID | Numeric | This well ID should be related to one of the well ID values defined in the Well Locations file described above. |
+| Date | Date | The date that the measurement was taken. The dates can be in almost any format. When the measurements are imported, the user has the option to define the date format so that the dates are properly interpreted. The Unix Epoch begins in 1970, so any dates before 1970 will need to be 4-digit years; otherwise, they will be converted to the next century (e.g. 1/1/69 will be converted to 1/1/2069; 1/1/1969 will remain 1/1/1969). |
+| Measurement(s) | Numeric | This column contains the actual measurements (water table elevation, depth to groundwater, water quality, etc). You can have one or multiple data columns. |
+| Aquifer ID | Text or Integer | This field is optional if all the measurements are from a single aquifer. This field is required if the uploaded files contain measurements/wells from multiple aquifers. This aquifer ID should be related to one of the aquifer ID values defined in the Well Locations file described above. |
 
-  Date             Date      The date that the measurement was taken. The dates can 
-                             be in almost any format\*. \| When the measurements    
-                             are imported, the user has the option to define the    
-                             date format so that the dates are properly             
-                             interpreted. \*The Unix Epoch begins in 1970, so any   
-                             dates before 1970 will need to be 4-digit years;       
-                             otherwise, they will be converted to the next \|       
-                             century (e.g. 1/1/69 will be converted to 1/1/2069;    
-                             1/1/1969 will remain 1/1/1969) \|                      
-
-  Measurement(s)   Numeric   This column contains the actual measurements (water    
-                             table elevation, depth to groundwater, water quality,  
-                             etc). You can have one or multiple data columns.       
-
-  Aquifer ID       Text or   This field is optional if all the measurements are     
-                   Integer   from a single aquifer. This field is required if the   
-                             uploaded files contain measurements/wells from         
-                             multiple aquifers. This aquifer ID should be related   
-                             to one of the aquifer ID values defined in the Well    
-                             Locations file described above.                        
-  ------------------------------------------------------------------------------------
 
 This is a sample measurements file. Note that a measurements file can
 contain extra fields or columns. These columns are ignored when the data
