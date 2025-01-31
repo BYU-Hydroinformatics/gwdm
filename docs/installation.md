@@ -48,65 +48,65 @@ make sure the following page is displayed.
 3.  Bring up a terminal window and go to the directory just created by
     executing the following command.
 
-```bash
+``` bash
 cd tethys_dev
 ```
 
->The directory `tethys_dev` should be modified if the directory is named
+> `tethys_dev` should be modified if the directory is named
 differently.
 
 4.  The GDWM app will be cloned here. To clone the app, type the
     following:
 
-    > ``` bash
-    > git clone URL
-    > ```
+```bash
+git clone URL
+```
 
-    Where URL is the URL that you copied to the clipboard. In other
-    words, type `git clone` then paste the URL from the clipboard. When
-    you are done, it should look like this:
+>Where URL is the URL that you copied to the clipboard. In other
+     words, type `git clone` then paste the URL from the clipboard. When
+     you are done, it should look like this:
 
-    > ``` python
-    > git clone https://github.com/BYU-Hydroinformatics/gwdm.git
-    > ```
+```python
+git clone https://github.com/BYU-Hydroinformatics/gwdm.git
+```
 
 5.  To complete the installation, we need to install the app we just
     cloned. First, we need to be in the Tethys virtual environment. In
     the Command Line, type:
 
-    > ``` bash
-    > conda activate tethys
-    > ```
+``` bash
+conda activate tethys
+```
 
-    Next, make sure you are at the top level of the new directory you
+>Next, make sure you are at the top level of the new directory you
     just created (e.g. tethys_dev). There should be a new
     directory/folder called `gwdm` and the folder should contain
     `setup.py`. Go to the `gwdm` directly by executing:
 
-    > ``` bash
-    > cd tethys_dev/gwdm
-    > ```
+``` bash
+cd tethys_dev/gwdm
+```
 
-    Finally, this command is used to install the app on your portal:
+>Finally, this command is used to install the app on your portal:
 
-    > ``` bash
-    > tethys install
-    > ```
+``` bash
+tethys install
+```
 
-    To make sure that the app is installed on your local Tethys
+>To make sure that the app is installed on your local Tethys
     Platform, launch the Tethys portal by typing on the Command Line:
 
-    > ``` bash
-    > tethys manage start
-    > ```
+``` bash
+tethys manage start
+```
 
-    Then, go to [http://127.0.0.1:8000/apps/](http://127.0.0.1:8000/apps/){:target="blank"} and the app should be
+>Then, go to [http://127.0.0.1:8000/apps/](http://127.0.0.1:8000/apps/){:target="blank"} and the app should be
     displayed.
 
 
-    !!! Note
-        The initial admin login ID and password is: Username: admin
-        Password: pass
+!!! Note
+    The initial admin login ID and password is: Username: admin
+    Password: pass
     
 ![image](images_install/gwdm_app.png)
 
@@ -116,48 +116,48 @@ differently.
     `thredds`. Make the thredds directory public by typing in the
     Command Line:
 
-    > ``` bash
-    > sudo chmod -R 777 thredds
-    > ```
+``` bash
+sudo chmod -R 777 thredds
+```
 
    2.  Next, install Docker from [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/){:target="blank"}.
        . Docker will be installed as an app on Mac. In the Command Line,
        type:
 
-    >    ``` bash
-    >    tethys docker init
-    >    ```
+``` bash
+tethys docker init
+```
 
-       This will initiate downloading necessary elements and may take
+>This will initiate downloading necessary elements and may take
        anywhere from a few minutes to hours depending on the internet
        connection. After the Docker initializes, the Command Line will ask
        for several settings. For most of the cases, simply accept the
        defaults by hitting `Enter`.
 
-       !!!Note
-           1.  For the password, put pass to keep it simple. If a different
-           password is selected, that needs to be remembered as this
-           password will be required in later steps.
-           2.  For the THREDDS container, it will ask "Bind the THREDDS data
-           directory to the host?" To which you will respond "Y" for yes.
-           The next option will ask you to specify the location. Respond
-           with the file path to the thredds directory that you created
-           earlier.
+!!! Note
+    1.  For the password, put pass to keep it simple. If a different
+        password is selected, that needs to be remembered as this
+        password will be required in later steps.
+    2.  For the THREDDS container, it will ask "Bind the THREDDS data
+        directory to the host?" To which you will respond "Y" for yes.
+        The next option will ask you to specify the location. Respond
+        with the file path to the thredds directory that you created
+        earlier.
 
-       ![image](images_install/respond_enter.png)
+![image](images_install/respond_enter.png)
 
 ## **OPTIONAL: Set Up Portainer.io**
 
 Portainer gives a detailed status and health check of the Docker
 containers. In the Command Line, type:
 
-> ``` bash
-> docker volume create portainer_data
-> ```
+``` bash
+docker volume create portainer_data
+```
 >
-> ``` bash
-> docker run -d  -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
-> ```
+``` bash
+docker run -d  -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
+```
 
 Go to localhost:9000 to set up the userID and the password. On the next
 page, select \"Docker\" and complete the setting.
@@ -191,15 +191,15 @@ Name it as you desire (e.g. \"postgis_thethys_docker\"). Click the
 
 Now in the Command Line, run:
 
-> ``` bash
-> tethys syncstores gwdm
-> ```
+``` bash
+tethys syncstores gwdm
+```
 
 and
 
-> ``` bash
-> tethys manage start
-> ```
+``` bash
+tethys manage start
+```
 
 Go to the Tethys homepage ([http://127.0.0.1:8000/apps/](http://127.0.0.1:8000/apps/){:target="blank") and click the
 app icon. You should land on the page titled \"Change Tethys App.\"
@@ -237,7 +237,7 @@ Now, save the settings.
 3.  Add another Spatial Dataset Service (for thredds) and select it in
     the app settings
 
-    !!!Note
+    !!! Note
         -   Name: Arbitrary Name (e.g. Thredds)
         -   Engine: THREDDS
         -   Endpoint: [http://127.0.0.1:8383/thredds/](http://127.0.0.1:8383/thredds/){:target="blank"}
@@ -251,9 +251,9 @@ Now, save the settings.
     file path to this new groundwater directory to the thredds file path
     in the app settings
 
-    > ``` bash
-    > tethys syncstores gwdm
-    > ```
+``` bash
+tethys syncstores gwdm
+```
 
     Open up PGAdmin4 again to check that the database is initialized.
     Under Databases, **"gwdm_gwdb"** should now show up. Within
@@ -305,16 +305,15 @@ Go to "Workspaces" tab \> "Add New Workspace" link. Name it "gwdm"
 Stores tab \> "Add New Store" link \> "Postgis" link. Select gwdm
 workspace from dropdown and set:
 
-:::: note
-::: title
-Note
-:::
-
-\- Name: postgis - Host: 172.17.0.1 - Port: 5435 - Database: gwdm_gwdb -
-Schema: public - User: postgres - Password: pass
-
--   Save it
-::::
+!!! note
+    - Name: postgis 
+    - Host: 172.17.0.1 
+    - Port: 5435 
+    - Database: gwdm_gwdb 
+    - Schema: public 
+    - User: postgres 
+    - Password: pass
+    - Save it
 
 \>Publish the Layers
 
@@ -327,8 +326,5 @@ dropdown
 > -   Save it
 > -   Repeat the process for the aquifer and well layers
 
-::: admonition
-Success
-
-Now you can add data and begin using the app.
-:::
+!!! Success
+    Now you can add data and begin using the app.

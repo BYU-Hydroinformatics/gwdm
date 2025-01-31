@@ -49,7 +49,7 @@ extrapolation. The product of this process is a series of time-varying
 rasters that can be animated to allow water managers to visualize how
 the water levels are changing over time and where the aquifer is being
 stressed. The rasters can also be analyzed to assess the change in
-aquifer water volume or storage over time -- a key indicator of aquifer
+aquifer water volume or storage over time - a key indicator of aquifer
 health and sustainability.
 
 ## **Tethys Application**
