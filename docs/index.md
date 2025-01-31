@@ -1,6 +1,6 @@
 {{ include_file('docs/translate.html') }}
 
-# **Home**
+# The Groundwater Data Mapper (GWDM)
 
 The Groundwater Data Mapper (GWDM) is a Tethys Platform web application
 and an associated set of Python scripts. The GWDM Tethys app can be used
@@ -27,3 +27,5 @@ Aeronautics and Space Administration: 80NSSC20K0155; United States
 Agency for International Development: Cooperative Agreement with SERVIR
 West Africa Hub. More details about this project can be found here:
 [https://hydroinf.groups.et.byu.net/servir-wa/](https://hydroinf.groups.et.byu.net/servir-wa/){:target="_blank"}
+
+![gwdm_map.png](images_index/gwdm_map.png)

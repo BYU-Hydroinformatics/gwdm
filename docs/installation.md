@@ -48,9 +48,11 @@ make sure the following page is displayed.
 3.  Bring up a terminal window and go to the directory just created by
     executing the following command.
 
+<blockquote>
 ``` bash
 cd tethys_dev
 ```
+</blockquote>
 
 > `tethys_dev` should be modified if the directory is named
 differently.
