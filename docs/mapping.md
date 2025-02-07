@@ -195,21 +195,13 @@ the interpolation, you can view the interpolation results by using the
 Interpolation Layer dropdown menu. Here are some sample results for an
 aquifer in Utah, USA and Niger.
 
-![Cedar Valley, Utah Interpolation Results](images_mapping/interp_CedarValley.gif)
-###### *Cedar Valley, Utah Interpolation Results*
+**Cedar Valley, Utah Interpolation
+Results:**
+![Cedar Valley, Utah Interpolation Results](images_mapping/interp_CedarValley.gif){width=750px}
 
-<figure>
-<figcaption><strong>Cedar Valley, Utah Interpolation
-Results</strong></figcaption>
-</figure>
-
+**Goulbi Maradi, Niger Interpolation
+Results:**
 ![Goulbi Maradi, Niger Interpolation Results](images_mapping/interp_niger_goulbi.gif)
-###### *Goulbi Maradi, Niger Interpolation Results*
-
-<figure>
-<figcaption><strong>Goulbi Maradi, Niger Interpolation
-Results</strong></figcaption>
-</figure>
 
 To view the storage change vs time curve, click on the **View Drawdown
 Volume** button. The storage change curve will then appear in a new
