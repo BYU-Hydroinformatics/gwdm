@@ -60,57 +60,69 @@ differently.
 4.  The GDWM app will be cloned here. To clone the app, type the
     following:
 
+<blockquote>
 ```bash
 git clone URL
 ```
+</blockquote>
 
 >Where URL is the URL that you copied to the clipboard. In other
      words, type `git clone` then paste the URL from the clipboard. When
      you are done, it should look like this:
 
+<blockquote>
 ```python
 git clone https://github.com/BYU-Hydroinformatics/gwdm.git
 ```
+</blockquote>
 
 5.  To complete the installation, we need to install the app we just
     cloned. First, we need to be in the Tethys virtual environment. In
     the Command Line, type:
 
+<blockquote>
 ``` bash
 conda activate tethys
 ```
+</blockquote>
 
 >Next, make sure you are at the top level of the new directory you
     just created (e.g. tethys_dev). There should be a new
     directory/folder called `gwdm` and the folder should contain
     `setup.py`. Go to the `gwdm` directly by executing:
 
+<blockquote>
 ``` bash
 cd tethys_dev/gwdm
 ```
+</blockquote>
 
 >Finally, this command is used to install the app on your portal:
 
+<blockquote>
 ``` bash
 tethys install
 ```
+</blockquote>
 
 >To make sure that the app is installed on your local Tethys
     Platform, launch the Tethys portal by typing on the Command Line:
 
+<blockquote>
 ``` bash
 tethys manage start
 ```
+</blockquote>
 
 >Then, go to [http://127.0.0.1:8000/apps/](http://127.0.0.1:8000/apps/){:target="blank"} and the app should be
     displayed.
 
 
-!!! Note
+> !!! Note
     The initial admin login ID and password is: Username: admin
     Password: pass
     
-![image](images_install/gwdm_app.png)
+>![image](images_install/gwdm_app.png)
 
 ## **Step 3: Set Up Docker Containers**
 
@@ -118,17 +130,21 @@ tethys manage start
     `thredds`. Make the thredds directory public by typing in the
     Command Line:
 
+<blockquote>
 ``` bash
 sudo chmod -R 777 thredds
 ```
+</blockquote>
 
    2.  Next, install Docker from [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/){:target="blank"}.
        . Docker will be installed as an app on Mac. In the Command Line,
        type:
 
+<blockquote>
 ``` bash
 tethys docker init
 ```
+</blockquote>
 
 >This will initiate downloading necessary elements and may take
        anywhere from a few minutes to hours depending on the internet
@@ -136,7 +152,7 @@ tethys docker init
        for several settings. For most of the cases, simply accept the
        defaults by hitting `Enter`.
 
-!!! Note
+>!!! Note
     1.  For the password, put pass to keep it simple. If a different
         password is selected, that needs to be remembered as this
         password will be required in later steps.
@@ -146,7 +162,7 @@ tethys docker init
         with the file path to the thredds directory that you created
         earlier.
 
-![image](images_install/respond_enter.png)
+>![image](images_install/respond_enter.png)
 
 ## **OPTIONAL: Set Up Portainer.io**
 
@@ -175,7 +191,7 @@ button).
 
 ## **Step 4: Download PGAdmin 4 for Database Management**
 
-Download PGAdmin ([https://www.pgadmin.org/](https://www.pgadmin.org/){:target="blank"). Download the macOS
+Download PGAdmin ([https://www.pgadmin.org/](https://www.pgadmin.org/){:target="blank"}). Download the macOS
 version (or whatever operating system you are using).
 
 Open the application and add a new server
@@ -203,7 +219,7 @@ and
 tethys manage start
 ```
 
-Go to the Tethys homepage ([http://127.0.0.1:8000/apps/](http://127.0.0.1:8000/apps/){:target="blank") and click the
+Go to the Tethys homepage ([http://127.0.0.1:8000/apps/](http://127.0.0.1:8000/apps/){:target="blank"}) and click the
 app icon. You should land on the page titled \"Change Tethys App.\"
 
 1.  Click the **plus mark** under **PERSISTENT STORE DATABASE
@@ -253,11 +269,13 @@ Now, save the settings.
     file path to this new groundwater directory to the thredds file path
     in the app settings
 
+<blockquote>
 ``` bash
 tethys syncstores gwdm
 ```
+</blockquote>
 
-    Open up PGAdmin4 again to check that the database is initialized.
+>Open up PGAdmin4 again to check that the database is initialized.
     Under Databases, **"gwdm_gwdb"** should now show up. Within
     gwdm_gwdb, if you select Schemas\>public\>Tables the different
     parameters should be visible (aquifer, measurement, well, etc.)
@@ -274,9 +292,8 @@ tethys syncstores gwdm
         `Test all files in a directory` to `All Datasets`
     -   In the "Filter" section towards the bottom of the file:
 
-Remove one of the "include" tags and change the other one to say `<include wildcard=”*”/>`
-
-:   -   Delete the "catalogref" tag at the very bottom
+**Remove one of the "include" tags and change the other one to say `<include wildcard=”*”/>`**
+> - Delete the "catalogref" tag at the very bottom
 
 If you need help, the screenshot below shows what it should look like.
 
