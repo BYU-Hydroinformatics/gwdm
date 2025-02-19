@@ -38,8 +38,8 @@ var LIBRARY_OBJECT = (function() {
     reset_form = function(result){
         if("success" in result){
             $("#shp-upload-input").val('');
-            $(".attributes").addClass('hidden');
-            $(".add").addClass('hidden');
+            $(".attributes").addClass('d-none');
+            $(".add").addClass('d-none');
             reset_dropdown();
             addSuccessMessage('Wells Upload Complete!');
         }
@@ -68,13 +68,13 @@ var LIBRARY_OBJECT = (function() {
     };
 
     init_dropdown = function () {
-        $(".lat_attributes").select2();
-        $(".lon_attributes").select2();
-        $(".name_attributes").select2();
-        $(".id_attributes").select2();
-        $(".aquifer_attributes").select2();
-        $(".gse_attributes").select2();
-        $(".meta_attributes").select2();
+        $(".lat_attributes").select2({dropdownParent: $wellsModal});
+        $(".lon_attributes").select2({dropdownParent: $wellsModal});
+        $(".name_attributes").select2({dropdownParent: $wellsModal});
+        $(".id_attributes").select2({dropdownParent: $wellsModal});
+        $(".aquifer_attributes").select2({dropdownParent: $wellsModal});
+        $(".gse_attributes").select2({dropdownParent: $wellsModal});
+        $(".meta_attributes").select2({dropdownParent: $wellsModal});
     };
 
 
@@ -99,18 +99,18 @@ var LIBRARY_OBJECT = (function() {
         xhr.done(function(return_data){ //Reset the form once the data is added successfully
             if("success" in return_data){
                 submit_button.html(submit_button_html);
-                $(".attributes").removeClass('hidden');
+                $(".attributes").removeClass('d-none');
                 $wellsModal.modal('show');
                 var attributes = return_data["attributes"];
                 reset_dropdown();
                 var empty_opt = '<option value="" selected disabled>Select item...</option>';
-                $("#name_attributes").append(empty_opt);
-                $("#id_attributes").append(empty_opt);
-                $("#lat_attributes").append(empty_opt);
-                $("#lon_attributes").append(empty_opt);
-                $("#gse_attributes").append(empty_opt);
-                $("#aquifer_attributes").append(empty_opt);
-                // $("#meta_attributes").append(empty_opt);
+                $("#name_attributes").append(empty_opt).trigger('change');
+                $("#id_attributes").append(empty_opt).trigger('change');
+                $("#lat_attributes").append(empty_opt).trigger('change');
+                $("#lon_attributes").append(empty_opt).trigger('change');
+                $("#gse_attributes").append(empty_opt).trigger('change');
+                $("#aquifer_attributes").append(empty_opt).trigger('change');
+                // $("#meta_attributes").append(empty_opt).trigger('change');
                 attributes.forEach(function(attr,i){
                     var name_option = new Option(attr, attr);
                     var id_option = new Option(attr, attr);
@@ -119,15 +119,15 @@ var LIBRARY_OBJECT = (function() {
                     var gse_option = new Option(attr, attr);
                     var meta_option = new Option(attr, attr);
                     var aquifer_option = new Option(attr, attr);
-                    $("#name_attributes").append(name_option);
-                    $("#id_attributes").append(id_option);
-                    $("#lat_attributes").append(lat_option);
-                    $("#lon_attributes").append(lon_option);
-                    $("#gse_attributes").append(gse_option);
-                    $("#aquifer_attributes").append(aquifer_option);
-                    $("#meta_attributes").append(meta_option);
+                    $("#name_attributes").append(name_option).trigger('change');
+                    $("#id_attributes").append(id_option).trigger('change');
+                    $("#lat_attributes").append(lat_option).trigger('change');
+                    $("#lon_attributes").append(lon_option).trigger('change');
+                    $("#gse_attributes").append(gse_option).trigger('change');
+                    $("#aquifer_attributes").append(aquifer_option).trigger('change');
+                    $("#meta_attributes").append(meta_option).trigger('change');
                 });
-                $(".add").removeClass('hidden');
+                $(".add").removeClass('d-none');
             }else{
                 addErrorMessage(return_data['error']);
                 submit_button.html(submit_button_html);
